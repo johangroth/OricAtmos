@@ -1,0 +1,1405 @@
+EESchema Schematic File Version 4
+LIBS:OricAtmos-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 8 8
+Title "ULA and Memory decoding"
+Date "2018-09-11"
+Rev "V1.0"
+Comp "Linux Grotto"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L OricAtmos-rescue:4164 U12
+U 1 1 5B567FC5
+P 2375 1500
+F 0 "U12" H 2125 1975 60  0000 C CNN
+F 1 "4164" V 2375 1300 60  0000 C CNN
+F 2 "" H 2375 1500 60  0001 C CNN
+F 3 "" H 2375 1500 60  0001 C CNN
+	1    2375 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:4164 U14
+U 1 1 5B568024
+P 4375 1500
+F 0 "U14" H 4125 1975 60  0000 C CNN
+F 1 "4164" V 4375 1300 60  0000 C CNN
+F 2 "" H 4375 1500 60  0001 C CNN
+F 3 "" H 4375 1500 60  0001 C CNN
+	1    4375 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:4164 U17
+U 1 1 5B56809B
+P 6500 1500
+F 0 "U17" H 6250 1975 60  0000 C CNN
+F 1 "4164" V 6500 1300 60  0000 C CNN
+F 2 "" H 6500 1500 60  0001 C CNN
+F 3 "" H 6500 1500 60  0001 C CNN
+	1    6500 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:4164 U19
+U 1 1 5B5680EC
+P 8450 1500
+F 0 "U19" H 8200 1975 60  0000 C CNN
+F 1 "4164" V 8450 1300 60  0000 C CNN
+F 2 "" H 8450 1500 60  0001 C CNN
+F 3 "" H 8450 1500 60  0001 C CNN
+	1    8450 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:4164 U13
+U 1 1 5B56810D
+P 2375 3725
+F 0 "U13" H 2125 4200 60  0000 C CNN
+F 1 "4164" V 2375 3525 60  0000 C CNN
+F 2 "" H 2375 3725 60  0001 C CNN
+F 3 "" H 2375 3725 60  0001 C CNN
+	1    2375 3725
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:4164 U15
+U 1 1 5B5681C0
+P 4375 3725
+F 0 "U15" H 4125 4200 60  0000 C CNN
+F 1 "4164" V 4375 3525 60  0000 C CNN
+F 2 "" H 4375 3725 60  0001 C CNN
+F 3 "" H 4375 3725 60  0001 C CNN
+	1    4375 3725
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:4164 U18
+U 1 1 5B568219
+P 6500 3725
+F 0 "U18" H 6250 4200 60  0000 C CNN
+F 1 "4164" V 6500 3525 60  0000 C CNN
+F 2 "" H 6500 3725 60  0001 C CNN
+F 3 "" H 6500 3725 60  0001 C CNN
+	1    6500 3725
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:4164 U20
+U 1 1 5B568248
+P 8450 3725
+F 0 "U20" H 8200 4200 60  0000 C CNN
+F 1 "4164" V 8450 3525 60  0000 C CNN
+F 2 "" H 8450 3725 60  0001 C CNN
+F 3 "" H 8450 3725 60  0001 C CNN
+	1    8450 3725
+	1    0    0    -1  
+$EndComp
+Entry Wire Line
+	1500 1050 1600 1150
+Entry Wire Line
+	1500 1150 1600 1250
+Entry Wire Line
+	1500 1250 1600 1350
+Entry Wire Line
+	1500 1350 1600 1450
+Entry Wire Line
+	1500 1450 1600 1550
+Entry Wire Line
+	1500 1550 1600 1650
+Entry Wire Line
+	1500 1650 1600 1750
+Entry Wire Line
+	1500 1750 1600 1850
+Entry Wire Line
+	3500 1050 3600 1150
+Entry Wire Line
+	3500 1150 3600 1250
+Entry Wire Line
+	3500 1250 3600 1350
+Entry Wire Line
+	3500 1350 3600 1450
+Entry Wire Line
+	3500 1450 3600 1550
+Entry Wire Line
+	3500 1550 3600 1650
+Entry Wire Line
+	3500 1650 3600 1750
+Entry Wire Line
+	3500 1750 3600 1850
+Entry Wire Line
+	5625 1050 5725 1150
+Entry Wire Line
+	5625 1150 5725 1250
+Entry Wire Line
+	5625 1250 5725 1350
+Entry Wire Line
+	5625 1350 5725 1450
+Entry Wire Line
+	5625 1450 5725 1550
+Entry Wire Line
+	5625 1550 5725 1650
+Entry Wire Line
+	5625 1650 5725 1750
+Entry Wire Line
+	5625 1750 5725 1850
+Entry Wire Line
+	7575 1050 7675 1150
+Entry Wire Line
+	7575 1150 7675 1250
+Entry Wire Line
+	7575 1250 7675 1350
+Entry Wire Line
+	7575 1350 7675 1450
+Entry Wire Line
+	7575 1450 7675 1550
+Entry Wire Line
+	7575 1550 7675 1650
+Entry Wire Line
+	7575 1650 7675 1750
+Entry Wire Line
+	7575 1750 7675 1850
+Entry Wire Line
+	1500 3275 1600 3375
+Entry Wire Line
+	1500 3375 1600 3475
+Entry Wire Line
+	1500 3475 1600 3575
+Entry Wire Line
+	1500 3575 1600 3675
+Entry Wire Line
+	1500 3675 1600 3775
+Entry Wire Line
+	1500 3775 1600 3875
+Entry Wire Line
+	1500 3875 1600 3975
+Entry Wire Line
+	1500 3975 1600 4075
+Entry Wire Line
+	3500 3275 3600 3375
+Entry Wire Line
+	3500 3375 3600 3475
+Entry Wire Line
+	3500 3475 3600 3575
+Entry Wire Line
+	3500 3575 3600 3675
+Entry Wire Line
+	3500 3675 3600 3775
+Entry Wire Line
+	3500 3775 3600 3875
+Entry Wire Line
+	3500 3875 3600 3975
+Entry Wire Line
+	3500 3975 3600 4075
+Entry Wire Line
+	5625 3275 5725 3375
+Entry Wire Line
+	5625 3375 5725 3475
+Entry Wire Line
+	5625 3475 5725 3575
+Entry Wire Line
+	5625 3575 5725 3675
+Entry Wire Line
+	5625 3675 5725 3775
+Entry Wire Line
+	5625 3775 5725 3875
+Entry Wire Line
+	5625 3875 5725 3975
+Entry Wire Line
+	5625 3975 5725 4075
+Entry Wire Line
+	7575 3275 7675 3375
+Entry Wire Line
+	7575 3375 7675 3475
+Entry Wire Line
+	7575 3475 7675 3575
+Entry Wire Line
+	7575 3575 7675 3675
+Entry Wire Line
+	7575 3675 7675 3775
+Entry Wire Line
+	7575 3775 7675 3875
+Entry Wire Line
+	7575 3875 7675 3975
+Entry Wire Line
+	7575 3975 7675 4075
+Text Label 1600 1150 0    60   ~ 0
+MA0
+Text Label 1600 1250 0    60   ~ 0
+MA1
+Text Label 1600 1350 0    60   ~ 0
+MA2
+Text Label 1600 1450 0    60   ~ 0
+MA3
+Text Label 1600 1550 0    60   ~ 0
+MA4
+Text Label 1600 1650 0    60   ~ 0
+MA5
+Text Label 1600 1750 0    60   ~ 0
+MA6
+Text Label 1600 1850 0    60   ~ 0
+MA7
+Text Label 1600 3375 0    60   ~ 0
+MA0
+Text Label 1600 3475 0    60   ~ 0
+MA1
+Text Label 1600 3575 0    60   ~ 0
+MA2
+Text Label 1600 3675 0    60   ~ 0
+MA3
+Text Label 1600 3775 0    60   ~ 0
+MA4
+Text Label 1600 3875 0    60   ~ 0
+MA5
+Text Label 1600 3975 0    60   ~ 0
+MA6
+Text Label 1600 4075 0    60   ~ 0
+MA7
+Text Label 3600 3375 0    60   ~ 0
+MA0
+Text Label 3600 3475 0    60   ~ 0
+MA1
+Text Label 3600 3575 0    60   ~ 0
+MA2
+Text Label 3600 3675 0    60   ~ 0
+MA3
+Text Label 3600 3775 0    60   ~ 0
+MA4
+Text Label 3600 3875 0    60   ~ 0
+MA5
+Text Label 3600 3975 0    60   ~ 0
+MA6
+Text Label 3600 4075 0    60   ~ 0
+MA7
+Text Label 3600 1150 0    60   ~ 0
+MA0
+Text Label 3600 1250 0    60   ~ 0
+MA1
+Text Label 3600 1350 0    60   ~ 0
+MA2
+Text Label 3600 1450 0    60   ~ 0
+MA3
+Text Label 3600 1550 0    60   ~ 0
+MA4
+Text Label 3600 1650 0    60   ~ 0
+MA5
+Text Label 3600 1750 0    60   ~ 0
+MA6
+Text Label 3600 1850 0    60   ~ 0
+MA7
+Text Label 5725 1150 0    60   ~ 0
+MA0
+Text Label 5725 1250 0    60   ~ 0
+MA1
+Text Label 5725 1350 0    60   ~ 0
+MA2
+Text Label 5725 1450 0    60   ~ 0
+MA3
+Text Label 5725 1550 0    60   ~ 0
+MA4
+Text Label 5725 1650 0    60   ~ 0
+MA5
+Text Label 5725 1750 0    60   ~ 0
+MA6
+Text Label 5725 1850 0    60   ~ 0
+MA7
+Text Label 7675 1150 0    60   ~ 0
+MA0
+Text Label 7675 1250 0    60   ~ 0
+MA1
+Text Label 7675 1350 0    60   ~ 0
+MA2
+Text Label 7675 1450 0    60   ~ 0
+MA3
+Text Label 7675 1550 0    60   ~ 0
+MA4
+Text Label 7675 1650 0    60   ~ 0
+MA5
+Text Label 7675 1750 0    60   ~ 0
+MA6
+Text Label 7675 1850 0    60   ~ 0
+MA7
+Text Label 5725 3375 0    60   ~ 0
+MA0
+Text Label 5725 3475 0    60   ~ 0
+MA1
+Text Label 5725 3575 0    60   ~ 0
+MA2
+Text Label 5725 3675 0    60   ~ 0
+MA3
+Text Label 5725 3775 0    60   ~ 0
+MA4
+Text Label 5725 3875 0    60   ~ 0
+MA5
+Text Label 5725 3975 0    60   ~ 0
+MA6
+Text Label 5725 4075 0    60   ~ 0
+MA7
+Text Label 7675 3375 0    60   ~ 0
+MA0
+Text Label 7675 3475 0    60   ~ 0
+MA1
+Text Label 7675 3575 0    60   ~ 0
+MA2
+Text Label 7675 3675 0    60   ~ 0
+MA3
+Text Label 7675 3775 0    60   ~ 0
+MA4
+Text Label 7675 3875 0    60   ~ 0
+MA5
+Text Label 7675 3975 0    60   ~ 0
+MA6
+Text Label 7675 4075 0    60   ~ 0
+MA7
+Text Label 4850 650  0    60   ~ 0
+MA[0..7]
+Text HLabel 9300 650  2    60   Input ~ 0
+MA[0..7]
+Text HLabel 925  2625 0    60   Input ~ 0
+R/~W
+Text HLabel 925  2750 0    60   Input ~ 0
+~CAS
+Text HLabel 925  2875 0    60   Input ~ 0
+~RAS
+Wire Wire Line
+	1850 1150 1600 1150
+Wire Wire Line
+	1850 1250 1600 1250
+Wire Wire Line
+	1850 1350 1600 1350
+Wire Wire Line
+	1850 1450 1600 1450
+Wire Wire Line
+	1850 1550 1600 1550
+Wire Wire Line
+	1850 1650 1600 1650
+Wire Wire Line
+	1850 1750 1600 1750
+Wire Wire Line
+	1850 1850 1600 1850
+Wire Wire Line
+	3850 1150 3600 1150
+Wire Wire Line
+	3850 1250 3600 1250
+Wire Wire Line
+	3850 1350 3600 1350
+Wire Wire Line
+	3850 1450 3600 1450
+Wire Wire Line
+	3850 1550 3600 1550
+Wire Wire Line
+	3850 1650 3600 1650
+Wire Wire Line
+	3850 1750 3600 1750
+Wire Wire Line
+	3850 1850 3600 1850
+Wire Wire Line
+	5975 1150 5725 1150
+Wire Wire Line
+	5975 1250 5725 1250
+Wire Wire Line
+	5975 1350 5725 1350
+Wire Wire Line
+	5975 1450 5725 1450
+Wire Wire Line
+	5975 1550 5725 1550
+Wire Wire Line
+	5975 1650 5725 1650
+Wire Wire Line
+	5975 1750 5725 1750
+Wire Wire Line
+	5975 1850 5725 1850
+Wire Wire Line
+	7925 1150 7675 1150
+Wire Wire Line
+	7925 1250 7675 1250
+Wire Wire Line
+	7925 1350 7675 1350
+Wire Wire Line
+	7925 1450 7675 1450
+Wire Wire Line
+	7925 1550 7675 1550
+Wire Wire Line
+	7925 1650 7675 1650
+Wire Wire Line
+	7925 1750 7675 1750
+Wire Wire Line
+	7925 1850 7675 1850
+Wire Wire Line
+	7925 3375 7675 3375
+Wire Wire Line
+	7925 3475 7675 3475
+Wire Wire Line
+	7925 3575 7675 3575
+Wire Wire Line
+	7925 3675 7675 3675
+Wire Wire Line
+	7925 3775 7675 3775
+Wire Wire Line
+	7925 3875 7675 3875
+Wire Wire Line
+	7925 3975 7675 3975
+Wire Wire Line
+	7925 4075 7675 4075
+Wire Wire Line
+	5975 3375 5725 3375
+Wire Wire Line
+	5975 3475 5725 3475
+Wire Wire Line
+	5975 3575 5725 3575
+Wire Wire Line
+	5975 3675 5725 3675
+Wire Wire Line
+	5975 3775 5725 3775
+Wire Wire Line
+	5975 3875 5725 3875
+Wire Wire Line
+	5975 3975 5725 3975
+Wire Wire Line
+	5975 4075 5725 4075
+Wire Wire Line
+	3850 3375 3600 3375
+Wire Wire Line
+	3850 3475 3600 3475
+Wire Wire Line
+	3850 3575 3600 3575
+Wire Wire Line
+	3850 3675 3600 3675
+Wire Wire Line
+	3850 3775 3600 3775
+Wire Wire Line
+	3850 3875 3600 3875
+Wire Wire Line
+	3850 3975 3600 3975
+Wire Wire Line
+	3850 4075 3600 4075
+Wire Wire Line
+	1850 3375 1600 3375
+Wire Wire Line
+	1850 3475 1600 3475
+Wire Wire Line
+	1850 3575 1600 3575
+Wire Wire Line
+	1850 3675 1600 3675
+Wire Wire Line
+	1850 3775 1600 3775
+Wire Wire Line
+	1850 3875 1600 3875
+Wire Wire Line
+	1850 3975 1600 3975
+Wire Wire Line
+	1850 4075 1600 4075
+Wire Bus Line
+	1500 650  1500 3975
+Wire Bus Line
+	1500 650  9300 650 
+Wire Bus Line
+	3500 650  3500 3975
+Wire Bus Line
+	5625 650  5625 3975
+Wire Bus Line
+	7575 650  7575 3975
+Wire Wire Line
+	925  2625 7925 2625
+Wire Wire Line
+	7925 2625 7925 2200
+Wire Wire Line
+	925  2750 7800 2750
+Wire Wire Line
+	7800 2750 7800 2100
+Wire Wire Line
+	7800 2100 7925 2100
+Wire Wire Line
+	925  2875 7650 2875
+Wire Wire Line
+	7650 2875 7650 2000
+Wire Wire Line
+	7650 2000 7925 2000
+Wire Wire Line
+	1325 2625 1325 4900
+Wire Wire Line
+	1325 4900 7925 4900
+Wire Wire Line
+	7925 4900 7925 4425
+Connection ~ 1325 2625
+Wire Wire Line
+	1200 2750 1200 5025
+Wire Wire Line
+	1200 5025 7800 5025
+Wire Wire Line
+	7800 5025 7800 4325
+Wire Wire Line
+	7800 4325 7925 4325
+Connection ~ 1200 2750
+Wire Wire Line
+	1075 2875 1075 5150
+Wire Wire Line
+	1075 5150 7675 5150
+Wire Wire Line
+	7675 5150 7675 4225
+Wire Wire Line
+	7675 4225 7925 4225
+Connection ~ 1075 2875
+Wire Wire Line
+	3850 2200 3850 2625
+Connection ~ 3850 2625
+Wire Wire Line
+	1850 2200 1850 2625
+Connection ~ 1850 2625
+Wire Wire Line
+	5975 2200 5975 2625
+Connection ~ 5975 2625
+Wire Wire Line
+	1850 4425 1850 4900
+Connection ~ 1850 4900
+Wire Wire Line
+	3850 4425 3850 4900
+Connection ~ 3850 4900
+Wire Wire Line
+	5975 4425 5975 4900
+Connection ~ 5975 4900
+Wire Wire Line
+	1850 2100 1750 2100
+Wire Wire Line
+	1750 2100 1750 2750
+Connection ~ 1750 2750
+Wire Wire Line
+	3850 2100 3750 2100
+Wire Wire Line
+	3750 2100 3750 2750
+Connection ~ 3750 2750
+Wire Wire Line
+	5975 2100 5875 2100
+Wire Wire Line
+	5875 2100 5875 2750
+Connection ~ 5875 2750
+Wire Wire Line
+	5975 4325 5850 4325
+Wire Wire Line
+	5850 4325 5850 5025
+Connection ~ 5850 5025
+Wire Wire Line
+	3850 4325 3775 4325
+Wire Wire Line
+	3775 4325 3775 5025
+Connection ~ 3775 5025
+Wire Wire Line
+	1850 4325 1800 4325
+Wire Wire Line
+	1800 4325 1800 5025
+Connection ~ 1800 5025
+Wire Wire Line
+	1850 2000 1650 2000
+Wire Wire Line
+	1650 2000 1650 2875
+Connection ~ 1650 2875
+Wire Wire Line
+	3850 2000 3650 2000
+Wire Wire Line
+	3650 2000 3650 2875
+Connection ~ 3650 2875
+Wire Wire Line
+	5975 2000 5775 2000
+Wire Wire Line
+	5775 2000 5775 2875
+Connection ~ 5775 2875
+Wire Wire Line
+	5975 4225 5725 4225
+Wire Wire Line
+	5725 4225 5725 5150
+Connection ~ 5725 5150
+Wire Wire Line
+	3850 4225 3700 4225
+Wire Wire Line
+	3700 4225 3700 5150
+Connection ~ 3700 5150
+Wire Wire Line
+	1850 4225 1750 4225
+Wire Wire Line
+	1750 4225 1750 5150
+Connection ~ 1750 5150
+Wire Wire Line
+	2900 1150 3000 1150
+Wire Wire Line
+	3000 1150 3000 1250
+Wire Wire Line
+	3000 1250 2900 1250
+Entry Wire Line
+	3000 1250 3100 1350
+Wire Wire Line
+	2900 3375 3000 3375
+Wire Wire Line
+	3000 3375 3000 3475
+Wire Wire Line
+	3000 3475 2900 3475
+Entry Wire Line
+	3000 3475 3100 3575
+Wire Wire Line
+	4900 1150 5000 1150
+Wire Wire Line
+	5000 1150 5000 1250
+Wire Wire Line
+	5000 1250 4900 1250
+Entry Wire Line
+	5000 1250 5100 1350
+Wire Wire Line
+	7025 1150 7125 1150
+Wire Wire Line
+	7125 1150 7125 1250
+Wire Wire Line
+	7125 1250 7025 1250
+Entry Wire Line
+	7125 1250 7225 1350
+Wire Wire Line
+	8975 1150 9075 1150
+Wire Wire Line
+	9075 1150 9075 1250
+Wire Wire Line
+	9075 1250 8975 1250
+Entry Wire Line
+	9075 1250 9175 1350
+Wire Wire Line
+	8975 3375 9075 3375
+Wire Wire Line
+	9075 3375 9075 3475
+Wire Wire Line
+	9075 3475 8975 3475
+Entry Wire Line
+	9075 3475 9175 3575
+Wire Wire Line
+	7025 3375 7125 3375
+Wire Wire Line
+	7125 3375 7125 3475
+Wire Wire Line
+	7125 3475 7025 3475
+Entry Wire Line
+	7125 3475 7225 3575
+Wire Wire Line
+	4900 3375 5000 3375
+Wire Wire Line
+	5000 3375 5000 3475
+Wire Wire Line
+	5000 3475 4900 3475
+Entry Wire Line
+	5000 3475 5100 3575
+Text Label 3000 1150 2    60   ~ 0
+D0
+Text Label 5000 1150 2    60   ~ 0
+D1
+Text Label 7125 1150 2    60   ~ 0
+D2
+Text Label 9075 1150 2    60   ~ 0
+D3
+Text Label 3000 3375 2    60   ~ 0
+D4
+Text Label 5000 3375 2    60   ~ 0
+D5
+Text Label 7125 3375 2    60   ~ 0
+D6
+Text Label 9075 3375 2    60   ~ 0
+D7
+Wire Bus Line
+	3100 1350 3100 5300
+Wire Bus Line
+	3100 5300 10325 5300
+Wire Bus Line
+	5100 1350 5100 5300
+Wire Bus Line
+	7225 1350 7225 5300
+Wire Bus Line
+	9175 1350 9175 5300
+Text Label 5600 5300 2    60   ~ 0
+D[0..7]
+Text HLabel 10325 5300 2    60   BiDi ~ 0
+D[0..7]
+$Comp
+L OricAtmos-rescue:74HC00 U11
+U 3 1 5B57033B
+P 1700 6200
+F 0 "U11" H 1700 6250 50  0000 C CNN
+F 1 "74HC00" H 1700 6100 50  0000 C CNN
+F 2 "" H 1700 6200 50  0001 C CNN
+F 3 "" H 1700 6200 50  0001 C CNN
+	3    1700 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:74HC00 U11
+U 4 1 5B5704A3
+P 3100 6300
+F 0 "U11" H 3100 6350 50  0000 C CNN
+F 1 "74HC00" H 3100 6200 50  0000 C CNN
+F 2 "" H 3100 6300 50  0001 C CNN
+F 3 "" H 3100 6300 50  0001 C CNN
+	4    3100 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:74HC00 U11
+U 1 1 5B570530
+P 1675 6950
+F 0 "U11" H 1675 7000 50  0000 C CNN
+F 1 "74HC00" H 1675 6850 50  0000 C CNN
+F 2 "" H 1675 6950 50  0001 C CNN
+F 3 "" H 1675 6950 50  0001 C CNN
+	1    1675 6950
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:74HC00 U11
+U 2 1 5B5705B3
+P 1675 7425
+F 0 "U11" H 1675 7475 50  0000 C CNN
+F 1 "74HC00" H 1675 7325 50  0000 C CNN
+F 2 "" H 1675 7425 50  0001 C CNN
+F 3 "" H 1675 7425 50  0001 C CNN
+	2    1675 7425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1075 7525 1075 6725
+$Comp
+L OricAtmos-rescue:GND #PWR034
+U 1 1 5B5706F9
+P 1075 6725
+F 0 "#PWR034" H 1075 6475 50  0001 C CNN
+F 1 "GND" H 1075 6575 50  0000 C CNN
+F 2 "" H 1075 6725 50  0001 C CNN
+F 3 "" H 1075 6725 50  0001 C CNN
+	1    1075 6725
+	-1   0    0    1   
+$EndComp
+NoConn ~ 2275 6950
+NoConn ~ 2275 7425
+Wire Wire Line
+	2300 6200 2500 6200
+Wire Wire Line
+	3700 6300 3700 7450
+Wire Wire Line
+	3700 7450 4350 7450
+$Comp
+L OricAtmos-rescue:74HC04 U6
+U 6 1 5B570FA1
+P 3200 7350
+F 0 "U6" H 3350 7450 50  0000 C CNN
+F 1 "74HC04" H 3400 7250 50  0000 C CNN
+F 2 "" H 3200 7350 50  0001 C CNN
+F 3 "" H 3200 7350 50  0001 C CNN
+	6    3200 7350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 6400 2500 6475
+Wire Wire Line
+	2500 6475 875  6475
+Text HLabel 875  5775 0    60   Input ~ 0
+~ROMDIS
+Text HLabel 875  6475 0    60   Input ~ 0
+~CSROM
+Wire Wire Line
+	875  5775 1100 5775
+Wire Wire Line
+	4350 5650 4100 5650
+Wire Wire Line
+	4350 5750 4100 5750
+Wire Wire Line
+	4350 5850 4100 5850
+Wire Wire Line
+	4350 5950 4100 5950
+Wire Wire Line
+	4350 6050 4100 6050
+Wire Wire Line
+	4350 6150 4100 6150
+Wire Wire Line
+	4350 6250 4100 6250
+Wire Wire Line
+	4350 6350 4100 6350
+Wire Wire Line
+	4350 6450 4100 6450
+Wire Wire Line
+	4350 6550 4100 6550
+Wire Wire Line
+	4350 6650 4100 6650
+Wire Wire Line
+	4350 6750 4100 6750
+Wire Wire Line
+	4350 6850 4100 6850
+Wire Wire Line
+	4350 6950 4100 6950
+Wire Wire Line
+	2700 7050 4350 7050
+Entry Wire Line
+	4000 5550 4100 5650
+Entry Wire Line
+	4000 5650 4100 5750
+Entry Wire Line
+	4000 5750 4100 5850
+Entry Wire Line
+	4000 5850 4100 5950
+Entry Wire Line
+	4000 5950 4100 6050
+Entry Wire Line
+	4000 6050 4100 6150
+Entry Wire Line
+	4000 6150 4100 6250
+Entry Wire Line
+	4000 6250 4100 6350
+Entry Wire Line
+	4000 6350 4100 6450
+Entry Wire Line
+	4000 6450 4100 6550
+Entry Wire Line
+	4000 6550 4100 6650
+Entry Wire Line
+	4000 6650 4100 6750
+Entry Wire Line
+	4000 6750 4100 6850
+Entry Wire Line
+	4000 6850 4100 6950
+Wire Bus Line
+	4000 5475 4000 6850
+Wire Bus Line
+	4000 5475 2525 5475
+Text HLabel 2525 5475 0    60   Input ~ 0
+A[0..15]
+Text Label 2525 5475 0    60   ~ 0
+A[0..15]
+Text Label 4100 5650 0    60   ~ 0
+A0
+Text Label 4100 5750 0    60   ~ 0
+A1
+Text Label 4100 5850 0    60   ~ 0
+A2
+Text Label 4100 5950 0    60   ~ 0
+A3
+Text Label 4100 6050 0    60   ~ 0
+A4
+Text Label 4100 6150 0    60   ~ 0
+A5
+Text Label 4100 6250 0    60   ~ 0
+A6
+Text Label 4100 6350 0    60   ~ 0
+A7
+Text Label 4100 6450 0    60   ~ 0
+A8
+Text Label 4100 6550 0    60   ~ 0
+A9
+Text Label 4100 6650 0    60   ~ 0
+A10
+Text Label 4100 6750 0    60   ~ 0
+A11
+Text Label 4100 6850 0    60   ~ 0
+A12
+Text Label 4100 6950 0    60   ~ 0
+A13
+Wire Wire Line
+	5750 5650 6000 5650
+Wire Wire Line
+	5750 5750 6000 5750
+Wire Wire Line
+	5750 5850 6000 5850
+Wire Wire Line
+	5750 5950 6000 5950
+Wire Wire Line
+	5750 6050 6000 6050
+Wire Wire Line
+	5750 6150 6000 6150
+Wire Wire Line
+	5750 6250 6000 6250
+Wire Wire Line
+	5750 6350 6000 6350
+Text Label 6000 5650 2    60   ~ 0
+D0
+Text Label 6000 5750 2    60   ~ 0
+D1
+Text Label 6000 5850 2    60   ~ 0
+D2
+Text Label 6000 5950 2    60   ~ 0
+D3
+Text Label 6000 6050 2    60   ~ 0
+D4
+Text Label 6000 6150 2    60   ~ 0
+D5
+Text Label 6000 6250 2    60   ~ 0
+D6
+Text Label 6000 6350 2    60   ~ 0
+D7
+Entry Wire Line
+	6000 5650 6100 5550
+Entry Wire Line
+	6000 5750 6100 5650
+Entry Wire Line
+	6000 5850 6100 5750
+Entry Wire Line
+	6000 5950 6100 5850
+Entry Wire Line
+	6000 6050 6100 5950
+Entry Wire Line
+	6000 6150 6100 6050
+Entry Wire Line
+	6000 6250 6100 6150
+Entry Wire Line
+	6000 6350 6100 6250
+Wire Bus Line
+	6100 5300 6100 6250
+$Comp
+L OricAtmos-rescue:C_Small C15
+U 1 1 5B572CF5
+P 2800 2500
+F 0 "C15" H 2810 2570 50  0000 L CNN
+F 1 "0.1uF" H 2810 2420 50  0000 L CNN
+F 2 "" H 2800 2500 50  0001 C CNN
+F 3 "" H 2800 2500 50  0001 C CNN
+	1    2800 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L OricAtmos-rescue:C_Small C18
+U 1 1 5B572DB1
+P 4825 2500
+F 0 "C18" H 4835 2570 50  0000 L CNN
+F 1 "0.1uF" H 4835 2420 50  0000 L CNN
+F 2 "" H 4825 2500 50  0001 C CNN
+F 3 "" H 4825 2500 50  0001 C CNN
+	1    4825 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L OricAtmos-rescue:C_Small C20
+U 1 1 5B572E84
+P 6950 2500
+F 0 "C20" H 6960 2570 50  0000 L CNN
+F 1 "0.1uF" H 6960 2420 50  0000 L CNN
+F 2 "" H 6950 2500 50  0001 C CNN
+F 3 "" H 6950 2500 50  0001 C CNN
+	1    6950 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L OricAtmos-rescue:C_Small C22
+U 1 1 5B572F6B
+P 8875 2500
+F 0 "C22" H 8885 2570 50  0000 L CNN
+F 1 "0.1uF" H 8885 2420 50  0000 L CNN
+F 2 "" H 8875 2500 50  0001 C CNN
+F 3 "" H 8875 2500 50  0001 C CNN
+	1    8875 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L OricAtmos-rescue:C_Small C21
+U 1 1 5B572FA0
+P 8825 4725
+F 0 "C21" H 8835 4795 50  0000 L CNN
+F 1 "0.1uF" H 8835 4645 50  0000 L CNN
+F 2 "" H 8825 4725 50  0001 C CNN
+F 3 "" H 8825 4725 50  0001 C CNN
+	1    8825 4725
+	0    -1   -1   0   
+$EndComp
+$Comp
+L OricAtmos-rescue:C_Small C19
+U 1 1 5B572FD9
+P 6900 4725
+F 0 "C19" H 6910 4795 50  0000 L CNN
+F 1 "0.1uF" H 6910 4645 50  0000 L CNN
+F 2 "" H 6900 4725 50  0001 C CNN
+F 3 "" H 6900 4725 50  0001 C CNN
+	1    6900 4725
+	0    -1   -1   0   
+$EndComp
+$Comp
+L OricAtmos-rescue:C_Small C17
+U 1 1 5B573162
+P 4775 4725
+F 0 "C17" H 4785 4795 50  0000 L CNN
+F 1 "0.1uF" H 4785 4645 50  0000 L CNN
+F 2 "" H 4775 4725 50  0001 C CNN
+F 3 "" H 4775 4725 50  0001 C CNN
+	1    4775 4725
+	0    -1   -1   0   
+$EndComp
+$Comp
+L OricAtmos-rescue:C_Small C14
+U 1 1 5B57319D
+P 2775 4725
+F 0 "C14" H 2785 4795 50  0000 L CNN
+F 1 "0.1uF" H 2785 4645 50  0000 L CNN
+F 2 "" H 2775 4725 50  0001 C CNN
+F 3 "" H 2775 4725 50  0001 C CNN
+	1    2775 4725
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2375 2500 2700 2500
+Wire Wire Line
+	2900 2500 3200 2500
+Wire Wire Line
+	3200 2500 3200 875 
+Wire Wire Line
+	3200 875  2375 875 
+Wire Wire Line
+	4375 2500 4725 2500
+Wire Wire Line
+	4925 2500 5200 2500
+Wire Wire Line
+	5200 2500 5200 875 
+Wire Wire Line
+	5200 875  4375 875 
+Wire Wire Line
+	6500 2500 6850 2500
+Wire Wire Line
+	7050 2500 7300 2500
+Wire Wire Line
+	7300 2500 7300 875 
+Wire Wire Line
+	7300 875  6500 875 
+Wire Wire Line
+	8450 2500 8775 2500
+Wire Wire Line
+	8975 2500 9275 2500
+Wire Wire Line
+	9275 2500 9275 875 
+Wire Wire Line
+	9275 875  8450 875 
+Wire Wire Line
+	2375 4725 2675 4725
+Wire Wire Line
+	2875 4725 3175 4725
+Wire Wire Line
+	3175 4725 3175 3100
+Wire Wire Line
+	3175 3100 2375 3100
+Wire Wire Line
+	4375 4725 4675 4725
+Wire Wire Line
+	4875 4725 5175 4725
+Wire Wire Line
+	5175 4725 5175 3100
+Wire Wire Line
+	5175 3100 4375 3100
+Wire Wire Line
+	6500 4725 6800 4725
+Wire Wire Line
+	7000 4725 7300 4725
+Wire Wire Line
+	7300 4725 7300 3100
+Wire Wire Line
+	7300 3100 6500 3100
+Wire Wire Line
+	8450 4725 8725 4725
+Wire Wire Line
+	8925 4725 9250 4725
+Wire Wire Line
+	9250 4725 9250 3100
+Wire Wire Line
+	9250 3100 8450 3100
+$Comp
+L OricAtmos-rescue:VCC #PWR035
+U 1 1 5B57686D
+P 2375 875
+F 0 "#PWR035" H 2375 725 50  0001 C CNN
+F 1 "VCC" H 2375 1025 50  0000 C CNN
+F 2 "" H 2375 875 50  0001 C CNN
+F 3 "" H 2375 875 50  0001 C CNN
+	1    2375 875 
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:VCC #PWR041
+U 1 1 5B576919
+P 4375 875
+F 0 "#PWR041" H 4375 725 50  0001 C CNN
+F 1 "VCC" H 4375 1025 50  0000 C CNN
+F 2 "" H 4375 875 50  0001 C CNN
+F 3 "" H 4375 875 50  0001 C CNN
+	1    4375 875 
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:VCC #PWR047
+U 1 1 5B576A73
+P 6500 875
+F 0 "#PWR047" H 6500 725 50  0001 C CNN
+F 1 "VCC" H 6500 1025 50  0000 C CNN
+F 2 "" H 6500 875 50  0001 C CNN
+F 3 "" H 6500 875 50  0001 C CNN
+	1    6500 875 
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:VCC #PWR051
+U 1 1 5B576E61
+P 8450 875
+F 0 "#PWR051" H 8450 725 50  0001 C CNN
+F 1 "VCC" H 8450 1025 50  0000 C CNN
+F 2 "" H 8450 875 50  0001 C CNN
+F 3 "" H 8450 875 50  0001 C CNN
+	1    8450 875 
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:VCC #PWR053
+U 1 1 5B576F4D
+P 8450 3100
+F 0 "#PWR053" H 8450 2950 50  0001 C CNN
+F 1 "VCC" H 8450 3250 50  0000 C CNN
+F 2 "" H 8450 3100 50  0001 C CNN
+F 3 "" H 8450 3100 50  0001 C CNN
+	1    8450 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:VCC #PWR049
+U 1 1 5B577417
+P 6500 3100
+F 0 "#PWR049" H 6500 2950 50  0001 C CNN
+F 1 "VCC" H 6500 3250 50  0000 C CNN
+F 2 "" H 6500 3100 50  0001 C CNN
+F 3 "" H 6500 3100 50  0001 C CNN
+	1    6500 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:VCC #PWR043
+U 1 1 5B57794F
+P 4375 3100
+F 0 "#PWR043" H 4375 2950 50  0001 C CNN
+F 1 "VCC" H 4375 3250 50  0000 C CNN
+F 2 "" H 4375 3100 50  0001 C CNN
+F 3 "" H 4375 3100 50  0001 C CNN
+	1    4375 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:VCC #PWR037
+U 1 1 5B577FA5
+P 2375 3100
+F 0 "#PWR037" H 2375 2950 50  0001 C CNN
+F 1 "VCC" H 2375 3250 50  0000 C CNN
+F 2 "" H 2375 3100 50  0001 C CNN
+F 3 "" H 2375 3100 50  0001 C CNN
+	1    2375 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR038
+U 1 1 5B5784B3
+P 2375 4725
+F 0 "#PWR038" H 2375 4475 50  0001 C CNN
+F 1 "GND" H 2250 4650 50  0000 C CNN
+F 2 "" H 2375 4725 50  0001 C CNN
+F 3 "" H 2375 4725 50  0001 C CNN
+	1    2375 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR044
+U 1 1 5B5789ED
+P 4375 4725
+F 0 "#PWR044" H 4375 4475 50  0001 C CNN
+F 1 "GND" H 4250 4650 50  0000 C CNN
+F 2 "" H 4375 4725 50  0001 C CNN
+F 3 "" H 4375 4725 50  0001 C CNN
+	1    4375 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR050
+U 1 1 5B5790DD
+P 6500 4725
+F 0 "#PWR050" H 6500 4475 50  0001 C CNN
+F 1 "GND" H 6375 4650 50  0000 C CNN
+F 2 "" H 6500 4725 50  0001 C CNN
+F 3 "" H 6500 4725 50  0001 C CNN
+	1    6500 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR054
+U 1 1 5B579917
+P 8450 4725
+F 0 "#PWR054" H 8450 4475 50  0001 C CNN
+F 1 "GND" H 8450 4575 50  0000 C CNN
+F 2 "" H 8450 4725 50  0001 C CNN
+F 3 "" H 8450 4725 50  0001 C CNN
+	1    8450 4725
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR052
+U 1 1 5B579A2F
+P 8450 2500
+F 0 "#PWR052" H 8450 2250 50  0001 C CNN
+F 1 "GND" H 8450 2350 50  0000 C CNN
+F 2 "" H 8450 2500 50  0001 C CNN
+F 3 "" H 8450 2500 50  0001 C CNN
+	1    8450 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR048
+U 1 1 5B57A119
+P 6500 2500
+F 0 "#PWR048" H 6500 2250 50  0001 C CNN
+F 1 "GND" H 6375 2425 50  0000 C CNN
+F 2 "" H 6500 2500 50  0001 C CNN
+F 3 "" H 6500 2500 50  0001 C CNN
+	1    6500 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR042
+U 1 1 5B57A835
+P 4375 2500
+F 0 "#PWR042" H 4375 2250 50  0001 C CNN
+F 1 "GND" H 4250 2425 50  0000 C CNN
+F 2 "" H 4375 2500 50  0001 C CNN
+F 3 "" H 4375 2500 50  0001 C CNN
+	1    4375 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR036
+U 1 1 5B57AEB7
+P 2375 2500
+F 0 "#PWR036" H 2375 2250 50  0001 C CNN
+F 1 "GND" H 2225 2425 50  0000 C CNN
+F 2 "" H 2375 2500 50  0001 C CNN
+F 3 "" H 2375 2500 50  0001 C CNN
+	1    2375 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:28C256 U16
+U 1 1 5B57F361
+P 5050 6550
+F 0 "U16" H 5250 7550 50  0000 C CNN
+F 1 "28C256" H 5350 5550 50  0000 C CNN
+F 2 "" H 5050 6550 50  0001 C CNN
+F 3 "" H 5050 6550 50  0001 C CNN
+	1    5050 6550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3875 7250 4350 7250
+Wire Wire Line
+	3650 7350 4350 7350
+$Comp
+L OricAtmos-rescue:GND #PWR046
+U 1 1 5B5801B9
+P 5050 7700
+F 0 "#PWR046" H 5050 7450 50  0001 C CNN
+F 1 "GND" H 5050 7550 50  0000 C CNN
+F 2 "" H 5050 7700 50  0001 C CNN
+F 3 "" H 5050 7700 50  0001 C CNN
+	1    5050 7700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5050 7700 4650 7700
+$Comp
+L OricAtmos-rescue:C_Small C16
+U 1 1 5B580561
+P 4550 7700
+F 0 "C16" V 4675 7675 50  0000 L CNN
+F 1 "0.1uF" V 4600 7450 50  0000 L CNN
+F 2 "" H 4550 7700 50  0001 C CNN
+F 3 "" H 4550 7700 50  0001 C CNN
+	1    4550 7700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3875 7700 4450 7700
+Wire Wire Line
+	3875 5400 3875 7700
+Wire Wire Line
+	3875 5400 5050 5400
+$Comp
+L OricAtmos-rescue:VCC #PWR045
+U 1 1 5B5808A1
+P 5050 5400
+F 0 "#PWR045" H 5050 5250 50  0001 C CNN
+F 1 "VCC" V 5050 5575 50  0000 C CNN
+F 2 "" H 5050 5400 50  0001 C CNN
+F 3 "" H 5050 5400 50  0001 C CNN
+	1    5050 5400
+	0    1    1    0   
+$EndComp
+Connection ~ 3875 7250
+Text HLabel 2625 7350 0    60   Input ~ 0
+Phi2
+Wire Wire Line
+	2625 7350 2750 7350
+$Comp
+L OricAtmos-rescue:Conn_01x03 J6
+U 1 1 5B98F4E1
+P 2700 6675
+F 0 "J6" H 2700 6875 50  0000 C CNN
+F 1 "Conn_01x03" V 2800 6675 50  0000 C CNN
+F 2 "" H 2700 6675 50  0001 C CNN
+F 3 "" H 2700 6675 50  0001 C CNN
+	1    2700 6675
+	0    -1   -1   0   
+$EndComp
+$Comp
+L OricAtmos-rescue:R_Small R19
+U 1 1 5B98F602
+P 2600 6975
+F 0 "R19" V 2450 6925 50  0000 L CNN
+F 1 "10k" V 2525 6900 50  0000 L CNN
+F 2 "" H 2600 6975 50  0001 C CNN
+F 3 "" H 2600 6975 50  0001 C CNN
+	1    2600 6975
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR039
+U 1 1 5B98F75F
+P 2600 7075
+F 0 "#PWR039" H 2600 6825 50  0001 C CNN
+F 1 "GND" H 2600 6925 50  0000 C CNN
+F 2 "" H 2600 7075 50  0001 C CNN
+F 3 "" H 2600 7075 50  0001 C CNN
+	1    2600 7075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 7050 2700 6875
+Wire Wire Line
+	2800 6875 3025 6875
+$Comp
+L OricAtmos-rescue:R_Small R20
+U 1 1 5B98FA23
+P 3125 6875
+F 0 "R20" V 3200 6825 50  0000 L CNN
+F 1 "10k" V 3050 6825 50  0000 L CNN
+F 2 "" H 3125 6875 50  0001 C CNN
+F 3 "" H 3125 6875 50  0001 C CNN
+	1    3125 6875
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3225 6875 3350 6875
+$Comp
+L OricAtmos-rescue:GND #PWR040
+U 1 1 5B98FB9F
+P 3350 6875
+F 0 "#PWR040" H 3350 6625 50  0001 C CNN
+F 1 "GND" H 3350 6725 50  0000 C CNN
+F 2 "" H 3350 6875 50  0001 C CNN
+F 3 "" H 3350 6875 50  0001 C CNN
+	1    3350 6875
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1100 5775 1100 6300
+Connection ~ 1100 6100
+$EndSCHEMATC

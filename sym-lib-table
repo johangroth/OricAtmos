@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name OricAtmos-rescue)(type Legacy)(uri ${KIPRJMOD}/OricAtmos-rescue.lib)(options "")(descr ""))
+)
