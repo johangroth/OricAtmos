@@ -1,2 +1,11 @@
 *.bak
 *.od
+*~
+*.bin
+*.lst
+a.out
+*.rom
+*bak
+*.hex
+*.od
+*#
