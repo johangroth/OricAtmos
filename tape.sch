@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:OricAtmos-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -14,4 +14,647 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L Connector:DIN-7 J?
+U 1 1 5CFE8853
+P 2375 2025
+F 0 "J?" H 2375 1750 50  0000 C CNN
+F 1 "DIN-7" H 2375 1659 50  0000 C CNN
+F 2 "" H 2375 2025 50  0001 C CNN
+F 3 "http://www.mouser.com/ds/2/18/40_c091_abd_e-75918.pdf" H 2375 2025 50  0001 C CNN
+	1    2375 2025
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFE90C1
+P 4025 1825
+F 0 "R?" V 3950 1825 50  0000 C CNN
+F 1 "10k" V 4100 1825 50  0000 C CNN
+F 2 "" H 4025 1825 50  0001 C CNN
+F 3 "~" H 4025 1825 50  0001 C CNN
+	1    4025 1825
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFE91FC
+P 4650 2550
+F 0 "R?" V 4575 2550 50  0000 C CNN
+F 1 "10k" V 4725 2550 50  0000 C CNN
+F 2 "" H 4650 2550 50  0001 C CNN
+F 3 "~" H 4650 2550 50  0001 C CNN
+	1    4650 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFE95D6
+P 5550 2375
+F 0 "R?" V 5475 2375 50  0000 C CNN
+F 1 "10k" V 5625 2375 50  0000 C CNN
+F 2 "" H 5550 2375 50  0001 C CNN
+F 3 "~" H 5550 2375 50  0001 C CNN
+	1    5550 2375
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFEAF0F
+P 4175 1575
+F 0 "R?" H 4234 1621 50  0000 L CNN
+F 1 "12k" H 4234 1530 50  0000 L CNN
+F 2 "" H 4175 1575 50  0001 C CNN
+F 3 "~" H 4175 1575 50  0001 C CNN
+	1    4175 1575
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFEB053
+P 5225 1475
+F 0 "R?" V 5150 1475 50  0000 C CNN
+F 1 "10k" V 5300 1475 50  0000 C CNN
+F 2 "" H 5225 1475 50  0001 C CNN
+F 3 "~" H 5225 1475 50  0001 C CNN
+	1    5225 1475
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFEB2AF
+P 5500 1925
+F 0 "R?" V 5425 1925 50  0000 C CNN
+F 1 "1k" V 5575 1925 50  0000 C CNN
+F 2 "" H 5500 1925 50  0001 C CNN
+F 3 "~" H 5500 1925 50  0001 C CNN
+	1    5500 1925
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFEB4EF
+P 5875 1425
+F 0 "R?" V 5950 1375 50  0000 L CNN
+F 1 "100k" V 5800 1325 50  0000 L CNN
+F 2 "" H 5875 1425 50  0001 C CNN
+F 3 "~" H 5875 1425 50  0001 C CNN
+	1    5875 1425
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFEB6CA
+P 3650 3450
+F 0 "R?" V 3725 3400 50  0000 L CNN
+F 1 "10k" V 3575 3375 50  0000 L CNN
+F 2 "" H 3650 3450 50  0001 C CNN
+F 3 "~" H 3650 3450 50  0001 C CNN
+	1    3650 3450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFEB8F2
+P 5225 3050
+F 0 "R?" H 5284 3096 50  0000 L CNN
+F 1 "1k" H 5284 3005 50  0000 L CNN
+F 2 "" H 5225 3050 50  0001 C CNN
+F 3 "~" H 5225 3050 50  0001 C CNN
+	1    5225 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFEBAF4
+P 3550 5075
+F 0 "R?" V 3625 5025 50  0000 L CNN
+F 1 "22k" V 3475 5000 50  0000 L CNN
+F 2 "" H 3550 5075 50  0001 C CNN
+F 3 "~" H 3550 5075 50  0001 C CNN
+	1    3550 5075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 5CFEBD6D
+P 2800 5175
+F 0 "R?" H 2859 5221 50  0000 L CNN
+F 1 "1k" H 2859 5130 50  0000 L CNN
+F 2 "" H 2800 5175 50  0001 C CNN
+F 3 "~" H 2800 5175 50  0001 C CNN
+	1    2800 5175
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CFECA59
+P 3550 1925
+F 0 "C?" H 3458 1879 50  0000 R CNN
+F 1 "47nF" H 3525 2000 50  0000 R CNN
+F 2 "" H 3550 1925 50  0001 C CNN
+F 3 "~" H 3550 1925 50  0001 C CNN
+	1    3550 1925
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CFECBFD
+P 5550 2600
+F 0 "C?" V 5500 2675 50  0000 C CNN
+F 1 "100nF" V 5600 2750 50  0000 C CNN
+F 2 "" H 5550 2600 50  0001 C CNN
+F 3 "~" H 5550 2600 50  0001 C CNN
+	1    5550 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 5CFECFE9
+P 5225 3350
+F 0 "C?" H 5317 3396 50  0000 L CNN
+F 1 "C_Small" H 5317 3305 50  0000 L CNN
+F 2 "" H 5225 3350 50  0001 C CNN
+F 3 "~" H 5225 3350 50  0001 C CNN
+	1    5225 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NPN_ECB Q?
+U 1 1 5CFEDF6C
+P 4275 3450
+F 0 "Q?" H 4466 3496 50  0000 L CNN
+F 1 "2SC1815" H 4466 3405 50  0000 L CNN
+F 2 "" H 4475 3550 50  0001 C CNN
+F 3 "~" H 4275 3450 50  0001 C CNN
+	1    4275 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NPN_ECB Q?
+U 1 1 5CFEE8B4
+P 3975 4300
+F 0 "Q?" H 4166 4346 50  0000 L CNN
+F 1 "2SC1815" H 4166 4255 50  0000 L CNN
+F 2 "" H 4175 4400 50  0001 C CNN
+F 3 "~" H 3975 4300 50  0001 C CNN
+	1    3975 4300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:LM358 U?
+U 1 1 5CFEF0E6
+P 5025 1925
+F 0 "U?" H 5025 2100 50  0000 C CNN
+F 1 "LM358" H 5025 1950 50  0001 C CNN
+F 2 "" H 5025 1925 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 5025 1925 50  0001 C CNN
+	1    5025 1925
+	1    0    0    1   
+$EndComp
+$Comp
+L Amplifier_Operational:LM358 U?
+U 2 1 5CFEF813
+P 5975 2025
+F 0 "U?" H 6025 1875 50  0000 C CNN
+F 1 "LM358" H 6000 2225 50  0000 C CNN
+F 2 "" H 5975 2025 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 5975 2025 50  0001 C CNN
+	2    5975 2025
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:LM358 U?
+U 3 1 5CFF00F7
+P 5025 1925
+F 0 "U?" H 5000 2100 50  0001 L CNN
+F 1 "LM358" H 4950 1750 50  0000 L CNN
+F 2 "" H 5025 1925 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 5025 1925 50  0001 C CNN
+	3    5025 1925
+	1    0    0    1   
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP?
+U 1 1 5CFF147F
+P 1575 3625
+F 0 "JP?" H 1575 3860 50  0000 C CNN
+F 1 "JUMPER" H 1575 3769 50  0000 C CNN
+F 2 "" H 1575 3625 50  0001 C CNN
+F 3 "~" H 1575 3625 50  0001 C CNN
+	1    1575 3625
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP?
+U 1 1 5CFF20D5
+P 3400 3025
+F 0 "JP?" H 3400 3260 50  0000 C CNN
+F 1 "Jumper_2_Open" H 3400 3169 50  0000 C CNN
+F 2 "" H 3400 3025 50  0001 C CNN
+F 3 "~" H 3400 3025 50  0001 C CNN
+	1    3400 3025
+	0    1    1    0   
+$EndComp
+Text HLabel 5200 5175 2    50   Input ~ 0
+PB[0..7]
+Text HLabel 1350 3000 1    50   Input ~ 0
+SYNC_IN
+Wire Wire Line
+	2675 2025 3550 2025
+Text Label 2850 2025 0    50   ~ 0
+TAPE_IN
+Wire Wire Line
+	3550 1825 3925 1825
+$Comp
+L Device:D_Small_ALT D?
+U 1 1 5D028CD5
+P 4350 2275
+F 0 "D?" H 4350 2200 50  0000 C CNN
+F 1 "DIODE" H 4375 2375 50  0000 C CNN
+F 2 "" V 4350 2275 50  0001 C CNN
+F 3 "~" V 4350 2275 50  0001 C CNN
+	1    4350 2275
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D_Small_ALT D?
+U 1 1 5D02900A
+P 3375 3825
+F 0 "D?" H 3350 3750 50  0000 C CNN
+F 1 "DIODE" H 3375 3939 50  0000 C CNN
+F 2 "" V 3375 3825 50  0001 C CNN
+F 3 "~" V 3375 3825 50  0001 C CNN
+	1    3375 3825
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_Small_ALT D?
+U 1 1 5D029366
+P 4350 2550
+F 0 "D?" H 4375 2625 50  0000 C CNN
+F 1 "DIODE" H 4300 2450 50  0000 C CNN
+F 2 "" V 4350 2550 50  0001 C CNN
+F 3 "~" V 4350 2550 50  0001 C CNN
+	1    4350 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4125 1825 4175 1825
+Wire Wire Line
+	4250 2550 4175 2550
+Wire Wire Line
+	4175 2550 4175 2275
+Connection ~ 4175 1825
+Wire Wire Line
+	4175 1825 4725 1825
+Wire Wire Line
+	4250 2275 4175 2275
+Connection ~ 4175 2275
+Wire Wire Line
+	4175 2275 4175 1825
+Wire Wire Line
+	4175 1675 4175 1825
+Wire Wire Line
+	4175 1475 5125 1475
+Wire Wire Line
+	5325 1475 5325 1925
+Wire Wire Line
+	5400 1925 5325 1925
+Connection ~ 5325 1925
+$Comp
+L OricAtmos-rescue:VCC #PWR?
+U 1 1 5D08FBAF
+P 5175 2350
+F 0 "#PWR?" H 5175 2200 50  0001 C CNN
+F 1 "VCC" H 5192 2523 50  0000 C CNN
+F 2 "" H 5175 2350 50  0001 C CNN
+F 3 "" H 5175 2350 50  0001 C CNN
+	1    5175 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 2550 4450 2550
+Wire Wire Line
+	4450 2550 4450 2275
+Connection ~ 4450 2550
+Wire Wire Line
+	4450 2275 4450 2025
+Wire Wire Line
+	4450 2025 4725 2025
+Connection ~ 4450 2275
+Wire Wire Line
+	4750 2550 4925 2550
+Wire Wire Line
+	4925 2550 4925 2225
+Wire Wire Line
+	4925 2550 5175 2550
+Wire Wire Line
+	5175 2550 5175 2350
+Connection ~ 4925 2550
+$Comp
+L OricAtmos-rescue:GND #PWR?
+U 1 1 5D093C55
+P 4600 1550
+F 0 "#PWR?" H 4600 1300 50  0001 C CNN
+F 1 "GND" H 4600 1425 50  0000 C CNN
+F 2 "" H 4600 1550 50  0001 C CNN
+F 3 "" H 4600 1550 50  0001 C CNN
+	1    4600 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1550 4925 1550
+Wire Wire Line
+	4925 1550 4925 1625
+$Comp
+L Amplifier_Operational:LM358 U?
+U 3 1 5D0B4D3F
+P 5975 2025
+F 0 "U?" H 5950 2200 50  0001 L CNN
+F 1 "LM358" H 5950 1675 50  0001 L CNN
+F 2 "" H 5975 2025 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm2904-n.pdf" H 5975 2025 50  0001 C CNN
+	3    5975 2025
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5875 2325 5875 2375
+$Comp
+L OricAtmos-rescue:GND #PWR?
+U 1 1 5D0BC7BA
+P 5875 2750
+F 0 "#PWR?" H 5875 2500 50  0001 C CNN
+F 1 "GND" H 5880 2577 50  0000 C CNN
+F 2 "" H 5875 2750 50  0001 C CNN
+F 3 "" H 5875 2750 50  0001 C CNN
+	1    5875 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 2375 5875 2375
+Connection ~ 5875 2375
+Wire Wire Line
+	5875 2375 5875 2600
+Wire Wire Line
+	5650 2600 5875 2600
+Connection ~ 5875 2600
+Wire Wire Line
+	5875 2600 5875 2750
+Wire Wire Line
+	5450 2375 5450 2600
+Wire Wire Line
+	5450 2600 5450 2675
+Wire Wire Line
+	5450 2675 4450 2675
+Wire Wire Line
+	4450 2675 4450 2550
+Connection ~ 5450 2600
+Wire Wire Line
+	5675 2125 5450 2125
+Wire Wire Line
+	5450 2125 5450 2375
+Connection ~ 5450 2375
+$Comp
+L OricAtmos-rescue:VCC #PWR?
+U 1 1 5D0C0BB3
+P 5875 1725
+F 0 "#PWR?" H 5875 1575 50  0001 C CNN
+F 1 "VCC" H 5875 1850 50  0000 C CNN
+F 2 "" H 5875 1725 50  0001 C CNN
+F 3 "" H 5875 1725 50  0001 C CNN
+	1    5875 1725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 1925 5650 1425
+Wire Wire Line
+	5650 1425 5775 1425
+Wire Wire Line
+	5600 1925 5650 1925
+Connection ~ 5650 1925
+Wire Wire Line
+	5650 1925 5675 1925
+Wire Wire Line
+	5975 1425 6275 1425
+Wire Wire Line
+	6275 1425 6275 2025
+Wire Wire Line
+	6275 2025 6675 2025
+Connection ~ 6275 2025
+Text Label 6675 2025 2    50   ~ 0
+TAPE_AMP
+Wire Wire Line
+	2675 2125 3175 2125
+Wire Wire Line
+	3175 2125 3175 3250
+Wire Wire Line
+	3175 3250 2725 3250
+Text Label 2725 3250 0    50   ~ 0
+relay12
+Wire Wire Line
+	2725 3450 3550 3450
+Text Label 2725 3450 0    50   ~ 0
+relay5
+Wire Wire Line
+	3750 3450 4075 3450
+Wire Wire Line
+	4375 3250 5225 3250
+Text HLabel 5900 3250 2    50   Output ~ 0
+CB1
+Wire Wire Line
+	5225 3250 5900 3250
+Connection ~ 5225 3250
+$Comp
+L OricAtmos-rescue:VCC #PWR?
+U 1 1 5D032269
+P 5225 2950
+F 0 "#PWR?" H 5225 2800 50  0001 C CNN
+F 1 "VCC" H 5225 3100 50  0000 C CNN
+F 2 "" H 5225 2950 50  0001 C CNN
+F 3 "" H 5225 2950 50  0001 C CNN
+	1    5225 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5225 3150 5225 3250
+Wire Wire Line
+	5225 3450 5225 3650
+Wire Wire Line
+	5225 3650 4375 3650
+Wire Wire Line
+	4375 3650 4375 3800
+Connection ~ 4375 3650
+$Comp
+L OricAtmos-rescue:GND #PWR?
+U 1 1 5D03A00B
+P 4375 3800
+F 0 "#PWR?" H 4375 3550 50  0001 C CNN
+F 1 "GND" H 4375 3650 50  0000 C CNN
+F 2 "" H 4375 3800 50  0001 C CNN
+F 3 "" H 4375 3800 50  0001 C CNN
+	1    4375 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2725 3725 3375 3725
+Wire Wire Line
+	3375 3725 3375 3600
+$Comp
+L OricAtmos-rescue:GND #PWR?
+U 1 1 5D04E3B1
+P 3375 3600
+F 0 "#PWR?" H 3375 3350 50  0001 C CNN
+F 1 "GND" H 3500 3525 50  0000 C CNN
+F 2 "" H 3375 3600 50  0001 C CNN
+F 3 "" H 3375 3600 50  0001 C CNN
+	1    3375 3600
+	-1   0    0    1   
+$EndComp
+Text Label 2725 3725 0    50   ~ 0
+relay8
+Wire Wire Line
+	2725 3850 3250 3850
+Wire Wire Line
+	3250 3850 3250 3925
+Connection ~ 3375 3725
+Wire Wire Line
+	3250 3925 3375 3925
+Text Label 2725 3850 0    50   ~ 0
+relay9
+Wire Wire Line
+	3375 3925 3375 4100
+Wire Wire Line
+	3375 4100 3875 4100
+Connection ~ 3375 3925
+Wire Wire Line
+	4175 4300 4450 4300
+$Comp
+L OricAtmos-rescue:GND #PWR?
+U 1 1 5D073D5C
+P 3875 4625
+F 0 "#PWR?" H 3875 4375 50  0001 C CNN
+F 1 "GND" H 3880 4452 50  0000 C CNN
+F 2 "" H 3875 4625 50  0001 C CNN
+F 3 "" H 3875 4625 50  0001 C CNN
+	1    3875 4625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3875 4500 3875 4625
+Entry Wire Line
+	4450 4300 4550 4400
+Wire Wire Line
+	2075 2125 1950 2125
+Wire Wire Line
+	1950 2125 1950 3275
+Wire Wire Line
+	1950 3275 2275 3275
+Text Label 2275 3275 2    50   ~ 0
+relay16
+Text Notes 1325 3875 0    50   ~ 0
+Shunt jumper only you want\nto support VSYNC\n
+Wire Wire Line
+	2750 3500 2575 3500
+Wire Wire Line
+	2575 3500 2575 4000
+Wire Wire Line
+	2575 4000 2000 4000
+Text Label 2000 4000 0    50   ~ 0
+TAPE_AMP
+Text Label 2750 3500 2    50   ~ 0
+relay1
+Wire Wire Line
+	2750 3350 1775 3350
+Wire Wire Line
+	1775 3350 1775 3625
+Text Label 2750 3350 2    50   ~ 0
+relay3
+$Comp
+L Device:C_Small C?
+U 1 1 5D08DC16
+P 2650 5175
+F 0 "C?" H 2525 5250 50  0000 L CNN
+F 1 "47nF" H 2450 5100 50  0000 L CNN
+F 2 "" H 2650 5175 50  0001 C CNN
+F 3 "~" H 2650 5175 50  0001 C CNN
+	1    2650 5175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2075 2025 1225 2025
+Wire Wire Line
+	1225 2025 1225 5075
+Wire Wire Line
+	1225 5075 2650 5075
+Wire Wire Line
+	2650 5075 2800 5075
+Connection ~ 2650 5075
+Connection ~ 2800 5075
+Wire Wire Line
+	2800 5075 3450 5075
+Wire Wire Line
+	3650 5075 4450 5075
+Entry Wire Line
+	4450 5075 4550 5175
+Text Label 4450 4300 2    50   ~ 0
+PB6
+Text Label 4450 5075 2    50   ~ 0
+PB7
+Wire Bus Line
+	4550 4400 4550 5175
+Wire Bus Line
+	4550 5175 5200 5175
+Text Label 4775 5175 0    50   ~ 0
+PB[0..7]
+Text Label 2075 2025 2    50   ~ 0
+TAPE_OUT
+Text HLabel 2450 1225 2    50   Input ~ 0
+SOUND_OUT
+Wire Wire Line
+	2675 1925 2675 1350
+Wire Wire Line
+	2675 1350 2375 1350
+Wire Wire Line
+	2075 1350 2075 1925
+Wire Wire Line
+	2450 1225 2375 1225
+Wire Wire Line
+	2375 1225 2375 1350
+Connection ~ 2375 1350
+Wire Wire Line
+	2375 1350 2075 1350
+Wire Wire Line
+	2375 1725 2375 1500
+Wire Wire Line
+	2375 1500 2500 1500
+Wire Wire Line
+	2500 1500 2500 1600
+$Comp
+L OricAtmos-rescue:GND #PWR?
+U 1 1 5D0B3AC8
+P 2500 1600
+F 0 "#PWR?" H 2500 1350 50  0001 C CNN
+F 1 "GND" H 2500 1475 50  0000 C CNN
+F 2 "" H 2500 1600 50  0001 C CNN
+F 3 "" H 2500 1600 50  0001 C CNN
+	1    2500 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L OricAtmos-rescue:GND #PWR?
+U 1 1 5D0BCDD9
+P 2800 5400
+F 0 "#PWR?" H 2800 5150 50  0001 C CNN
+F 1 "GND" H 2805 5227 50  0000 C CNN
+F 2 "" H 2800 5400 50  0001 C CNN
+F 3 "" H 2800 5400 50  0001 C CNN
+	1    2800 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 5275 2800 5275
+Wire Wire Line
+	2800 5275 2800 5400
+Connection ~ 2800 5275
 $EndSCHEMATC

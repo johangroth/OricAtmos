@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:OricAtmos-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -1082,4 +1082,6 @@ Wire Bus Line
 	6975 4050 6975 4825
 Wire Bus Line
 	1600 900  1600 2400
+Text Notes 1200 5150 0    50   ~ 0
+Add a DS1813 as button debouncer
 $EndSCHEMATC

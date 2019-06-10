@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:OricAtmos-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -352,21 +352,19 @@ Wire Wire Line
 Wire Wire Line
 	9250 3425 9550 3425
 Wire Bus Line
-	9650 850  9650 3325
-Wire Bus Line
 	9650 850  10300 850 
 Wire Wire Line
 	1675 1950 1875 1950
 Wire Wire Line
 	2075 1950 2300 1950
 Wire Wire Line
-	3200 1550 3200 2400
+	3200 1550 3200 1950
 Wire Wire Line
 	3200 1550 2100 1550
 Wire Wire Line
 	775  1550 1800 1550
 Wire Wire Line
-	775  1550 775  2350
+	775  1550 775  1950
 Wire Wire Line
 	775  2350 1100 2350
 Connection ~ 775  1950
@@ -398,7 +396,7 @@ Wire Wire Line
 Wire Wire Line
 	3625 2975 3625 3075
 Wire Wire Line
-	3625 3075 4475 3075
+	3625 3075 3900 3075
 Wire Wire Line
 	3900 2975 3900 3075
 Connection ~ 3900 3075
@@ -477,24 +475,20 @@ Wire Wire Line
 Wire Wire Line
 	6000 5175 6300 5175
 Wire Bus Line
-	4075 4375 4075 5075
-Wire Bus Line
 	4075 4375 3150 4375
-Wire Bus Line
-	4075 3375 4075 4075
 Wire Bus Line
 	4075 3375 3150 3375
 Wire Wire Line
 	7750 2075 7575 2075
 Wire Wire Line
-	7575 2075 7575 3975
+	7575 2075 7575 3625
 Wire Wire Line
 	7750 3625 7575 3625
 Connection ~ 7575 3625
 Wire Wire Line
 	7750 2175 7675 2175
 Wire Wire Line
-	7675 2175 7675 3925
+	7675 2175 7675 3725
 Wire Wire Line
 	7750 3725 7675 3725
 Connection ~ 7675 3725
@@ -515,11 +509,7 @@ Wire Wire Line
 Wire Wire Line
 	7200 3375 7750 3375
 Wire Bus Line
-	6400 2975 6400 3675
-Wire Bus Line
 	6400 3675 7100 3675
-Wire Bus Line
-	7100 3675 7100 975 
 Wire Wire Line
 	7750 1175 6900 1175
 Wire Wire Line
@@ -550,8 +540,6 @@ Entry Wire Line
 	6800 3125 6900 3225
 Entry Wire Line
 	6800 3375 6900 3475
-Wire Bus Line
-	6800 3375 6800 975 
 Wire Bus Line
 	6800 975  6200 975 
 Text HLabel 6200 975  0    60   Input ~ 0
@@ -646,7 +634,7 @@ R/~W_RAM
 Text HLabel 4175 3175 0    60   Output ~ 0
 Phi2
 Text Notes 4050 2475 0    60   ~ 12
-Phi2O and Phi1O are not connected\nand not checked by WDC
+Phi2O and Phi1O are not connected\non the MPU and not checked by WDC
 $Comp
 L OricAtmos-rescue:C_Small C12
 U 1 1 5B99E67E
@@ -690,4 +678,26 @@ F 3 "" H 5225 5575 50  0001 C CNN
 $EndComp
 Text HLabel 4175 4325 0    60   Input ~ 0
 R/~W
+Wire Wire Line
+	775  1950 775  2350
+Wire Wire Line
+	3200 1950 3200 2400
+Wire Wire Line
+	3900 3075 4475 3075
+Wire Wire Line
+	7575 3625 7575 3975
+Wire Wire Line
+	7675 3725 7675 3925
+Wire Bus Line
+	4075 3375 4075 4075
+Wire Bus Line
+	4075 4375 4075 5075
+Wire Bus Line
+	6400 2975 6400 3675
+Wire Bus Line
+	9650 850  9650 3325
+Wire Bus Line
+	7100 975  7100 3675
+Wire Bus Line
+	6800 975  6800 3375
 $EndSCHEMATC

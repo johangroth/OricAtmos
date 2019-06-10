@@ -1,11 +1,11 @@
 EESchema Schematic File Version 4
 LIBS:OricAtmos-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 8
-Title "ULA and Memory decoding"
+Title "Keyboard and sound"
 Date "2018-09-11"
 Rev "V1.0"
 Comp "Linux Grotto"
@@ -249,12 +249,6 @@ Entry Wire Line
 	5425 5050 5525 4950
 Entry Wire Line
 	5425 5150 5525 5050
-Wire Bus Line
-	2200 4900 2200 6125
-Wire Bus Line
-	2200 6125 5425 6125
-Wire Bus Line
-	5425 6125 5425 4450
 Entry Wire Line
 	3525 6025 3625 6125
 Entry Wire Line
@@ -293,15 +287,13 @@ PB1
 Text Label 2475 4700 2    60   ~ 0
 PB2
 Wire Bus Line
-	2600 4600 2600 4800
-Wire Bus Line
 	2600 4800 3075 4800
 Text Label 2625 4800 0    60   ~ 0
 PB[0..7]
 Text HLabel 3075 4800 2    60   Input ~ 0
 PB[0..7]
 Wire Wire Line
-	1900 2750 1900 3900
+	1900 2750 1900 2825
 $Comp
 L OricAtmos-rescue:VCC #PWR05
 U 1 1 5B9893C2
@@ -314,7 +306,7 @@ F 3 "" H 1900 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2350 3025 2350 4000
+	2350 3025 2350 3350
 Connection ~ 2350 3350
 Wire Wire Line
 	2550 3350 2650 3350
@@ -346,23 +338,23 @@ Text Label 3300 2650 0    60   ~ 0
 PB[0..7]
 NoConn ~ 6375 3750
 Wire Wire Line
-	5700 3950 6375 3950
+	5700 3950 5850 3950
 Wire Wire Line
 	6375 4050 5975 4050
 Wire Wire Line
-	5975 3950 5975 4150
+	5975 3950 5975 4050
 Wire Wire Line
 	5975 4150 6375 4150
 Connection ~ 5975 4050
 Connection ~ 5975 3950
 Wire Wire Line
-	5300 5300 9125 5300
+	5300 5300 6875 5300
 Wire Wire Line
-	5300 4175 5300 5300
+	5300 4175 5300 4200
 Wire Wire Line
-	4550 4200 5850 4200
+	4550 4200 5025 4200
 Wire Wire Line
-	4900 3950 5500 3950
+	4900 3950 5025 3950
 Connection ~ 5300 4200
 Wire Wire Line
 	5850 4200 5850 4175
@@ -401,7 +393,7 @@ F 3 "" H 4800 3950 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4550 3950 4700 3950
+	4550 3950 4625 3950
 Text HLabel 4550 3950 0    60   Output ~ 0
 SOUND_OUT
 $Comp
@@ -438,7 +430,7 @@ F 3 "" H 6875 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4625 2600 4625 3950
+	4625 2600 4625 2800
 Connection ~ 4625 3950
 Wire Wire Line
 	4625 2600 5150 2600
@@ -450,12 +442,12 @@ Connection ~ 4625 2800
 Wire Wire Line
 	5350 3000 5350 3475
 Wire Wire Line
-	5150 3475 6550 3475
+	5150 3475 5350 3475
 Wire Wire Line
 	5150 2800 5150 3475
 Connection ~ 5350 3475
 Wire Wire Line
-	5750 2700 6575 2700
+	5750 2700 5875 2700
 $Comp
 L OricAtmos-rescue:C_Small C6
 U 1 1 5B98AF6E
@@ -521,7 +513,7 @@ Wire Wire Line
 Wire Wire Line
 	4900 2150 5350 2150
 Wire Wire Line
-	5350 1950 5350 2400
+	5350 1950 5350 2150
 Connection ~ 5350 2150
 $Comp
 L OricAtmos-rescue:VCC #PWR010
@@ -597,8 +589,6 @@ Entry Wire Line
 Entry Wire Line
 	7675 4450 7775 4350
 Wire Bus Line
-	7775 3550 7775 4350
-Wire Bus Line
 	7775 3550 8225 3550
 Text HLabel 8225 3550 2    60   BiDi ~ 0
 PA[0..7]
@@ -653,4 +643,48 @@ F 3 "" H 7075 3400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6875 3400 6975 3400
+Wire Wire Line
+	2350 3350 2350 4000
+Wire Wire Line
+	1900 2825 1900 3900
+Wire Wire Line
+	5975 4050 5975 4150
+Wire Wire Line
+	5975 3950 6375 3950
+Wire Wire Line
+	5300 4200 5300 5300
+Wire Wire Line
+	5300 4200 5850 4200
+Wire Wire Line
+	5850 3950 5975 3950
+Wire Wire Line
+	5300 3950 5500 3950
+Wire Wire Line
+	5025 3950 5300 3950
+Wire Wire Line
+	5025 4200 5300 4200
+Wire Wire Line
+	4625 3950 4700 3950
+Wire Wire Line
+	4625 2800 4625 3950
+Wire Wire Line
+	5350 3475 5875 3475
+Wire Wire Line
+	5875 3475 6550 3475
+Wire Wire Line
+	5875 2700 6575 2700
+Wire Wire Line
+	5350 2150 5350 2400
+Wire Wire Line
+	6875 5300 9125 5300
+Wire Bus Line
+	2600 4600 2600 4800
+Wire Bus Line
+	2200 4900 2200 6125
+Wire Bus Line
+	2200 6125 5425 6125
+Wire Bus Line
+	5425 4450 5425 6125
+Wire Bus Line
+	7775 3550 7775 4350
 $EndSCHEMATC

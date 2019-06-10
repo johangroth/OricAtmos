@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:OricAtmos-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -26,7 +26,7 @@ F 3 "" H 1600 1235 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1850 1375 3825 1375
+	1850 1375 2025 1375
 Wire Wire Line
 	1850 1275 2025 1275
 Wire Wire Line
@@ -48,7 +48,7 @@ $EndComp
 Wire Wire Line
 	2300 1175 2300 1025
 Wire Wire Line
-	2300 1025 2625 1025
+	2300 1025 2475 1025
 $Comp
 L OricAtmos-rescue:+9V #PWR2
 U 1 1 5B565E45
@@ -63,7 +63,7 @@ F 3 "" H 2300 1025 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3225 1025 3800 1025
+	3225 1025 3300 1025
 $Comp
 L OricAtmos-rescue:VCC #PWR03
 U 1 1 5B565E71
@@ -195,4 +195,18 @@ Text HLabel 2700 3300 2    60   Output ~ 0
 ~ROMDIS
 Text HLabel 2700 3400 2    60   Output ~ 0
 ~MAP
+Wire Wire Line
+	2025 1375 2475 1375
+Wire Wire Line
+	2925 1375 3300 1375
+Wire Wire Line
+	2475 1025 2625 1025
+Wire Wire Line
+	2475 1375 2925 1375
+Wire Wire Line
+	3300 1375 3825 1375
+Wire Wire Line
+	3300 1025 3800 1025
+Text Notes 1300 775  0    50   ~ 0
+Add fuse and power on switch.
 $EndSCHEMATC
