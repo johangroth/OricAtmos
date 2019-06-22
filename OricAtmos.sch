@@ -46,6 +46,10 @@ S 1175 3800 1500 600
 U 5B56558A
 F0 "Tape" 60
 F1 "tape.sch" 60
+F2 "PB[0..7]" I R 2675 3950 50 
+F3 "SYNC_IN" I R 2675 4300 50 
+F4 "CB1" O R 2675 4100 50 
+F5 "SOUND_OUT" I L 1175 4000 50 
 $EndSheet
 $Sheet
 S 3400 1925 2025 2425
@@ -218,7 +222,7 @@ Wire Wire Line
 Wire Bus Line
 	2650 2950 3400 2950
 Wire Bus Line
-	2650 3200 3400 3200
+	2650 3200 2775 3200
 Text Label 2800 2825 0    60   ~ 0
 CA2
 Text Label 2800 2950 0    60   ~ 0
@@ -305,4 +309,32 @@ Wire Wire Line
 	8125 4125 8425 4125
 Wire Wire Line
 	5525 2950 5900 2950
+Wire Bus Line
+	2775 3200 2775 3950
+Wire Bus Line
+	2775 3950 2675 3950
+Connection ~ 2775 3200
+Wire Bus Line
+	2775 3200 3400 3200
+Wire Wire Line
+	3400 3325 2850 3325
+Wire Wire Line
+	2850 3325 2850 4100
+Wire Wire Line
+	2850 4100 2675 4100
+Wire Wire Line
+	10300 2525 10850 2525
+Wire Wire Line
+	10850 2525 10850 4500
+Wire Wire Line
+	10850 4500 2850 4500
+Wire Wire Line
+	2850 4500 2850 4300
+Wire Wire Line
+	2850 4300 2675 4300
+Wire Wire Line
+	1175 4000 875  4000
+Wire Wire Line
+	875  4000 875  2950
+Connection ~ 875  2950
 $EndSCHEMATC

@@ -1,0 +1,11 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+OkFile	/home/jgroth/dev/repos_github/OricAtmos/OSDK/Oricutron/osdk_oricutron.bat	/^:OkFile$/;"	label	line:32
+RunDefault	/home/jgroth/dev/repos_github/OricAtmos/OSDK/Oricutron/osdk_oricutron.bat	/^:RunDefault$/;"	label	line:41
+ErCfg	/home/jgroth/dev/repos_github/OricAtmos/OSDK/Oricutron/osdk_oricutron.bat	/^:ErCfg$/;"	label	line:52
+ErBld	/home/jgroth/dev/repos_github/OricAtmos/OSDK/Oricutron/osdk_oricutron.bat	/^:ErBld$/;"	label	line:63
+End	/home/jgroth/dev/repos_github/OricAtmos/OSDK/Oricutron/osdk_oricutron.bat	/^:End$/;"	label	line:71
