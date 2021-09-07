@@ -47,8 +47,8 @@
 		arr_end_ptr = $a0			;$a0,$a1		end of arrays pointer.
 		str_area_end = $a2			;$a2,$a3		bottom of string area pointer.
 		alloc_str_ptr = $a4			;$a4,$a5		work pointer for allocating strings.
-		himem = $a6					;$a6,$a7		himem.
-		cur_line_num = $a8			;$a8,$a9		current line number, top byte is #ff if in command mode.
+		basic_himem = $a6			;$a6,$a7		highest available memory location available to BASIC.
+		cur_line_num = $a8			;$a8,$a9		current line number, top byte is #ff if in command mode (read-only).
 		prev_line_num = $aa			;$aa,$ab		previous line number.
 		last_line_addr = $ac		;$ac,$ad		last line start address.
 		tmp_cpy_line_num = $ae		;$ae,$af		temporary copy of line number.
@@ -215,7 +215,7 @@
 									;$2F7		Not used?
 		plot_row_tmp = $2f8			;$2F8		Temporary row indicator for PLOT.
 									;$2F9,$2FA	Not used?
-		and_vec = $2fb				;$2FB-$2FD	Jump to '&' routine.
+		ampersand_vec = $2fb		;$2FB-$2FD	Jump to '&' routine.
 									;$2FE-$2FF	Free for developer use
 
 		; via device addresses:
@@ -264,189 +264,105 @@
 		.word dim-1
 		.word cls-1
 		.word read-1
-		.byte $1b		;
-		.byte $cb		;
-		.byte $e4		;
-		.byte $c9		;
-		.byte $bc		;
-		.byte $c9		;
-		.byte $6f		;
-		.byte $ca		;
-		.byte $51		;
-		.byte $c9		;
-		.byte $c7		;
-		.byte $c9		;
+        .word let-1
+        .word goto-1
+        .word run-1
+        .word if-1
+        .word restore-1
+        .word gosub-1
 		.word return-1
-		.byte $98		;
-		.byte $ca		;
-		.byte $cd		;
-		.byte $eb		;
-		.byte $e6		;
-		.byte $eb		;
-		.byte $0b		;
-		.byte $ec		;
-		.byte $20
-		.byte $ec
-		.byte $32
-		.byte $ec		;
-		.byte $b4		;
-		.byte $fa		;
-		.byte $ca		;
-		.byte $fa		;
-		.byte $e0		;
-		.byte $fa		;
-		.byte $9e		;
-		.byte $fa		;
-		.byte $fb		;
-		.byte $ea		;
-		.byte $fb		;
-		.byte $ea		;
-		.byte $fb		;
-		.byte $ea		;
-		.byte $ef		;
-		.byte $ea		;
-		.byte $ef		;
-		.byte $ea		;
-		.byte $ef		;
-		.byte $ea		;
-		.byte $ef		;
-		.byte $ea		;
-		.byte $ef		;
-		.byte $ea		;
-		.byte $ef		;
-		.byte $ea		;
-		.byte $ef		;
-		.byte $ea		;
-		.byte $fb		;
-		.byte $ea		;
-		.byte $fb		;
-		.byte $ea		;
-		.byte $70		;
-		.byte $c9		;
-		.byte $c1		;
-		.byte $ca		;
-		.byte $57		;
-		.byte $d9		;
-		.byte $5a		;
-		.byte $e8		;
-		.byte $08		;
-		.byte $e9		;
-		.byte $b9		;
-		.byte $d4		;
-		.byte $4e		;
-		.byte $d9		;
-		.byte $aa		;
-		.byte $cb		;
-		.byte $9f		;
-		.byte $c9		;
-		.byte $47		;
-		.byte $c7		;
-		.byte $0c		;
-		.byte $c7		;
-		.byte $45		;
-		.byte $cd		;
-		.byte $45		;
-		.byte $e9		;
-		.byte $12		;
-		.byte $cd		;
-		.byte $ed		;
-		.byte $c6		;
-		.byte $21		;
-		.byte $df		;
-		.byte $bd		;
-		.byte $df		;
-		.byte $49		;
-		.byte $df		;
-		.byte $21		;
-		.byte $00
-		.byte $7e
-		.byte $d4		;
-		.byte $a6		;
-		.byte $d4		;
-		.byte $b5		;
-		.byte $d9		;
-		.byte $fb		;
-		.byte $02		;
-		.byte $2e		;
-		.byte $e2		;
-		.byte $4f		;
-		.byte $e3		;
-		.byte $af		;
-		.byte $dc		;
-		.byte $aa		;
-		.byte $e2		;
-		.byte $8b		;
-		.byte $e3		;
-		.byte $92		;
-		.byte $e3		;
-		.byte $db		;
-		.byte $e3		;
-		.byte $3f		;
-		.byte $e4		;
-		.byte $38		;
-		.byte $d9		;
-		.byte $83		;
-		.byte $d9		;
-		.byte $d4		;
-		.byte $dd		;
-		.byte $a6		;
-		.byte $d8		;
-		.byte $93		;
-		.byte $d5		;
-		.byte $d7		;
-		.byte $d8		;
-		.byte $b5		;
-		.byte $d8		;
-		.byte $16		;
-		.byte $d8		;
-		.byte $77		;
-		.byte $de		;
-		.byte $0f		;
-		.byte $df		;
-		.byte $0b		;
-		.byte $df		;
-		.byte $da		;
-		.byte $da		;
-		.byte $3f		;
-		.byte $da		;
-		.byte $45		;
-		.byte $ec		;
-		.byte $2a		;
-		.byte $d8		;
-		.byte $56		;
-		.byte $d8		;
-		.byte $61		;
-		.byte $d8		;
+        .word rem-1
+        .word himem-1
+        .word grab-1
+        .word release-1
+        .word text-1
+        .word hires-1
+        .word shoot-1
+        .word explode-1
+        .word zap-1
+        .word ping-1
+        .word sound_cmds-1
+        .word sound_cmds-1
+        .word sound_cmds-1
+        .word hires_scr_cmds-1
+        .word hires_scr_cmds-1
+        .word hires_scr_cmds-1
+        .word hires_scr_cmds-1
+        .word hires_scr_cmds-1
+        .word hires_scr_cmds-1
+        .word hires_scr_cmds-1
+        .word sound_cmds-1
+        .word sound_cmds-1
+        .word stop-1
+        .word on-1
+        .word wait-1
+        .word cload-1
+        .word csave-1
+        .word def-1
+        .word poke-1
+        .word print-1
+        .word cont-1
+        .word list-1
+        .word clear-1
+        .word get-1
+        .word call-1
+        .word exclamation_mark-1
+        .word new-1
+        .word sgn
+        .word int
+        .word abs
+        .word usr_ptr   ; USR
+        .word fre
+        .word pos
+        .word hex_string
+        .word ampersand_vec
+        .word sqr
+        .word rnd
+        .word ln
+        .word exp
+        .word cos
+        .word sin
+        .word tan
+        .word atn
+        .word peek
+        .word deek
+        .word log
+        .word len
+        .word str_string
+        .word val
+        .word asc
+        .word chr_string
+        .word pi
+        .word true
+        .word false
+        .word key_string
+        .word scrn
+        .word point
+        .word left_string
+        .word right_string
+        .word mid_string
+
+        ;;; mystery bytes
 		.byte $79		;
-		.byte $24		;
-		.byte $db		;
+        .word plus_operator-1
 		.byte $79		;
-		.byte $0d		;
-		.byte $db		;
+        .word substraction_operator-1
 		.byte $7b		;
-		.byte $ef		;
-		.byte $dc		;
+        .word multiplication_operator-1
 		.byte $7b		;
-		.byte $e6		;
-		.byte $dd		;
+        .word division_operator-1
 		.byte $7f		;
-		.byte $37		;
-		.byte $e2		;
+        .word a_operator-1
 		.byte $50		;
-		.byte $e5		;
-		.byte $d0		;
+        .word and_operator-1
 		.byte $46		;
-		.byte $e2		;
-		.byte $d0		;
+        .word or_operator-1
 		.byte $7d		;
-		.byte $70		;
-		.byte $e2		;
+        .word negate_operator-1
 		.byte $5a		;
-		.byte $3b		;
-		.byte $d0		;
+        .word not-1
 		.byte $64		;
-		.byte $12		;
-		.byte $d1		;
+        .word relational_operators-1
 
 ; basic keywords. the last character has bit 7 set
 		.text "EN", "D" | $80
@@ -599,25 +515,25 @@
 ;; end of error messages
 
 l_c3c6:
-		tsx				;
+		tsx				;Search for a variable match in
+		inx				;FOR-NEXT loop.
 		inx				;
-		inx				;
-		inx				;
-		inx				;
+		inx				;Successive FOR-NEXT loops are
+		inx				;pulled off the stack until a
 l_c3cb:
-		lda $0101,x		;
+		lda $0101,x		;variable match is made.
 		cmp #$8d		;
-		bne l_c3f3		;
-		lda $b9			;
-		bne l_c3e0		;
-		lda $0102,x		;
-		sta $b8			;
+		bne l_c3f3		;If a match is made then the Z
+		lda tmp_dst_var_ptr+1			;flag in the status register is
+		bne l_c3e0		;set to 1; otherwise it is set
+		lda $0102,x		;to 0.
+		sta tmp_dst_var_ptr			;
 		lda $0103,x		;
-		sta $b9			;
+		sta tmp_dst_var_ptr+1			;
 l_c3e0:
 		cmp $0103,x		;
 		bne l_c3ec		;
-		lda $b8			;
+		lda tmp_dst_var_ptr			;
 		cmp $0102,x		;
 		beq l_c3f3		;
 l_c3ec:
@@ -630,65 +546,68 @@ l_c3f3:
 		rts				;
 
 l_c3f4:
-		jsr l_c444		;
-		sta $a0			;
-		sty $a1			;
+		jsr l_c444		;This routine opens up new
+		sta arr_end_ptr			;space in memory to store
+		sty arr_end_ptr+1			;new variables.
 l_c3fb:
-		sec				;
-		lda $c9			;
-		sbc $ce			;
-		sta $91			;
-		tay				;
-		lda $ca			;
-		sbc $cf			;
+		sec				;($CE/$CF points to start of
+		lda ptr2		;block, $C9/$CA points to end
+		sbc store_ptr			;of block, $C7/$C8 points to
+		sta str_ptr			;new end of block).
+		tay				;X(MSB) and Y (LSB) hold the
+		lda ptr2+1			;size of block.
+		sbc store_ptr+1			;
 		tax				;
-		inx				;
-		tya				;
+		inx				;Branch if block is a whole
+		tya				;number of pages.
 		beq l_c42f		;
-		lda $c9			;
-		sec				;
-		sbc $91			;
-		sta $c9			;
+		lda ptr2		;Point ptr2 and ptr1 to
+		sec				;the bottom of the pages that
+		sbc str_ptr			;they were pointing to.
+		sta ptr2			;
 		bcs l_c418		;
-		dec $ca			;
+		dec ptr2+1			;
 		sec				;
 l_c418:
-		lda $c7			;
-		sbc $91			;
-		sta $c7			;
+		lda ptr1			;
+		sbc str_ptr			;
+		sta ptr1			;
 		bcs l_c428		;
-		dec $c8			;
+		dec ptr1+1			;
 		bcc l_c428		;
 l_c424:
-		lda ($c9),y		;
-		sta ($c7),y		;
+		lda (ptr2),y		;Shift whole page up in memory.
+		sta (ptr1),y		;
 l_c428:
 		dey				;
 		bne l_c424		;
-		lda ($c9),y		;
-		sta ($c7),y		;
+		lda (ptr2),y		;Shift last byte (when Y=0)
+		sta (ptr1),y		;
 l_c42f:
-		dec $ca			;
-		dec $c8			;
-		dex				;
-		bne l_c428		;
+		dec ptr2+1			;Decrement pointer page numbers
+		dec ptr1+1		;
+		dex				;Continue until all pages have
+		bne l_c428		;been moved.
 		rts				;
 
 l_c437:
-		asl				;
-		adc #$3e		;
-		bcs l_c47c		;
-		sta $91			;
+		asl				;Check for 2 x content of A
+		adc #$3e		;free bytes on stack. C is set
+		bcs l_c47c		;at end of routine if enough
+		sta str_ptr			;space is free.
 		tsx				;
-		cpx $91			;
+		cpx str_ptr			;
 		bcc l_c47c		;
 		rts				;
 
+;;;
+;; CHECK FOR FREE MEMORY
+;;;
 l_c444:
-		cpy $a3			;
+		cpy str_area_end+1			;Check for free memory
 		bcc l_c470		;
 		bne l_c44e		;
-		cmp $a2			;
+		cmp str_area_end			;
 		bcc l_c470		;
 l_c44e:
 		pha				;
@@ -696,31 +615,31 @@ l_c44e:
 		tya				;
 l_c452:
 		pha				;
-		lda $c6,x		;
+		lda tmp_fpa2,x		;
 		dex				;
 		bpl l_c452		;
 		jsr l_d650		;
 		ldx #$f7		;
 l_c45d:
 		pla				;
-		sta $d0,x		;
+		sta exp_main_fpa,x		;
 		inx				;
 		bmi l_c45d		;
 		pla				;
 		tay				;
 		pla				;
-		cpy $a3			;
+		cpy str_area_end+1			;
 		bcc l_c470		;
 		bne l_c47c		;
-		cmp $a2			;
+		cmp str_area_end			;
 		bcs l_c47c		;
 l_c470:
 		rts				;
 
 l_c471:
-		lda $02c0		;
+		lda screen_status		;
 		and #$fe		;
-		sta $02c0		;
+		sta screen_status		;
 		jmp l_c4a8		;
 
 l_c47c:
@@ -923,7 +842,7 @@ l_c5cf:
 		pha				;
 		tya				;
 		pha				;
-		jsr l_fa9f		;
+		jsr ping		;
 		pla				;
 		tay				;
 		pla				;
@@ -1045,7 +964,7 @@ l_c68a:
 		sta $e9			;
 		rts				;
 edit:
-		jsr l_cae2		;EDIT Get integer from text. 
+		jsr l_cae2		;EDIT Get integer from text.
 		jsr l_c6b3		;
 		bcc l_c6b0		;
 		ror $02f2		;
@@ -1101,6 +1020,11 @@ l_c6ec:
 		clc				;
 l_c6ed:
 		rts				;
+
+;;;
+;; NEW
+;;;
+new:
 		bne l_c6ed		;
 l_c6f0:
 		lda #$00		;
@@ -1119,6 +1043,11 @@ l_c6f0:
 l_c708:
 		jsr l_c73a		;
 		lda #$00		;
+
+;;;
+;; CLEAR
+;;;
+clear:
 		bne l_c739		;
 l_c70f:
 		lda $a6			;
@@ -1131,7 +1060,7 @@ l_c70f:
 		sty $9f			;
 		sta $a0			;
 		sty $a1			;
-		jsr l_c952		;
+		jsr restore		;
 l_c726:
 		ldx #$88		;
 		stx $85			;
@@ -1159,7 +1088,10 @@ l_c73a:
 		sta $ea			;
 		rts				;
 
-l_c748:
+;;;
+;; LIST
+;;;
+list:
 		php				;
 		jsr l_cae2		;
 		jsr l_c6b3		;
@@ -1275,7 +1207,7 @@ llist:
 		jsr l_c816		; SET OUTPUT TO PRINTER.
 		lsr $02f2		; Set output to printer, clear
 		jsr $00e8		; "list return" flag and perform
-		jmp l_c748		; list.
+		jmp list		; list.
 
 ;;;
 ;; LPRINT
@@ -1329,7 +1261,7 @@ l_c854:
 for:
 		lda #$80		;
 		sta $2b			;
-		jsr l_cb1c		;
+		jsr let 		;
 		jsr l_c3c6		;
 		bne l_c866		;
 		txa				;
@@ -1444,7 +1376,7 @@ l_c917:
 		pha				;
 		jmp $00e2		;
 l_c92c:
-		jmp l_cb1c		;
+		jmp let 		;
 l_c92f:
 		cmp #$3a		;
 		beq l_c8f4		;
@@ -1458,12 +1390,15 @@ l_c92f:
 l_c945:
 		cmp #$27		;
 		bne l_c94f		;
-		jsr l_ca99		;
+		jsr rem 		;
 		jmp l_c8c1		;
 l_c94f:
 		jmp l_d070		;
 
-l_c952:
+;;;
+;; RESTORE
+;;;
+restore:
 		sec				;
 		lda $9a			;
 		sbc #$01		;
@@ -1486,7 +1421,14 @@ l_c962:
 		cmp #$03		;
 		bne l_c961		;
 		cmp #$03		;
+;;;
+;; STOP
+;;;
+stop:
 		bcs l_c974		;
+;;;
+;; END
+;;;
 end:					; END
 		clc				;
 l_c974:
@@ -1515,6 +1457,11 @@ l_c98a:
 		jmp l_c49d		;
 l_c99d:
 		jmp l_c4a8		;
+
+;;;
+;; CONT
+;;;
+cont:
 		bne l_c9b9		;
 		ldx #$d7		;
 		ldy $ad			;
@@ -1531,11 +1478,19 @@ l_c9ab:
 l_c9b9:
 		rts				;
 		jmp l_d336		;
+;;;
+;; RUN
+;;;
+run:
 		bne l_c9c2		;
 		jmp l_c708		;
 l_c9c2:
 		jsr l_c70f		;
 		jmp l_c9dc		;
+;;;
+;; GOSUB
+;;;
+gosub:
 		lda #$03		;
 		jsr l_c437		;
 		lda $ea			;
@@ -1550,10 +1505,13 @@ l_c9c2:
 		pha				;
 l_c9dc:
 		jsr $00e8		;
-		jsr l_c9e5		;
+		jsr goto		;
 		jmp l_c8c1		;
 
-l_c9e5:
+;;;
+;; GOTO
+;;;
+goto:
 		jsr l_e853		;
 		jsr l_ca51		;
 		lda $a9			;
@@ -1654,6 +1612,10 @@ l_ca61:
 		cmp #$22		;
 		bne l_ca61		;
 		beq l_ca59		;
+;;;
+;; IF
+;;;
+if:
 		jsr l_cf17		;
 		jsr $00e8		;
 		cmp #$97		;
@@ -1668,7 +1630,7 @@ l_ca7f:
 l_ca88:
 		jsr $00e8		;
 		bcs l_ca90		;
-		jmp l_c9e5		;
+		jmp goto		;
 l_ca90:
 		php				;
 		sec				;
@@ -1676,7 +1638,10 @@ l_ca90:
 		plp				;
 		jmp l_c915		;
 
-l_ca99:
+;;;
+;; REM
+;;;
+rem:
 		jsr l_ca51		;
 		beq l_ca3f		;
 l_ca9e:
@@ -1686,7 +1651,7 @@ l_caa0:
 		beq l_cab0		;
 		iny				;
 		cmp #$c9		;
-		beq l_ca99		;
+		beq rem 		;
 		cmp #$c8		;
 		bne l_caa0		;
 		jmp l_ca3f		;
@@ -1705,6 +1670,10 @@ l_cabc:
 		jmp l_ca3f		;
 l_cabf:
 		jmp l_d070		;
+;;;
+;; ON
+;;;
+on:
 		jsr l_d8c8		;
 		pha				;
 		cmp #$9b		;
@@ -1759,7 +1728,10 @@ l_cb16:
 		jsr $00e2		;
 		jmp l_cae8		;
 
-l_cb1c:
+;;;
+;; LET
+;;;
+let:
 		jsr l_d188		;
 		sta $b8			;
 		sty $b9			;
@@ -1842,6 +1814,11 @@ l_cba5:
 l_cba8:
 		jsr $00e8		;
 l_cbab:
+
+;;;
+;; PRINT
+;;;
+print:
 		beq l_cbf0		;
 l_cbad:
 		beq l_cc0b		;
@@ -2012,7 +1989,7 @@ l_cccd:
 ;;;
 cls:
 		lda #$0c		;Load A with CTRL L.
-		.byte $2c		;BIT instructions are used to 
+		.byte $2c		;BIT instructions are used to
 		lda #$11
 		.byte $2c		;hide the loading of A with
 l_ccd4:
@@ -2058,6 +2035,10 @@ l_cd0e:
 l_cd10:
 		and #$ff		;
 		rts				;
+;;;
+;; ! (exclamation mark command)
+;;;
+exclamation_mark:
 		jmp ($02f5)		;
 
 tron:
@@ -2091,6 +2072,11 @@ l_cd36:
 		sta $e9			;
 		sty $ea			;
 		rts				;
+
+;;;
+;; GET
+;;;
+get:
 		jsr l_d4d2		;
 		ldx #$36		;
 		ldy #$00		;
@@ -2540,6 +2526,11 @@ l_d034:
 		bne l_d04b		;
 		ldy #$18		;
 		bne l_d077		;
+
+;;;
+;; NOT
+;;;
+not:
 		jsr l_d2a9		;
 		lda $d4			;
 		eor #$ff		;
@@ -2644,8 +2635,20 @@ l_d0d3:
 		sta $c5			;
 		jsr $00c3		;
 		jmp l_cf06		;
+;;;
+;; AND / OR. Hidden by BIT ($2C)
+;;;
+
+;;;
+;; OR
+;;;
+or_operator:
 		ldy #$ff		;
 		.byte $2c
+;;;
+;; AND
+;;;
+and_operator:
 		ldy #$00
 		sty $26			;
 		jsr l_d2a9		;
@@ -2667,6 +2670,11 @@ l_d0d3:
 		and $24			;
 		eor $26			;
 		jmp l_d499		;
+
+;;;
+;; Relational operators >, =, <
+;;;
+relational_operators:
 		jsr l_cf09		;
 		bcs l_d12b		;
 		lda $dd			;
@@ -3234,6 +3242,10 @@ l_d479:
 		dec $cc			;
 		bne l_d460		;
 		rts				;
+;;;
+;; FRE
+;;;
+fre:
 		lda $28			;
 		beq l_d485		;
 		jsr l_d7d0		;
@@ -3256,6 +3268,10 @@ l_d499:
 		sty $d2			;
 		ldx #$90		;
 		jmp l_df2c		;
+;;;
+;; POS
+;;;
+pos:
 		jsr l_d8cb		;
 		txa				;
 		beq l_d4b4		;
@@ -3267,6 +3283,11 @@ l_d4b4:
 l_d4b6:
 		lda #$00		;
 		beq l_d499		;
+
+;;;
+;; DEF
+;;;
+def:
 		cmp #$d9		;
 		bne l_d4df		;
 		jsr $00e2		;
@@ -3394,6 +3415,11 @@ l_d57d:
 		iny				;
 		sta ($bd),y		;
 		rts				;
+
+;;;
+;; STR$
+;;;
+str_string:
 		jsr l_cf06		;
 		ldy #$00		;
 		jsr l_e0d7		;
@@ -3799,6 +3825,11 @@ l_d805:
 		ldy #$00		;
 l_d815:
 		rts				;
+
+;;;
+;; CHR$
+;;;
+chr_string:
 		jsr l_d8cb		;
 		txa				;
 		pha				;
@@ -3810,6 +3841,11 @@ l_d815:
 		pla				;
 		pla				;
 		jmp l_d5f4		;
+
+;;;
+;; LEFT$
+;;;
+left_string:
 		jsr l_d88b		;
 		cmp ($bf),y		;
 		tya				;
@@ -3841,11 +3877,21 @@ l_d84f:
 		tya				;
 		jsr l_d7b6		;
 		jmp l_d5f4		;
+
+;;;
+;; RIGHT$
+;;;
+right_string:
 		jsr l_d88b		;
 		clc				;
 		sbc ($bf),y		;
 		eor #$ff		;
 		jmp l_d830		;
+
+;;;
+;; MID$
+;;;
+mid_string:
 		lda #$ff		;
 		sta $d4			;
 		jsr $00e8		;
@@ -3889,6 +3935,11 @@ l_d88b:
 		ldy #$00		;
 		txa				;
 		rts				;
+
+;;;
+;; LEN
+;;;
+len:
 		jsr l_d8ac		;
 		jmp l_d4b6		;
 
@@ -3898,6 +3949,11 @@ l_d8ac:
 		stx $28			;
 		tay				;
 		rts				;
+
+;;;
+;; ASC
+;;;
+asc:
 		jsr l_d8ac		;
 		beq l_d8c2		;
 		ldy #$00		;
@@ -3918,6 +3974,10 @@ l_d8cb:
 		bne l_d8c2		;
 		ldx $d4			;
 		jmp $00e8		;
+;;;
+;; VAL
+;;;
+val:
 		jsr l_d8ac		;
 		bne l_d8df		;
 		jmp l_dbb2		;
@@ -3973,6 +4033,10 @@ l_d92a:
 		sty $33			;
 		sta $34			;
 		rts				;
+;;;
+;; PEEK
+;;;
+peek:
 		lda $34			;
 		pha				;
 		lda $33			;
@@ -3987,11 +4051,20 @@ l_d941:
 		pla				;
 		sta $34			;
 		jmp l_d4b6		;
+
+;;;
+;; POKE
+;;;
+poke:
 		jsr l_d916		;
 		txa				;
 		ldy #$00		;
 		sta ($33),y		;
 		rts				;
+;;;
+;; WAIT
+;;;
+wait:
 		jsr l_cf03		;
 		jsr l_d922		;
 		ldy $33			;
@@ -4017,6 +4090,10 @@ l_d97a:
 		dey				;
 		bpl l_d97a		;
 		rts				;
+;;;
+;; DEEK
+;;;
+deek:
 		jsr l_d922		;
 		ldy #$01		;
 		lda ($33),y		;
@@ -4053,6 +4130,10 @@ l_d9ae:
 		inx				;
 l_d9b4:
 		rts				;
+;;;
+;; HEX$
+;;;
+hex_string:
 		jsr l_d922		;
 		ldx #$00		;
 		stx $2f			;
@@ -4078,7 +4159,7 @@ l_d9db:
 ;; LORES
 ;;;
 lores:
-		jsr l_ec21		; Set screen to text.
+		jsr text		; Set screen to text.
 		jsr l_d8c8		; Get single byte expression.
 		txa				;
 		beq l_d9ed		; In LORES 0.
@@ -4136,6 +4217,11 @@ l_da22:
 		txa				;
 		jsr l_da0c		;
 		rts				;
+
+;;;
+;; SCRN
+;;;
+scrn:
 		jsr l_d062		;
 		jsr l_da22		;
 		jsr l_d05f		;
@@ -4239,6 +4325,11 @@ l_dacb:
 		pla				;
 		sta $ea			;
 		jmp l_da8c		;
+
+;;;
+;; KEY$
+;;;
+key_string:
 		jsr l_eb78		;
 		php				;
 		pha				;
@@ -4277,6 +4368,11 @@ l_db04:
 l_db0b:
 		jsr l_dd51		;
 l_db0e:
+
+;;;
+;; - operator
+;;;
+substraction_operator:
 		lda $d5			;
 		eor #$ff		;
 		sta $d5			;
@@ -4290,6 +4386,11 @@ l_db1d:
 l_db22:
 		jsr l_dd51		;
 l_db25:
+
+;;;
+;; + operator
+;;;
+plus_operator:
 		bne l_db2a		;
 		jmp l_ded5		;
 l_db2a:
@@ -4561,7 +4662,10 @@ l_dc75:
 		.byte $17		;
 		.byte $f8
 
-l_dcaf:
+;;;
+;; LN
+;;;
+ln:
 		jsr l_df13		;
 		beq l_dcb6		;
 		bpl l_dcb9		;
@@ -4594,6 +4698,10 @@ l_dcb9:
 		ldy #$dc		;
 l_dced:
 		jsr l_dd51		;
+;;;
+;; * operator
+;;;
+multiplication_operator:
 		bne l_dcf5		;
 		jmp l_dd50		;
 l_dcf5:
@@ -4739,7 +4847,12 @@ l_ddcc:
 		stx $de			;
 		jsr l_de7b		;
 		jmp l_dde7		;
-		jsr l_dcaf		;
+
+;;;
+;; LOG
+;;;
+log:
+		jsr ln    		;
 		jsr l_dee5		;
 		lda #$77		;
 		ldy #$dc		;
@@ -4749,6 +4862,10 @@ l_ddcc:
 l_dde4:
 		jsr l_dd51		;
 l_dde7:
+;;;
+;; / operator
+;;;
+division_operator:
 		beq l_de5f		;
 		jsr l_def4		;
 		lda #$00		;
@@ -4835,6 +4952,11 @@ l_de64:
 		lda $98			;
 		sta $d4			;
 		jmp l_db92		;
+
+;;;
+;; PI
+;;;
+pi:
 		lda #$7c		;
 		ldy #$dc		;
 l_de7b:
@@ -4931,10 +5053,18 @@ l_defc:
 		jmp l_dbf3		;
 		jsr l_d2a9		;
 		lsr $d4			;
-		bcs l_df0f		;
+		bcs true 		;
+
+;;;
+;; FALSE
+;;;
+false:
 		lda #$00		;
 		beq l_df24		;
-l_df0f:
+;;;
+;; TRUE
+;;;
+true:
 		lda #$ff		;
 		bmi l_df24		;
 l_df13:
@@ -4949,6 +5079,11 @@ l_df19:
 		lda #$01		;
 l_df20:
 		rts				;
+
+;;;
+;; SGN
+;;;
+sgn:
 		jsr l_df13		;
 l_df24:
 		sta $d1			;
@@ -4974,6 +5109,10 @@ l_df40:
 		ldx #$90		;
 		sec				;
 		bcs l_df31		;
+;;;
+;; ABS
+;;;
+abs:
 		lsr $d5			;
 		rts				;
 
@@ -5047,7 +5186,10 @@ l_dfac:
 		sty $d7			;
 		rts				;
 
-l_dfbd:
+;;;
+;; INT
+;;;
+int:
 		lda $d0			;
 		cmp #$a0		;
 		bcs l_dfe3		;
@@ -5149,7 +5291,7 @@ l_e05a:
 		bmi l_e05f		;
 		rts				;
 l_e05f:
-		jmp l_e271		;
+		jmp negate_operator		;
 l_e062:
 		pha				;
 		bit $ce			;
@@ -5460,11 +5602,20 @@ l_e200:
 		.byte $ff		;
 		.byte $ff		;
 
+;;;
+;; SQR
+;;;
+sqr:
 		jsr l_dee5		;
 		lda #$05		;
 		ldy #$e2		;
 		jsr l_de7b		;
-		beq l_e2aa		;
+
+;;;
+;; A operator (no explation what the 'A' operator is)
+;;;
+a_operator:
+		beq exp   		;
 		lda $d8			;
 		bne l_e241		;
 		jmp l_dbb4		;
@@ -5474,7 +5625,7 @@ l_e241:
 		jsr l_dead		;
 		lda $dd			;
 		bpl l_e25b		;
-		jsr l_dfbd		;
+		jsr int   		;
 		lda #$bd		;
 		ldy #$00		;
 		jsr l_df4c		;
@@ -5485,15 +5636,19 @@ l_e25b:
 		jsr l_ded7		;
 		tya				;
 		pha				;
-		jsr l_dcaf		;
+		jsr ln        	;
 		lda #$bd		;
 		ldy #$00		;
 		jsr l_dced		;
-		jsr l_e2aa		;
+		jsr exp   		;
 		pla				;
 		lsr				;
 		bcc l_e27b		;
-l_e271:
+
+;;;
+;; Unary - operator
+;;;
+negate_operator:
 		lda $d0			;
 		beq l_e27b		;
 		lda $d5			;
@@ -5552,7 +5707,10 @@ l_e27b:
 		.byte $00
 		.byte $00
 
-l_e2aa:
+;;;
+;; EXP
+;;;
+exp:
 		lda #$7c		;
 		ldy #$e2		;
 		jsr l_dced		;
@@ -5569,7 +5727,7 @@ l_e2ba:
 l_e2c5:
 		jsr l_dd99		;
 l_e2c8:
-		jsr l_dfbd		;
+		jsr int   		;
 		lda $24			;
 		clc				;
 		adc #$81		;
@@ -5588,7 +5746,7 @@ l_e2d8:
 		lda $c5			;
 		sta $df			;
 		jsr l_db0e		;
-		jsr l_e271		;
+		jsr negate_operator		;
 		lda #$81		;
 		ldy #$e2		;
 		jsr l_e313		;
@@ -5647,6 +5805,10 @@ l_e346:
 		.byte $98, $35, $44, $7a	;
 		.byte $68, $28, $b1, $46	;
 
+;;;
+;; RND
+;;;
+rnd:
 		jsr l_df13		;
 		tax				;
 		bmi l_e36d		;
@@ -5677,17 +5839,24 @@ l_e36d:
 		ldy #$00		;
 l_e388:
 		jmp l_dead		;
+;;;
+;; COS
+;;;
+cos:
 		lda #$07		;
 		ldy #$e4		;
 		jsr l_db22		;
-l_e392:
+;;;
+;; SIN
+;;;
+sin:
 		jsr l_dee5		;
 		lda #$0c		;
 		ldy #$e4		;
 		ldx $dd			;
 		jsr l_ddcc		;
 		jsr l_dee5		;
-		jsr l_dfbd		;
+		jsr int   		;
 		lda #$00		;
 		sta $de			;
 		jsr l_db0e		;
@@ -5704,22 +5873,26 @@ l_e392:
 		eor #$ff		;
 		sta $2d			;
 l_e3c4:
-		jsr l_e271		;
+		jsr negate_operator		;
 l_e3c7:
 		lda #$11		;
 		ldy #$e4		;
 		jsr l_db22		;
 		pla				;
 		bpl l_e3d4		;
-		jsr l_e271		;
+		jsr negate_operator		;
 l_e3d4:
 		lda #$16		;
 		ldy #$e4		;
 		jmp l_e2fd		;
+;;;
+;; TAN
+;;;
+tan:
 		jsr l_dea3		;
 		lda #$00		;
 		sta $2d			;
-		jsr l_e392		;
+		jsr sin   		;
 		ldx #$bd		;
 		ldy #$00		;
 		jsr l_e388		;
@@ -5797,10 +5970,14 @@ l_e403:
 		.byte $89		;
 		.byte $cd
 
+;;;
+;; ATN
+;;;
+atn:
 		lda $d5
 		pha				;
 		bpl l_e447		;
-		jsr l_e271		;
+		jsr negate_operator		;
 l_e447:
 		lda $d0			;
 		pha				;
@@ -5822,7 +5999,7 @@ l_e455:
 l_e468:
 		pla				;
 		bpl l_e46e		;
-		jmp l_e271		;
+		jmp negate_operator		;
 l_e46e:
 		rts				;
 
@@ -6430,6 +6607,10 @@ l_e853:
 		jsr l_d922		;
 		clc				;
 		rts				;
+;;;
+;; CLOAD
+;;;
+cload:
 		php				;
 		jsr l_e7b2		;
 		lda $02ad		;
@@ -6515,6 +6696,11 @@ l_e8e9:
 l_e903:
 		jsr l_c708		;
 		jmp l_c4a8		;
+
+;;;
+;; CSAVE
+;;;
+csave:
 		lda $9a			;
 		ldy $9b			;
 		sta $02a9		;
@@ -6542,6 +6728,10 @@ l_e93d:
 		jsr l_e5f5		;
 		jsr l_f9aa		;
 		jmp l_ede0		;
+;;;
+;; CALL
+;;;
+call:
 		jsr l_e853		;
 		jmp ($0033)		;
 
@@ -6808,13 +6998,20 @@ l_eac2:
 		.byte $00
 		.byte $00
 
+;;;
+;; Entry point for hires screen commands
+;;;
+hires_scr_cmds:
 		lda $02c0
 		and #$01
-		bne l_eafc
+		bne sound_cmds
 l_eaf7:
 		ldx #$a3		;
 		jmp l_c47e		;
-l_eafc:
+;;;
+;; Entry point for sound commands
+;;;
+sound_cmds:
 		cpy #$4e		;
 		bcs l_eb03		;
 l_eb00:
@@ -6954,6 +7151,10 @@ l_ebca:
 		sec				;
 		sbc #$01		;
 		rts				;
+;;;
+;; HIMEM
+;;;
+himem:
 		jsr l_cf03		;
 		jsr l_d922		;
 		lda $33			;
@@ -6967,6 +7168,10 @@ l_ebe0:
 		sta $a6			;
 		sty $a7			;
 		jmp l_c70f		;
+;;;
+;; GRAB
+;;;
+grab:
 		lda $0260		;
 		bne l_ebdd		;
 		lda $02c0		;
@@ -6988,6 +7193,11 @@ l_ebf9:
 		tay				;
 		pla				;
 		jmp l_ebe0		;
+
+;;;
+;; RELEASE
+;;;
+release:
 		jsr l_ebc1		;
 		jsr l_eb89		;
 		bcs l_ebdd		;
@@ -6998,7 +7208,10 @@ l_ebf9:
 		pla				;
 		jmp l_ebe0		;
 
-l_ec21:
+;;;
+;; TEXT
+;;;
+text:
 		lda $02c0		;
 		tay				;
 		and #$01		;
@@ -7009,6 +7222,10 @@ l_ec21:
 		jsr l_f967		;
 l_ec32:
 		rts				;
+;;;
+;; HIRES
+;;;
+hires:
 		lda $02c0		;
 		pha				;
 		and #$02		;
@@ -7018,6 +7235,11 @@ l_ec32:
 		sta $02c0		;
 		jsr l_f920		;
 		rts				;
+
+;;;
+;; POINT
+;;;
+point:
 		jsr l_d062		;
 		jsr l_cf17		;
 		lda $34			;
@@ -8518,7 +8740,7 @@ l_f6b0:
 		sta $020c		;
 		jsr l_f75a		;
 		jmp l_f6fe		;
-		jsr l_fa9f		;
+		jsr ping		;
 l_f6fe:
 		lda $026a		;
 		ora $0251		;
@@ -9052,37 +9274,52 @@ l_fa8e:
 		plp				;
 		rts				;
 
-l_fa9f:
-		ldx #<ping		;
-		ldy #>ping		;
+;;;
+;; PING
+;;;
+ping:
+		ldx #<ping_data		;
+		ldy #>ping_data		;
 		jsr l_fa86		;
 		rts				;
 
 ; data for ping command
-ping:
+ping_data:
 		.byte $18, $00, $00, $00, $00, $00, $00
 		.byte $3e, $10, $00, $00, $00, $0f, $00
 
-		ldx #<shoot
-		ldy #>shoot		;
+;;;
+;; SHOOT
+;;;
+shoot:
+		ldx #<shoot_data
+		ldy #>shoot_data		;
 		jsr l_fa86		;
 		rts				;
 
-shoot:
+shoot_data:
 		.byte $00, $00, $00, $00, $00, $00, $0f	; data for shoot command.
 		.byte $07, $10, $10, $10, $00, $08, $00
 
-		ldx #<explode
-		ldy #>explode	;
+;;;
+;; EXPLODE
+;;;
+explode:
+		ldx #<explode_data
+		ldy #>explode_data	;
 		jsr l_fa86		;
 		rts				;
 
-explode:
+explode_data:
 		.byte $00, $00, $00, $00, $00, $00, $1f	; data for explode command.
 		.byte $07, $10, $10, $10, $00, $18, $00
 
-		ldx #<zap
-		ldy #>zap		;
+;;;
+;; ZAP
+;;;
+zap:
+		ldx #<zap_data
+		ldy #>zap_data		;
 		jsr l_fa86		;
 		lda #$00		;
 		tax				;
@@ -9105,17 +9342,17 @@ l_faf4:
 		jsr l_f590		;
 		rts				;
 
-zap:
+zap_data:
 		.byte $00, $00, $00, $00, $00, $00, $00	; data for zap command.
 		.byte $3e, $0f, $00, $00, $00, $00, $00
 
 l_fb14:
-		ldx #<high_keyclick
-		ldy #>high_keyclick	;
+		ldx #<high_keyclick_data
+		ldy #>high_keyclick_data	;
 		jsr l_fa86		;
 		rts				;
 
-high_keyclick:
+high_keyclick_data:
 		.byte $1f, $00, $00, $00, $00, $00, $00	; data for high pitch keyclick.
 		.byte $3e, $10, $00, $00, $1f, $00, $00
 
