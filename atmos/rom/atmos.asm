@@ -605,87 +605,90 @@ l_c437:
 ;;;
 l_c444:
 		cpy str_area_end+1			;Check for free memory
-		bcc l_c470		;
-		bne l_c44e		;
-		cmp str_area_end			;
-		bcc l_c470		;
+		bcc l_c470		;A (low) & Y (high) hold new
+		bne l_c44e		;end of arrays address. Test
+		cmp str_area_end			;and branch if above start of
+		bcc l_c470		;string memory.
 l_c44e:
 		pha				;
-		ldx #$09		;
-		tya				;
+		ldx #$09		;Save A, Y on stack, also
+		tya				;contents of $CF to $C7
 l_c452:
-		pha				;
+		pha				;inclusive.
 		lda tmp_fpa2,x		;
 		dex				;
 		bpl l_c452		;
-		jsr l_d650		;
+		jsr attempt_gc		;Attempt Garbage collection.
 		ldx #$f7		;
 l_c45d:
 		pla				;
-		sta exp_main_fpa,x		;
-		inx				;
+		sta exp_main_fpa,x		;Restore $C7 to $CF from the
+		inx				;stack.
 		bmi l_c45d		;
-		pla				;
+		pla				;Restore A, Y from stack.
 		tay				;
 		pla				;
-		cpy str_area_end+1			;
-		bcc l_c470		;
-		bne l_c47c		;
-		cmp str_area_end			;
+		cpy str_area_end+1			;If the end of the block is
+		bcc l_c470		;still above bottom of string
+		bne l_c47c		;space then jump to print "OUT
+		cmp str_area_end			;OF MEMORY ERROR"
 		bcs l_c47c		;
 l_c470:
-		rts				;
+		rts				;Normal finish A, Y unaltered.
 
 l_c471:
-		lda screen_status		;
-		and #$fe		;
-		sta screen_status		;
+		lda screen_status		;NMI routine ends up here.
+		and #$fe		;Remove GRAB status and then
+		sta screen_status		;restart Basic.
 		jmp l_c4a8		;
 
+;;;
+;; PRINT ERROR MESSAGES.
+;;;
 l_c47c:
-		ldx #$4d		;
+		ldx #$4d		;PRINT ERROR MESSAGES.
 l_c47e:
-		jsr l_c82f		;
-		lsr $2e			;
-		jsr l_cbf0		;
-		jsr l_ccd7		;
+		jsr l_c82f		;Reset output to screen.
+		lsr ctrl_o_flag			;Reset CTRL 0.
+		jsr l_cbf0		;Move to start of next line.
+		jsr l_ccd7		;Print "?" on screen.
 l_c489:
-		lda $c2a8,x		;
-		pha				;
-		and #$7f		;
-		jsr l_ccd9		;
-		inx				;
+		lda $c2a8,x		;Print error message on screen
+		pha				;until last char which has bit
+		and #$7f		;7 set. X holds initial offset
+		jsr l_ccd9		;into error table at start of
+		inx				;routine.
 		pla				;
 		bpl l_c489		;
-		jsr l_c726		;
-		lda #$a6		;
-		ldy #$c3		;
+		jsr l_c726		;Reset 6502 stack etc.
+		lda #$a6		;Print "ERROR" after the
+		ldy #$c3		;message.
 l_c49d:
 		jsr l_ccb0		;
-		ldy $a9			;
-		iny				;
-		beq l_c4a8		;
-		jsr l_e0ba		;
+		ldy cur_line_num+1			;If high byte of line number
+		iny				;is #FF then the computer is in
+		beq l_c4a8		;immediate mode (not program).
+		jsr l_e0ba		;Print "IN (line number>"
 l_c4a8:
-		lsr $0252		;
-		lsr $2e			;
-		lsr $02f2		;
+		lsr else_pending		;RESTART BASIC
+		lsr ctrl_o_flag			;Clear pending ELSE, CTRL O
+		lsr $02f2		;and LIST/EDIT flags.
 		lda #$b2		;
 		ldy #$c3		;
-		jsr $001a		;
+		jsr $001a		;Print "Ready"
 l_c4b7:
-		jsr l_c82f		;
-		jsr l_c592		;
-		stx $e9			;
+		jsr l_c82f		;Reset output to screen.
+		jsr l_c592		;Input line from keyboard.
+		stx $e9			;Save start of line.
 		sty $ea			;
-		jsr $00e2		;
-		tax				;
-		beq l_c4b7		;
-		ldx #$ff		;
-		stx $a9			;
+		jsr $00e2		;Get next non space char.
+		tax				;If end of line, go back to
+		beq l_c4b7		;get another.
+		ldx #$ff		;Set immediate mode.
+		stx cur_line_num+1			;
 		bcc l_c4d3		;
-		jsr l_c5fa		;
-		jmp l_c90c		;
+		jsr l_c5fa		;Tokenise the line.
+		jmp l_c90c		;Execute the line.
 l_c4d3:
 		jsr l_cae2		;
 		jsr l_c5fa		;
@@ -860,9 +863,9 @@ l_c5e8:
 		cmp #$0f		;
 		bne l_c5f9		;
 		pha				;
-		lda $2e			;
+		lda ctrl_o_flag			;
 		eor #$ff		;
-		sta $2e			;
+		sta ctrl_o_flag			;
 		pla				;
 l_c5f9:
 		rts				;
@@ -1281,9 +1284,9 @@ l_c866:
 		lda $ea			;
 		adc #$00		;
 		pha				;
-		lda $a9			;
+		lda cur_line_num+1			;
 		pha				;
-		lda $a8			;
+		lda cur_line_num			;
 		pha				;
 		lda #$c3		;
 		jsr l_d067		;
@@ -1326,7 +1329,7 @@ l_c8c1:
 l_c8d0:
 		lda ($e9),y		;
 		bne l_c92f		;
-		lsr $0252		;
+		lsr else_pending		;
 		ldy #$02		;
 		lda ($e9),y		;
 		clc				;
@@ -1335,10 +1338,10 @@ l_c8d0:
 l_c8e1:
 		iny				;
 		lda ($e9),y		;
-		sta $a8			;
+		sta cur_line_num			;
 		iny				;
 		lda ($e9),y		;
-		sta $a9			;
+		sta cur_line_num+1			;
 		tya				;
 		adc $e9			;
 		sta $e9			;
@@ -1350,8 +1353,8 @@ l_c8f4:
 		pha				;
 		lda #$5b		;
 		jsr l_ccfb		;
-		lda $a9			;
-		ldx $a8			;
+		lda cur_line_num+1			;
+		ldx cur_line_num			;
 		jsr l_e0c5		;
 		lda #$5d		;
 		jsr l_ccfb		;
@@ -1382,10 +1385,10 @@ l_c92f:
 		beq l_c8f4		;
 		cmp #$c8		;
 		bne l_c945		;
-		bit $0252		;
+		bit else_pending		;
 		bpl l_c94f		;
 		jsr l_cab1		;
-		lsr $0252		;
+		lsr else_pending		;
 		jmp l_c8c1		;
 l_c945:
 		cmp #$27		;
@@ -1439,8 +1442,8 @@ l_c974:
 		sta $ac			;
 		sty $ad			;
 l_c980:
-		lda $a8			;
-		ldy $a9			;
+		lda cur_line_num			;
+		ldy cur_line_num+1			;
 		sta $aa			;
 		sty $ab			;
 l_c988:
@@ -1452,7 +1455,7 @@ l_c98a:
 		ldx #$00		;
 		stx $02f1		;
 		stx $02df		;
-		stx $2e			;
+		stx ctrl_o_flag			;
 		bcc l_c99d		;
 		jmp l_c49d		;
 l_c99d:
@@ -1473,8 +1476,8 @@ l_c9ab:
 		sty $ea			;
 		lda $aa			;
 		ldy $ab			;
-		sta $a8			;
-		sty $a9			;
+		sta cur_line_num			;
+		sty cur_line_num+1			;
 l_c9b9:
 		rts				;
 		jmp l_d336		;
@@ -1497,9 +1500,9 @@ gosub:
 		pha				;
 		lda $e9			;
 		pha				;
-		lda $a9			;
+		lda cur_line_num+1			;
 		pha				;
-		lda $a8			;
+		lda cur_line_num			;
 		pha				;
 		lda #$9b		;
 		pha				;
@@ -1514,7 +1517,7 @@ l_c9dc:
 goto:
 		jsr l_e853		;
 		jsr l_ca51		;
-		lda $a9			;
+		lda cur_line_num+1			;
 		cmp $34			;
 		bcs l_c9fc		;
 		tya				;
@@ -1562,9 +1565,9 @@ l_ca2b:
 		pla				;
 		cpy #$0c		;
 		beq l_ca4a		;
-		sta $a8			;
+		sta cur_line_num			;
 		pla				;
-		sta $a9			;
+		sta cur_line_num+1			;
 		pla				;
 		sta $e9			;
 		pla				;
@@ -1634,7 +1637,7 @@ l_ca88:
 l_ca90:
 		php				;
 		sec				;
-		ror $0252		;
+		ror else_pending		;
 		plp				;
 		jmp l_c915		;
 
@@ -1998,7 +2001,7 @@ l_ccd4:
 l_ccd7:
 		lda #$3f
 l_ccd9:
-		bit $2e			; If CTRL O flag is set then set
+		bit ctrl_o_flag			; If CTRL O flag is set then set
 		bmi l_cd10		;flags and exit.
 		pha				;Save char to be printed.
 		cmp #$20		;If control character do not
@@ -2059,8 +2062,8 @@ l_cd29:
 		lda $ae			;
 		ldy $af			;
 l_cd2d:
-		sta $a8			;
-		sty $a9			;
+		sta cur_line_num			;
+		sty cur_line_num+1			;
 		ldx #$a8		;
 		jmp l_c47e		;
 l_cd36:
@@ -2089,7 +2092,7 @@ get:
 ;; INPUT
 ;;;
 input:
-		lsr $2e			; Turn off CTRL O flag.
+		lsr ctrl_o_flag			; Turn off CTRL O flag.
 		cmp #$22		;
 		bne l_cd66		; Double quote is not present.
 		jsr l_d025		; Get string after " and update
@@ -2299,9 +2302,9 @@ l_ceae:
 		sbc $0109,x		;
 		beq l_cef1		; Exit current FOR-NEXT loop.
 		lda $010f,x		; Take line number and program
-		sta $a8			; position off stack so that
+		sta cur_line_num			; position off stack so that
 		lda $0110,x		; program can go back to just
-		sta $a9			; after the FOR statement.
+		sta cur_line_num+1			; after the FOR statement.
 		lda $0112,x		;
 		sta $e9			;
 		lda $0111,x		;
@@ -3250,7 +3253,7 @@ fre:
 		beq l_d485		;
 		jsr l_d7d0		;
 l_d485:
-		jsr l_d650		;
+		jsr attempt_gc		;
 		sec				;
 		lda $a2			;
 		sbc $a0			;
@@ -3302,7 +3305,7 @@ l_d4d1:
 		rts				;
 
 l_d4d2:
-		ldx $a9			;
+		ldx cur_line_num+1			;
 		inx				;
 		bne l_d4d1		;
 		ldx #$95		;
@@ -3536,12 +3539,12 @@ l_d640:
 		ldx #$4d		;
 		lda $2a			;
 		bmi l_d5fc		;
-		jsr l_d650		;
+		jsr attempt_gc		;
 		lda #$80		;
 		sta $2a			;
 		pla				;
 		bne l_d620		;
-l_d650:
+attempt_gc:
 		ldx $a6			;
 		lda $a7			;
 l_d654:
@@ -4274,9 +4277,9 @@ l_da8c:
 		pha				;
 		lda $e9			;
 		pha				;
-		lda $a9			;
+		lda cur_line_num+1			;
 		pha				;
-		lda $a8			;
+		lda cur_line_num			;
 		pha				;
 		lda #$8b		;
 		pha				;
@@ -4317,9 +4320,9 @@ l_dac1:
 		rts				;
 l_dacb:
 		pla				;
-		sta $a8			;
+		sta cur_line_num			;
 		pla				;
-		sta $a9			;
+		sta cur_line_num+1			;
 		pla				;
 		sta $e9			;
 		pla				;
@@ -5350,8 +5353,8 @@ l_e0ba:
 		lda #$ad
 		ldy #$c3			;
 		jsr l_e0d2		;
-		lda $a9			;
-		ldx $a8			;
+		lda cur_line_num+1			;
+		ldx cur_line_num			;
 l_e0c5:
 		sta $d1			;
 		stx $d2			;
@@ -6818,7 +6821,7 @@ l_e9cc:
 		rts				;
 
 recall:
-		jsr l_d650		; RECALL Attempt Garbage
+		jsr attempt_gc		; RECALL Attempt Garbage
 		php				;
 		jsr l_ea57		;
 		jsr l_e57d		;
@@ -7314,7 +7317,7 @@ l_eccb:
 l_eccc:
 		cld				;
 		ldx #$ff		;
-		stx $a9			;
+		stx cur_line_num+1			;
 		txs				;
 		lda #$cc		;
 		ldy #$ec		;
@@ -7346,7 +7349,7 @@ l_ecfb:
 		sta $87			;
 		sta $2f			;
 		pha				;
-		sta $2e			;
+		sta ctrl_o_flag			;
 		sta $02f2		;
 		ldx #$88		;
 		stx $85			;

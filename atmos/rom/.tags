@@ -1079,3 +1079,1338 @@ L_FC6B	/home/jgroth/C64/atmos/rom/atmos.asm	/^L_FC6B: $/;"	label	line:9000
 L_FC78	/home/jgroth/C64/atmos/rom/atmos.asm	/^L_FC78: $/;"	label	line:9004
 NMI	/home/jgroth/C64/atmos/rom/atmos.asm	/^		NMI = $0247$/;"	define	line:9121
 IRQ	/home/jgroth/C64/atmos/rom/atmos.asm	/^		IRQ = $0244$/;"	define	line:9122
+hex_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		hex_ptr = $0c 				;$0c,$0d		indirect pointer for screen and hex number construction area.$/;"	define	line:5
+screen_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		screen_ptr = $0e			;$0e,$0f		indirect pointer for the screen.$/;"	define	line:6
+hires_cursor_addr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		hires_cursor_addr = $10		;$10,$11		address of hires cursor.$/;"	define	line:7
+text_cursor_addr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		text_cursor_addr = $12		;$12,$13		address of text cursor.$/;"	define	line:8
+workspace	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		workspace = $14				;$14—$16		expression workspace.$/;"	define	line:9
+ctrl_c_flag	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		ctrl_c_flag = $17			;$17			set to 1 if ctrl c pressed, otherwise 0.$/;"	define	line:10
+tokenising_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tokenising_ptr = $18		;$18,$19		tokenising pointer.$/;"	define	line:11
+ready_routine	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		ready_routine = $1a			;$1a—$1c		jump location to print 'ready'.$/;"	define	line:12
+program_line_counter	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		program_line_counter = $1d	;$1d,$1e		counter for searching through lines of program.$/;"	define	line:13
+calc_cursor_addr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		calc_cursor_addr = $1f		;$1f,$20		calculation of cursor address.$/;"	define	line:14
+usr_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		usr_ptr = $21				;$21—$23		jump location for usr command.$/;"	define	line:15
+workspace2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		workspace2 = $24			;$24—$26		expression workspace.$/;"	define	line:16
+tmp	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp = $27					;$27			temporary storage — often for characters being printed.$/;"	define	line:17
+string_handling	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		string_handling = $28		;$28			set to #ff if dealing with strings.$/;"	define	line:18
+integer_handling	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		integer_handling = $29		;$29			bit 7 is set if using integer variable.$/;"	define	line:19
+gc_or_data_skip	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		gc_or_data_skip = $2a		;$2a			garbage collection flag or flag for skipping through data statements.$/;"	define	line:20
+int_store_recall	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		int_store_recall = $2b		;$2b			bit 7 when set inhibits the use of integers. bit 6 when set	indicates store or recall commands in use.$/;"	define	line:21
+input_err_flag	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		input_err_flag = $2c		;$2c			zero if redoing input from start.$/;"	define	line:22
+tmp_expr_eval	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_expr_eval = $2d			;$2d			temporary storage for expression evaluator.$/;"	define	line:23
+ctrl_o_flag	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		ctrl_o_flag = $2e			;$2e			ctrl o flag. 0 if output to screen enabled.$/;"	define	line:24
+byte_from_cas	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		byte_from_cas = $2f			;$2f			next byte to\/from cassette.$/;"	define	line:25
+cursor_pos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cursor_pos = $30			;$30			cursor position for basic printout.$/;"	define	line:26
+scr_line_width	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		scr_line_width = $31		;$31			screen line width.$/;"	define	line:27
+line_with	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		line_with = $32				;$32			8 - multiple line width.$/;"	define	line:28
+int_conv_fpa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		int_conv_fpa = $33			;$33,$34		integer values to\/from main floating point accumulator.$/;"	define	line:29
+input_buf	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		input_buf = $35				;$35-$84		input buffer. (79 bytes)$/;"	define	line:30
+filename_v10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		filename_v10 = $35			;$35-$48		name of program required for cload (v1.0 only).$/;"	define	line:31
+loaded_program_v10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		loaded_program_v10 = $49	;$49-$5d		name of program just loaded (v1.0 only).$/;"	define	line:32
+start_addr_tape_v10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		start_addr_tape_v10 = $5f	;$5f,$60		start address of data to\/from tape (v1.0 only).$/;"	define	line:33
+end_addr_tape_v10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		end_addr_tape_v10 = $61		;$61,$62		end address of data to\/from tape (v1.0 only).$/;"	define	line:34
+tape_auto_v10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tape_auto_v10 = $63			;$63			1 when using auto else 0 (v1.0 only).$/;"	define	line:35
+load_mode_v10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		load_mode_v10 = $64			;$64			0 for basic, 1 for machine code (v1.0 only).$/;"	define	line:36
+tape_speed_v10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tape_speed_v10 = $67		;$67			tape speed - 0 fast, 1 slow (v1.0 only).$/;"	define	line:37
+str_stack_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		str_stack_ptr = $85			;$85			string block stack pointer.$/;"	define	line:38
+active_str_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		active_str_ptr = $86		;$86,$87		address of top active string in memory.$/;"	define	line:39
+tmp_str_stack	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_str_stack = $88			;$88-$90		temporary string stack.$/;"	define	line:40
+str_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		str_ptr = $91				;$91,$92		string address pointer.$/;"	define	line:41
+mem_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		mem_ptr = $93				;$93,$94		general memory pointer.$/;"	define	line:42
+mul_div_wa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		mul_div_wa = $95			;$95—$99		work area for multiply and divide routines.$/;"	define	line:43
+basic_start_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		basic_start_ptr = $9a		;$9a,$9b		start of basic pointer.$/;"	define	line:44
+basic_end_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		basic_end_ptr = $9c			;$9c,$9d		end of basic pointer$/;"	define	line:45
+var_end_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		var_end_ptr = $9e			;$9e,$9f		end of variables pointer.$/;"	define	line:46
+arr_end_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		arr_end_ptr = $a0			;$a0,$a1		end of arrays pointer.$/;"	define	line:47
+str_area_end	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		str_area_end = $a2			;$a2,$a3		bottom of string area pointer.$/;"	define	line:48
+alloc_str_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		alloc_str_ptr = $a4			;$a4,$a5		work pointer for allocating strings.$/;"	define	line:49
+basic_himem	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		basic_himem = $a6			;$a6,$a7		highest available memory location available to BASIC.$/;"	define	line:50
+cur_line_num	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cur_line_num = $a8			;$a8,$a9		current line number, top byte is #ff if in command mode (read-only).$/;"	define	line:51
+prev_line_num	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		prev_line_num = $aa			;$aa,$ab		previous line number.$/;"	define	line:52
+last_line_addr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		last_line_addr = $ac		;$ac,$ad		last line start address.$/;"	define	line:53
+tmp_cpy_line_num	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_cpy_line_num = $ae		;$ae,$af		temporary copy of line number.$/;"	define	line:54
+data1_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		data1_ptr = $b0				;$b0,$b1		data pointer.$/;"	define	line:55
+data2_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		data2_ptr = $b2				;$b2,$b3		data pointer.$/;"	define	line:56
+last_var_accessed	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		last_var_accessed = $b4		;$b4,$b5		last variable name accessed.$/;"	define	line:57
+last_value_accessed	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		last_value_accessed = $b6	;$b6,$b7		address of last variable value accessed.$/;"	define	line:58
+tmp_dst_var_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_dst_var_ptr = $b8		;$b8,$b9		destination pointer for temporary assignment of variable.$/;"	define	line:59
+tmp2_expr_eval	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp2_expr_eval = $ba		;$ba			temporary storage for expression evaluator.$/;"	define	line:60
+tmp_fpa1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_fpa1 = $bd				;$bd—$c1		temporary storage of floating point accumulator.$/;"	define	line:62
+fn_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		fn_ptr = $bd				;$bd,$be		fn (function) pointer.$/;"	define	line:63
+str2_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		str2_ptr = $bf				;$bf,$c0		string pointer.$/;"	define	line:64
+str_ptr_size_gc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		str_ptr_size_gc = $c2		;$c2			string pointer size, used in garbage collection.$/;"	define	line:65
+jmp_eval_num_fn	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		jmp_eval_num_fn = $c3		;$c3—$c5		jump location to evaluate numeric functions.$/;"	define	line:66
+tmp_rounding	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_rounding = $c5			;$c5 			also used as a temporary store of the rounding byte for mathematical operations.$/;"	define	line:67
+tmp_fpa2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_fpa2 = $c6				;$c6—$ca		temporary storage of floating point accumulator.$/;"	define	line:68
+ptr1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		ptr1 = $c7					;$c7,$c8		pointer.$/;"	define	line:69
+ptr2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		ptr2 = $c9					;$c9,$ca		pointer.$/;"	define	line:70
+tmp_fpa3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_fpa3 = $cb				;$cb—$cf		temporary storage of floating point accumulator.$/;"	define	line:71
+store_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		store_ptr = $ce				;$ce,$cf		pointer for store.$/;"	define	line:72
+exp_main_fpa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		exp_main_fpa = $d0			;$d0			exponent of main floating point accumulator.$/;"	define	line:73
+mantissa_main_fpa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		mantissa_main_fpa = $d1		;$d1—$d4		mantissa of main floating point accumulator.$/;"	define	line:74
+sign_main_unpck_fpa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		sign_main_unpck_fpa = $d5	;$d5			sign of mantissa for main fpa when unpacked.$/;"	define	line:75
+series_eval_cnt	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		series_eval_cnt = $d6		;$d6			series evaluation counter.$/;"	define	line:76
+sign_extend_byte	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		sign_extend_byte = $d7		;$d7			sign extend byte.$/;"	define	line:77
+exp_work_fpa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		exp_work_fpa = $d8			;$d8			exponent of work floating point accumulator.$/;"	define	line:78
+mantissa_work_fpa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		mantissa_work_fpa = $d9		;$d9—$dc		mantissa of work floating point accumulator.$/;"	define	line:79
+sign_work_unpck_fpa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		sign_work_unpck_fpa = $dd	;$dd			sign of mantissa for work fpa when unpacked.$/;"	define	line:80
+str3_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		str3_ptr = $d3				;$de,$df		string pointer.$/;"	define	line:81
+xor_sgn_wrk_main_fpa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		xor_sgn_wrk_main_fpa = $de	;$de			holds exclusive or of sign byte of both fpas.$/;"	define	line:82
+rounding	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		rounding = $df				;$df			rounding byte for calculations.$/;"	define	line:83
+array_str_wa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		array_str_wa = $e0			;$e0,$e1		array and string workspace.$/;"	define	line:84
+next_non_spc_char	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		next_non_spc_char = $e2		;$e2—$f2		routine to step through program to find next non space char. see $ec9c of disassembly.$/;"	define	line:85
+pos_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		pos_ptr = $e9				;$e9,$ea		position pointer in program.$/;"	define	line:86
+copy_fpa_for_rnd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		copy_fpa_for_rnd = $fa		;$fa—$fe		copy of floating point number used by rnd.$/;"	define	line:88
+scr_handling_ptr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		scr_handling_ptr = $200		;$200,$201	Pointer for screen handling.$/;"	define	line:92
+scr_handling_ptr2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		scr_handling_ptr2 = $202	;$202,$203	Pointer for screen handling.$/;"	define	line:93
+hires_wa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		hires_wa = $204				;$204-$207	Work bytes for Hires routines.$/;"	define	line:94
+key_addr_pressed	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		key_addr_pressed = $208		;$208		Key address if pressed — #38 if no key pressed.$/;"	define	line:95
+key_status	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		key_status = $209			;$209		Key status,$/;"	define	line:96
+repeat_key_col	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		repeat_key_col = $20a		;$20A		Saved key column for repeat.$/;"	define	line:102
+caps_on_flag	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		caps_on_flag = $20C			;$20C		Bit 7 is set if CAPS is on otherwise clear.$/;"	define	line:104
+key_repeat_counter	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		key_repeat_counter = $20E	;$20E		Repeat counter for keyboard.$/;"	define	line:106
+tmp_key_row_repeat	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_key_row_repeat = $210	;$210		Temporary store of row of key being tested for repeat.$/;"	define	line:108
+tmp_key_row_strobe	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_key_row_strobe = $211	;$211		Temporary store of keyboard row during strobe routine.$/;"	define	line:109
+fb_hires	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		fb_hires = $212				;$212		Holds FB code in hires commands.$/;"	define	line:110
+pattern_data	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		pattern_data = $213			;$213		Pattern data for hires screen.$/;"	define	line:111
+tmp_pattern_data	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_pattern_data = $214		;$214		Temporary copy of pattern byte for drawing lines.$/;"	define	line:112
+pixel_pos_in_byte	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		pixel_pos_in_byte = $215	;$215		Holds position of pixel in byte corresponding to position of cursor on hires screen.$/;"	define	line:113
+tmp_hires_x_pos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_hires_x_pos = $216		;$216		Temporary store of hires X cursor positions.$/;"	define	line:114
+tmp_hires_y_pos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_hires_y_pos = $217		;$217		Temporary store of hires Y cursor positions.$/;"	define	line:115
+hires_x_pos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		hires_x_pos = $219			;$219		Hires cursor — X coordinate.$/;"	define	line:117
+hires_y_pos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		hires_y_pos = $21A			;$21A		Hires cursor — Y coordinate.$/;"	define	line:118
+graphics_mode	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		graphics_mode = $21F		;$21F		0 - LORES, 1 - HIRES.$/;"	define	line:120
+oric_model	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		oric_model = $220			;$220		0 - 48K Oric, 1 - 16K Oric.$/;"	define	line:121
+chrout	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		chrout = $238				;$238-$23A	Jump to PRINT CHARACTER on screen (V1.1).$/;"	define	line:128
+chrin	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		chrin = $23B				;$23B-$23D	Jump to GET KEY routine (V1.1).$/;"	define	line:129
+prtout	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		prtout = $23E				;$23E-$240	Jump to SEND BYTE TO PRINTER (V1.1).$/;"	define	line:130
+print_status	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		print_status = $241			;$241-$243	Jump to PRINT TO STATUS LINE (V1.1).$/;"	define	line:131
+irq_vec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		irq_vec = $244				;$244-$246	Jump to IRQ routine (V1.1).$/;"	define	line:132
+nmi_vec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		nmi_vec = $247				;$247-$249	Jump to NMI routine (V1.1).$/;"	define	line:133
+interceptable_rti	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		interceptable_rti = $24a 	;$24A—$24C	RTI instruction which can be intercepted by a jump (V1.1).$/;"	define	line:134
+tape_speed_v11	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tape_speed_v11 = $24D		;$24D		Tape speed, 0 - fast, 1 - slow (V1.1).$/;"	define	line:135
+cur_enable_in_ctrl	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cur_enable_in_ctrl = $251	;$251		Cursor enable in CTRL routines (V1.1).$/;"	define	line:139
+else_pending	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		else_pending = $252			;$252		ELSE pending flag, 1 - on, 0-off (V1.1).$/;"	define	line:140
+printer_width	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		printer_width = $256		;$256		Printer width (V1.1).$/;"	define	line:142
+screen_width	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		screen_width = $257			;$257		Screen width (V1.1).$/;"	define	line:143
+printer_cur_pos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		printer_cur_pos = $258		;$258		Printer cursor position (V1.1).$/;"	define	line:144
+screen_cur_pos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		screen_cur_pos = $259		;$259		Screen cursor position (V1.1).$/;"	define	line:145
+cassette_join	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cassette_join = $25a		;$25A		Cassette JOIN flag, off when 0 (V1.1).$/;"	define	line:146
+cassette_verify	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cassette_verify = $25b		;$25B		Cassette VERIFY flag, off when 0 (V1.1).$/;"	define	line:147
+cassette_verify_cnt	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cassette_verify_cnt = $25c	;$25C,$25D	Cassette verify error counter (V1.1).$/;"	define	line:148
+status_line_msg	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		status_line_msg = $25f		;$25F,$260	Contains 1 byte messages printed to status line.$/;"	define	line:150
+ctrl_char_vec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		ctrl_char_vec = $261		;$261,$262	Indirect jump for CTRL character routine.$/;"	define	line:151
+tmp_storage	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		tmp_storage	= $263			;$263,$264	Temporary storage.$/;"	define	line:152
+cursor_state	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cursor_state = $265			;$265		Current cursor state indicator, 0 - off, 1 — on.$/;"	define	line:153
+cursor_row	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cursor_row = $268			;$268		Cursor row number, (status line is row 0).$/;"	define	line:155
+cursor_column	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cursor_column = $269		;$269		Cursor column position.$/;"	define	line:156
+flag	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		flag = $26a					;$26A		Flag byte.$/;"	define	line:157
+paper_colour	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		paper_colour = $26b			;$26B		Paper colour (+16).$/;"	define	line:169
+ink_colour	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		ink_colour = $26c			;$26C		Ink colour.$/;"	define	line:170
+screen_mem_start	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		screen_mem_start = $26d		;$26D,$26E	Start address of screen memory.$/;"	define	line:171
+text_lines_avaiable	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		text_lines_avaiable = $26f	;$26F		Number of text lines available on screen (V1.0).$/;"	define	line:172
+cursor_on_off	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cursor_on_off = $270		;$270		Cursor on\/off flag.$/;"	define	line:173
+cursor_invert	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cursor_invert = $271		;$271		Cursor invert flag.$/;"	define	line:174
+keyboard_timer	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		keyboard_timer = $272		;$272,$273	Keyboard timer.$/;"	define	line:175
+cursor_timer	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cursor_timer = $274			;$274,$275	Cursor timer.$/;"	define	line:176
+spare_counter	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		spare_counter = $276		;$276,$277	Spare counter — also used by WAIT (and printer in V1.0).$/;"	define	line:177
+screen_second_line	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		screen_second_line = $278	;$278,$279	Address of second line on screen (V1.1).$/;"	define	line:178
+screen_first_line	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		screen_first_line = $27a	;$27A,$27B	Address of first line on screen (V1.1).$/;"	define	line:179
+char_screen_scroll	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		char_screen_scroll = $27c	;$27C,$27D	Number of characters normally used in screen scrolling,$/;"	define	line:180
+text_rows_available	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		text_rows_available = $27e	;$27E		Number of rows of text available (V1.1).$/;"	define	line:182
+filename_to_load	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		filename_to_load = $27f		;$27F-$28F	Name of program to be loaded off cassette (V1.1).$/;"	define	line:183
+filename_loaded	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		filename_loaded = $293		;$293-$2A3	Name of file just loaded off cassette (V1.1).$/;"	define	line:185
+cassette_data_start	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cassette_data_start = $2a9	;$2A9,$2AA	Start address of data for \/ from cassette (V1.1).$/;"	define	line:187
+cassette_data_end	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		cassette_data_end = $2ab	;$2AB,$2AC	End address of data for\/from cassette (V1.1).$/;"	define	line:188
+auto_indicator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		auto_indicator = $2ad		;$2AD		Auto indicator, 0 is off (V1.1).$/;"	define	line:189
+program_type	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		program_type = $2ae			;$2AE		Program type.$/;"	define	line:190
+arr_type_str_handling	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		arr_type_str_handling = $2af;$2AF		Array type - copy of $28(V1.1).$/;"	define	line:191
+arr_type_int_handling	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		arr_type_int_handling = $2b0;$2B0		Array type - copy of $29 (V1. 1).$/;"	define	line:192
+format_error	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		format_error = $2b1			;$2B1		Bit 7 set to 1 if format error.$/;"	define	line:193
+screen_status	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		screen_status = $2c0		;$2C0		Screen status, 0=GRAB, 2=TEXT and 3=HIRES.$/;"	define	line:195
+hires_char_set	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		hires_char_set = $2c1		;$2C1,$2C2	Char set start address in HIRES mode (V1.1).$/;"	define	line:196
+hires_cur_move	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		hires_cur_move = $2c3		;$2C3		Cursor movement in hires, 0 = Absolute, 1 = Relative(?)$/;"	define	line:197
+latest_key_form_kbd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		latest_key_form_kbd = $2df	;$2DF		Latest key from keyboard. Bit 7 set if valid.$/;"	define	line:199
+error_snd_graph	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		error_snd_graph = $2e0		;$2E0		Non zero if error in Sound \/ Graphics routines.$/;"	define	line:200
+param_loc_1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		param_loc_1 = $2e1			;$2E1,$2E2	First parameter location for the sound and graphics commands$/;"	define	line:201
+param_loc_2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		param_loc_2 = $2e3			;$2E3,$2E4	Second parameter location for the sound and graphics commands.$/;"	define	line:203
+param_loc_3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		param_loc_3 = $2e5			;$2E5,$2E6	Third parameter location for the sound and graphics commands.$/;"	define	line:205
+param_loc_4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		param_loc_4 = $2e7			;$2E7,$2E8	Fourth parameter location which is only used by MUSIC and PLAY.$/;"	define	line:207
+printer_enabled	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		printer_enabled = $2f1		;$2F1		Bit 7 set to 1 if printer enabled.$/;"	define	line:210
+edit_flag	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		edit_flag = $2f2			;$2F2		Bit 7 is EDIT flag, set to 1 when on.$/;"	define	line:211
+trace_flag	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		trace_flag = $2f4			;$2F4		TRACE flag, set if bit 7 is set.$/;"	define	line:213
+exclamation_mark_vec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		exclamation_mark_vec = $2f5	;$2F5,$2F6	Indirect jump for '!' routine.$/;"	define	line:214
+plot_row_tmp	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		plot_row_tmp = $2f8			;$2F8		Temporary row indicator for PLOT.$/;"	define	line:216
+ampersand_vec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		ampersand_vec = $2fb		;$2FB-$2FD	Jump to '&' routine.$/;"	define	line:218
+via1base	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1base = $0300			; VIA 6522 address$/;"	define	line:222
+via1rb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1rb   = via1base+0     	; write output register b, read input register b$/;"	define	line:223
+via1ra	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1ra   = via1base+1     	; write output register a, read input register a$/;"	define	line:224
+via1ddrb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1ddrb = via1base+2     	; data direction register b$/;"	define	line:225
+via1ddra	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1ddra = via1base+3     	; data direction register a$/;"	define	line:226
+via1t1cl	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1t1cl = via1base+4     	; write t1 low-order latches, read t1 low-order counter$/;"	define	line:227
+via1t1ch	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1t1ch = via1base+5     	; t1 high-order counter$/;"	define	line:228
+via1t1ll	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1t1ll = via1base+6     	; t1 low-order latches$/;"	define	line:229
+via1t1lh	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1t1lh = via1base+7     	; t1 high-order latches$/;"	define	line:230
+via1t2cl	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1t2cl = via1base+8     	; write t2 low-order latches, read t2 low-order counter$/;"	define	line:231
+via1t2ch	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1t2ch = via1base+9     	; t2 high-order counter$/;"	define	line:232
+via1sr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1sr   = via1base+$a    	; shift register$/;"	define	line:233
+via1acr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1acr  = via1base+$b    	; auxiliary control register$/;"	define	line:234
+via1pcr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1pcr  = via1base+$c    	; peripheral control register$/;"	define	line:235
+via1ifr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1ifr  = via1base+$d    	; interrupt flag register$/;"	define	line:236
+via1ier	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1ier  = via1base+$e    	; interrupt enable register$/;"	define	line:237
+via1ranh	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^        via1ranh = via1base+$f    	; same as reg a except no "handshake"$/;"	define	line:238
+l_c3c6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c3c6:$/;"	label	line:517
+l_c3cb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c3cb:$/;"	label	line:523
+l_c3e0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c3e0:$/;"	label	line:533
+l_c3ec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c3ec:$/;"	label	line:539
+l_c3f3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c3f3:$/;"	label	line:545
+l_c3f4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c3f4:$/;"	label	line:548
+l_c3fb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c3fb:$/;"	label	line:552
+l_c418	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c418:$/;"	label	line:571
+l_c424	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c424:$/;"	label	line:578
+l_c428	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c428:$/;"	label	line:581
+l_c42f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c42f:$/;"	label	line:586
+l_c437	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c437:$/;"	label	line:593
+l_c444	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c444:$/;"	label	line:606
+l_c44e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c44e:$/;"	label	line:612
+l_c452	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c452:$/;"	label	line:616
+l_c45d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c45d:$/;"	label	line:623
+l_c470	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c470:$/;"	label	line:636
+l_c471	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c471:$/;"	label	line:639
+l_c47c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c47c:$/;"	label	line:648
+l_c47e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c47e:$/;"	label	line:650
+l_c489	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c489:$/;"	label	line:655
+l_c49d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c49d:$/;"	label	line:666
+l_c4a8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c4a8:$/;"	label	line:672
+l_c4b7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c4b7:$/;"	label	line:679
+l_c4d3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c4d3:$/;"	label	line:692
+l_c50e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c50e:$/;"	label	line:724
+l_c516	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c516:$/;"	label	line:730
+l_c524	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c524:$/;"	label	line:739
+l_c53e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c53e:$/;"	label	line:753
+l_c54e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c54e:$/;"	label	line:762
+l_c553	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c553:$/;"	label	line:765
+l_c55f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c55f:$/;"	label	line:772
+l_c568	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c568:$/;"	label	line:778
+l_c570	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c570:$/;"	label	line:783
+l_c58b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c58b:$/;"	label	line:800
+l_c58c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c58c:$/;"	label	line:802
+l_c58f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c58f:$/;"	label	line:805
+l_c592	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c592:$/;"	label	line:807
+l_c594	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c594:$/;"	label	line:809
+l_c5a8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c5a8:$/;"	label	line:819
+l_c5c8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c5c8:$/;"	label	line:837
+l_c5cf	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c5cf:$/;"	label	line:841
+l_c5e1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c5e1:$/;"	label	line:854
+l_c5e5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c5e5:$/;"	label	line:857
+l_c5e8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c5e8:$/;"	label	line:860
+l_c5f9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c5f9:$/;"	label	line:870
+l_c5fa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c5fa:$/;"	label	line:873
+l_c600	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c600:$/;"	label	line:877
+l_c618	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c618:$/;"	label	line:890
+l_c620	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c620:$/;"	label	line:895
+l_c631	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c631:$/;"	label	line:905
+l_c638	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c638:$/;"	label	line:910
+l_c645	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c645:$/;"	label	line:918
+l_c647	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c647:$/;"	label	line:920
+l_c65a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c65a:$/;"	label	line:931
+l_c65c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c65c:$/;"	label	line:933
+l_c663	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c663:$/;"	label	line:938
+l_c66b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c66b:$/;"	label	line:943
+l_c672	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c672:$/;"	label	line:948
+l_c676	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c676:$/;"	label	line:951
+l_c67f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c67f:$/;"	label	line:957
+l_c68a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c68a:$/;"	label	line:964
+edit	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^edit:$/;"	label	line:969
+l_c6b0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6b0:$/;"	label	line:982
+l_c6b3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6b3:$/;"	label	line:985
+l_c6bd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6bd:$/;"	label	line:991
+l_c6cf	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6cf:$/;"	label	line:1002
+l_c6da	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6da:$/;"	label	line:1009
+l_c6e3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6e3:$/;"	label	line:1015
+l_c6ec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6ec:$/;"	label	line:1022
+l_c6ed	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6ed:$/;"	label	line:1024
+new	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^new:$/;"	label	line:1030
+l_c6f0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c6f0:$/;"	label	line:1032
+l_c708	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c708:$/;"	label	line:1046
+clear	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^clear:$/;"	label	line:1053
+l_c70f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c70f:$/;"	label	line:1055
+l_c726	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c726:$/;"	label	line:1067
+l_c739	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c739:$/;"	label	line:1081
+l_c73a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c73a:$/;"	label	line:1084
+list	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^list:$/;"	label	line:1097
+l_c74f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c74f:$/;"	label	line:1101
+l_c766	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c766:$/;"	label	line:1113
+l_c76c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c76c:$/;"	label	line:1117
+l_c77c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c77c:$/;"	label	line:1125
+l_c787	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c787:$/;"	label	line:1130
+l_c796	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c796:$/;"	label	line:1140
+l_c798	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c798:$/;"	label	line:1142
+l_c7a4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7a4:$/;"	label	line:1149
+l_c7a8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7a8:$/;"	label	line:1152
+l_c7bf	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7bf:$/;"	label	line:1166
+l_c7c5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7c5:$/;"	label	line:1170
+l_c7d0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7d0:$/;"	label	line:1176
+l_c7e2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7e2:$/;"	label	line:1187
+l_c7e5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7e5:$/;"	label	line:1190
+l_c7eb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7eb:$/;"	label	line:1194
+l_c7f2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c7f2:$/;"	label	line:1199
+llist	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^llist:$/;"	label	line:1209
+lprint	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^lprint:$/;"	label	line:1218
+l_c816	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c816:$/;"	label	line:1225
+l_c82f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c82f:$/;"	label	line:1237
+l_c83e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c83e:$/;"	label	line:1244
+l_c844	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c844:$/;"	label	line:1247
+l_c846	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c846:$/;"	label	line:1249
+l_c854	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c854:$/;"	label	line:1258
+for	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^for:$/;"	label	line:1264
+l_c866	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c866:$/;"	label	line:1274
+l_c8b2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c8b2:$/;"	label	line:1312
+l_c8c1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c8c1:$/;"	label	line:1321
+l_c8d0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c8d0:$/;"	label	line:1329
+l_c8e1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c8e1:$/;"	label	line:1338
+l_c8f4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c8f4:$/;"	label	line:1350
+l_c90c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c90c:$/;"	label	line:1362
+l_c915	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c915:$/;"	label	line:1367
+l_c917	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c917:$/;"	label	line:1369
+l_c92c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c92c:$/;"	label	line:1381
+l_c92f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c92f:$/;"	label	line:1383
+l_c945	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c945:$/;"	label	line:1393
+l_c94f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c94f:$/;"	label	line:1398
+restore	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^restore:$/;"	label	line:1404
+l_c95c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c95c:$/;"	label	line:1411
+l_c960	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c960:$/;"	label	line:1414
+l_c961	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c961:$/;"	label	line:1416
+l_c962	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c962:$/;"	label	line:1419
+stop	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^stop:$/;"	label	line:1430
+l_c974	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c974:$/;"	label	line:1437
+l_c980	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c980:$/;"	label	line:1444
+l_c988	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c988:$/;"	label	line:1449
+l_c98a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c98a:$/;"	label	line:1452
+l_c99d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c99d:$/;"	label	line:1461
+cont	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^cont:$/;"	label	line:1467
+l_c9ab	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c9ab:$/;"	label	line:1473
+l_c9b9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c9b9:$/;"	label	line:1481
+run	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^run:$/;"	label	line:1487
+l_c9c2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c9c2:$/;"	label	line:1490
+gosub	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^gosub:$/;"	label	line:1496
+l_c9dc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c9dc:$/;"	label	line:1509
+goto	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^goto:$/;"	label	line:1517
+l_c9fc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_c9fc:$/;"	label	line:1530
+l_ca00	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca00:$/;"	label	line:1533
+l_ca11	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca11:$/;"	label	line:1542
+pop	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^pop:$/;"	label	line:1547
+return	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^return:					;$/;"	label	line:1548
+l_ca23	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca23:$/;"	label	line:1558
+l_ca2b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca2b:$/;"	label	line:1563
+data	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^data:$/;"	label	line:1578
+l_ca3f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca3f:$/;"	label	line:1580
+l_ca49	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca49:$/;"	label	line:1587
+l_ca4a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca4a:$/;"	label	line:1589
+l_ca4e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca4e:$/;"	label	line:1595
+l_ca51	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca51$/;"	label	line:1599
+l_ca59	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca59:$/;"	label	line:1604
+l_ca61	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca61:$/;"	label	line:1609
+if	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^if:$/;"	label	line:1621
+l_ca7f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca7f:$/;"	label	line:1628
+l_ca88	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca88:$/;"	label	line:1633
+l_ca90	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca90:$/;"	label	line:1637
+rem	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^rem:$/;"	label	line:1647
+l_ca9e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ca9e:$/;"	label	line:1650
+l_caa0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_caa0:$/;"	label	line:1652
+l_cab0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cab0:$/;"	label	line:1661
+l_cab1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cab1:$/;"	label	line:1664
+l_cab3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cab3:$/;"	label	line:1666
+l_cabc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cabc:$/;"	label	line:1672
+l_cabf	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cabf:$/;"	label	line:1674
+on	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^on:$/;"	label	line:1679
+l_caca	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_caca:$/;"	label	line:1684
+l_cace	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cace:$/;"	label	line:1687
+l_cad6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cad6:$/;"	label	line:1692
+l_cae1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cae1:$/;"	label	line:1698
+l_cae2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cae2:$/;"	label	line:1701
+l_cae8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cae8:$/;"	label	line:1705
+l_cb16	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb16:$/;"	label	line:1730
+let	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^let:$/;"	label	line:1737
+l_cb39	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb39:$/;"	label	line:1753
+l_cb4d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb4d:$/;"	label	line:1764
+l_cb50	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb50:$/;"	label	line:1766
+l_cb51	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb51:$/;"	label	line:1768
+l_cb62	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb62:$/;"	label	line:1778
+l_cb70	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb70:$/;"	label	line:1786
+l_cb77	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb77:$/;"	label	line:1790
+l_cb8d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cb8d:$/;"	label	line:1801
+l_cba5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cba5:$/;"	label	line:1815
+l_cba8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cba8:$/;"	label	line:1817
+l_cbab	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cbab:$/;"	label	line:1819
+print	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^print:$/;"	label	line:1824
+l_cbad	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cbad:$/;"	label	line:1826
+l_cbc7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cbc7:$/;"	label	line:1840
+l_cbe2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cbe2:$/;"	label	line:1853
+l_cbea	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cbea:$/;"	label	line:1857
+l_cbf0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cbf0:$/;"	label	line:1861
+l_cc02	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc02:$/;"	label	line:1871
+l_cc0b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc0b:$/;"	label	line:1876
+l_cc0c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc0c:$/;"	label	line:1878
+l_cc17	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc17:$/;"	label	line:1884
+l_cc18	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc18:$/;"	label	line:1886
+l_cc2b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc2b:$/;"	label	line:1897
+l_cc2e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc2e:$/;"	label	line:1899
+l_cc41	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc41:$/;"	label	line:1910
+l_cc47	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc47:$/;"	label	line:1915
+l_cc48	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc48:$/;"	label	line:1917
+l_cc4b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc4b:$/;"	label	line:1920
+l_cc51	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc51:$/;"	label	line:1923
+l_cc56	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc56:$/;"	label	line:1926
+l_cc59	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc59:$/;"	label	line:1929
+l_cc66	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cc66:$/;"	label	line:1935
+l_ccad	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ccad:$/;"	label	line:1967
+l_ccb0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ccb0:$/;"	label	line:1970
+l_ccb3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ccb3:$/;"	label	line:1972
+l_ccba	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ccba:$/;"	label	line:1977
+l_cccd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cccd:$/;"	label	line:1987
+cls	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^cls:$/;"	label	line:1993
+l_ccd4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ccd4:$/;"	label	line:1998
+l_ccd7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ccd7:$/;"	label	line:2001
+l_ccd9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ccd9:$/;"	label	line:2003
+l_cceb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cceb:$/;"	label	line:2013
+l_cced	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cced:$/;"	label	line:2015
+l_ccfb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ccfb:$/;"	label	line:2025
+l_cd09	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd09:$/;"	label	line:2033
+l_cd0e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd0e:$/;"	label	line:2036
+l_cd10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd10:$/;"	label	line:2038
+exclamation_mark	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^exclamation_mark:$/;"	label	line:2044
+tron	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^tron:$/;"	label	line:2047
+troff	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^troff:					; TROFF$/;"	label	line:2050
+l_cd1f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd1f:$/;"	label	line:2055
+l_cd29	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd29:$/;"	label	line:2061
+l_cd2d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd2d:$/;"	label	line:2064
+l_cd36	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd36:$/;"	label	line:2069
+get	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^get:$/;"	label	line:2082
+input	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^input:$/;"	label	line:2094
+l_cd66	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd66:$/;"	label	line:2102
+l_cd6d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd6d:$/;"	label	line:2106
+l_cd80	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd80:$/;"	label	line:2117
+read	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^read:$/;"	label	line:2125
+l_cd8d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd8d:$/;"	label	line:2128
+l_cd8e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd8e:$/;"	label	line:2130
+l_cd8f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd8f:$/;"	label	line:2132
+l_cd95	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cd95:$/;"	label	line:2136
+l_cdb5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cdb5:$/;"	label	line:2152
+l_cdca	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cdca:$/;"	label	line:2162
+l_cdce	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cdce:$/;"	label	line:2165
+l_cdd7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cdd7:$/;"	label	line:2170
+l_cde2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cde2:$/;"	label	line:2177
+l_cdee	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cdee:$/;"	label	line:2184
+l_cdef	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cdef:$/;"	label	line:2186
+l_cdfa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cdfa:$/;"	label	line:2193
+l_ce06	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce06:$/;"	label	line:2198
+l_ce0e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce0e:$/;"	label	line:2202
+l_ce1a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce1a:$/;"	label	line:2208
+l_ce35	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce35:$/;"	label	line:2221
+l_ce4e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce4e:$/;"	label	line:2237
+l_ce5b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce5b:$/;"	label	line:2244
+l_ce66	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce66:$/;"	label	line:2250
+l_ce73	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce73:$/;"	label	line:2257
+next	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^next:$/;"	label	line:2266
+l_ce9e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ce9e:$/;"	label	line:2270
+l_cea1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cea1:$/;"	label	line:2272
+l_ceac	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ceac:$/;"	label	line:2278
+l_ceae	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ceae:$/;"	label	line:2280
+l_ceee	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ceee:$/;"	label	line:2312
+l_cef1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cef1:$/;"	label	line:2314
+l_cf03	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf03:$/;"	label	line:2324
+l_cf06	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf06:$/;"	label	line:2326
+l_cf08	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf08:$/;"	label	line:2329
+l_cf09	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf09:$/;"	label	line:2331
+l_cf0f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf0f:$/;"	label	line:2336
+l_cf10	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf10:$/;"	label	line:2338
+l_cf12	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf12:$/;"	label	line:2340
+l_cf14	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf14:$/;"	label	line:2342
+l_cf17	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf17:$/;"	label	line:2345
+l_cf1d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf1d:$/;"	label	line:2349
+l_cf22	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf22:$/;"	label	line:2353
+l_cf31	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf31:$/;"	label	line:2362
+l_cf34	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf34:$/;"	label	line:2364
+l_cf50	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf50:$/;"	label	line:2379
+l_cf61	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf61:$/;"	label	line:2388
+l_cf69	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf69:$/;"	label	line:2394
+l_cf72	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf72:$/;"	label	line:2399
+l_cf73	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf73:$/;"	label	line:2401
+l_cf80	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf80:$/;"	label	line:2409
+l_cf8a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf8a:$/;"	label	line:2416
+l_cf92	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf92:$/;"	label	line:2421
+l_cf99	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cf99:$/;"	label	line:2425
+l_cfa9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfa9:$/;"	label	line:2433
+l_cfac	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfac:$/;"	label	line:2436
+l_cfb1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfb1:$/;"	label	line:2439
+l_cfbe	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfbe:$/;"	label	line:2448
+l_cfc0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfc0:$/;"	label	line:2451
+l_cfd5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfd5:$/;"	label	line:2464
+l_cfd8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfd8:$/;"	label	line:2467
+l_cfda	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfda:$/;"	label	line:2469
+l_cfe1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfe1:$/;"	label	line:2473
+l_cfe3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cfe3:$/;"	label	line:2475
+l_cffd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_cffd:$/;"	label	line:2493
+l_d000	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d000:$/;"	label	line:2497
+l_d004	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d004:$/;"	label	line:2500
+l_d009	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d009:$/;"	label	line:2503
+l_d00c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d00c:$/;"	label	line:2505
+l_d025	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d025:$/;"	label	line:2518
+l_d02e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d02e:$/;"	label	line:2524
+l_d034	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d034:$/;"	label	line:2527
+not	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^not:$/;"	label	line:2536
+l_d04b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d04b:$/;"	label	line:2544
+l_d052	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d052:$/;"	label	line:2548
+l_d059	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d059:$/;"	label	line:2553
+l_d05f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d05f:$/;"	label	line:2556
+l_d062	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d062:$/;"	label	line:2559
+l_d065	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d065:$/;"	label	line:2562
+l_d067	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d067:$/;"	label	line:2564
+l_d070	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d070:$/;"	label	line:2570
+l_d075	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d075:$/;"	label	line:2573
+l_d077	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d077:$/;"	label	line:2575
+l_d07c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d07c:$/;"	label	line:2579
+l_d08c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d08c:$/;"	label	line:2588
+l_d09d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d09d:$/;"	label	line:2599
+l_d0a0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d0a0:$/;"	label	line:2602
+l_d0ce	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d0ce:$/;"	label	line:2629
+l_d0d1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d0d1:$/;"	label	line:2631
+l_d0d3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d0d3:$/;"	label	line:2634
+or_operator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^or_operator:$/;"	label	line:2648
+and_operator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^and_operator:$/;"	label	line:2654
+relational_operators	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^relational_operators:$/;"	label	line:2680
+l_d12b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d12b:$/;"	label	line:2692
+l_d153	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d153:$/;"	label	line:2713
+l_d158	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d158:$/;"	label	line:2717
+l_d15e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d15e:$/;"	label	line:2722
+l_d163	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d163:$/;"	label	line:2726
+l_d16f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d16f:$/;"	label	line:2733
+l_d178	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d178:$/;"	label	line:2740
+l_d17b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d17b:$/;"	label	line:2742
+dim	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^dim:$/;"	label	line:2748
+l_d188	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d188:$/;"	label	line:2755
+l_d18d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d18d:$/;"	label	line:2758
+l_d18f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d18f:$/;"	label	line:2760
+l_d199	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d199:$/;"	label	line:2765
+l_d19c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d19c:$/;"	label	line:2767
+l_d1ac	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1ac:$/;"	label	line:2775
+l_d1ad	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1ad:$/;"	label	line:2777
+l_d1b7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1b7:$/;"	label	line:2782
+l_d1c1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1c1:$/;"	label	line:2788
+l_d1d1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1d1:$/;"	label	line:2797
+l_d1d8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1d8:$/;"	label	line:2802
+l_d1e1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1e1:$/;"	label	line:2808
+l_d1e4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1e4:$/;"	label	line:2810
+l_d1f2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1f2:$/;"	label	line:2818
+l_d1f4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1f4:$/;"	label	line:2820
+l_d1fe	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d1fe:$/;"	label	line:2826
+l_d20c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d20c:$/;"	label	line:2835
+l_d216	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d216:$/;"	label	line:2842
+l_d221	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d221:$/;"	label	line:2849
+l_d222	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d222:$/;"	label	line:2851
+l_d235	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d235:$/;"	label	line:2863
+l_d24b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d24b:$/;"	label	line:2876
+l_d277	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d277:$/;"	label	line:2902
+l_d281	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d281:$/;"	label	line:2909
+l_d286	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d286:$/;"	label	line:2914
+l_d288	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d288:$/;"	label	line:2916
+l_d292	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d292:$/;"	label	line:2923
+l_d29c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d29c:$/;"	label	line:2935
+l_d2a2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d2a2:$/;"	label	line:2939
+l_d2a9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d2a9:$/;"	label	line:2944
+l_d2b6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d2b6:$/;"	label	line:2951
+l_d2b8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d2b8:$/;"	label	line:2953
+l_d2bb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d2bb:$/;"	label	line:2956
+l_d2c9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d2c9:$/;"	label	line:2965
+l_d306	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d306:$/;"	label	line:3000
+l_d30a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d30a:$/;"	label	line:3003
+l_d316	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d316:$/;"	label	line:3010
+l_d325	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d325:$/;"	label	line:3019
+l_d333	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d333:$/;"	label	line:3029
+l_d336	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d336:$/;"	label	line:3032
+l_d338	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d338:$/;"	label	line:3034
+l_d33b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d33b:$/;"	label	line:3036
+l_d347	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d347:$/;"	label	line:3044
+l_d355	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d355:$/;"	label	line:3051
+l_d361	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d361:$/;"	label	line:3057
+l_d375	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d375:$/;"	label	line:3068
+l_d37e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d37e:$/;"	label	line:3075
+l_d387	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d387:$/;"	label	line:3082
+l_d390	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d390:$/;"	label	line:3088
+l_d397	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d397:$/;"	label	line:3094
+l_d3ba	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d3ba:$/;"	label	line:3115
+l_d3c9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d3c9:$/;"	label	line:3123
+l_d3ce	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d3ce:$/;"	label	line:3127
+l_d3eb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d3eb:$/;"	label	line:3144
+l_d3f3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d3f3:$/;"	label	line:3149
+l_d409	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d409:$/;"	label	line:3164
+l_d40c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d40c:$/;"	label	line:3166
+l_d40f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d40f:$/;"	label	line:3168
+l_d410	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d410:$/;"	label	line:3170
+l_d421	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d421:$/;"	label	line:3181
+l_d432	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d432:$/;"	label	line:3191
+l_d438	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d438:$/;"	label	line:3196
+l_d445	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d445:$/;"	label	line:3204
+l_d44c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d44c:$/;"	label	line:3209
+l_d44d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d44d:$/;"	label	line:3212
+l_d44f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d44f:$/;"	label	line:3214
+l_d456	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d456:$/;"	label	line:3219
+l_d460	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d460:$/;"	label	line:3225
+l_d479	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d479:$/;"	label	line:3244
+fre	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^fre:$/;"	label	line:3251
+l_d485	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d485:$/;"	label	line:3255
+l_d499	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d499:$/;"	label	line:3267
+pos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^pos:$/;"	label	line:3277
+l_d4b4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d4b4:$/;"	label	line:3284
+l_d4b6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d4b6:$/;"	label	line:3286
+def	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^def:$/;"	label	line:3293
+l_d4d1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d4d1:$/;"	label	line:3304
+l_d4d2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d4d2:$/;"	label	line:3307
+l_d4da	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d4da:$/;"	label	line:3313
+l_d4df	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d4df:$/;"	label	line:3316
+l_d50d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d50d:$/;"	label	line:3339
+l_d522	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d522:$/;"	label	line:3350
+l_d546	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d546:$/;"	label	line:3371
+l_d577	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d577:$/;"	label	line:3399
+l_d57d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d57d:$/;"	label	line:3404
+str_string	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^str_string:$/;"	label	line:3425
+l_d59b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d59b:$/;"	label	line:3429
+l_d5a3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5a3:$/;"	label	line:3435
+l_d5ab	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5ab:$/;"	label	line:3440
+l_d5b5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5b5:$/;"	label	line:3447
+l_d5bb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5bb:$/;"	label	line:3451
+l_d5c5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5c5:$/;"	label	line:3457
+l_d5d2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5d2:$/;"	label	line:3465
+l_d5d6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5d6:$/;"	label	line:3468
+l_d5d7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5d7:$/;"	label	line:3470
+l_d5e3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5e3:$/;"	label	line:3478
+l_d5f4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5f4:$/;"	label	line:3487
+l_d5fc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5fc:$/;"	label	line:3492
+l_d5ff	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d5ff:$/;"	label	line:3494
+l_d61e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d61e:$/;"	label	line:3514
+l_d620	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d620:$/;"	label	line:3516
+l_d62b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d62b:$/;"	label	line:3524
+l_d635	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d635:$/;"	label	line:3530
+l_d640	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d640:$/;"	label	line:3538
+attempt_gc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^attempt_gc:$/;"	label	line:3547
+l_d654	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d654:$/;"	label	line:3550
+l_d66e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d66e:$/;"	label	line:3564
+l_d677	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d677:$/;"	label	line:3569
+l_d683	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d683:$/;"	label	line:3576
+l_d68b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d68b:$/;"	label	line:3581
+l_d690	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d690:$/;"	label	line:3584
+l_d698	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d698:$/;"	label	line:3589
+l_d69c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d69c:$/;"	label	line:3592
+l_d6a7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d6a7:$/;"	label	line:3598
+l_d6d8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d6d8:$/;"	label	line:3628
+l_d6da	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d6da:$/;"	label	line:3630
+l_d6e2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d6e2:$/;"	label	line:3635
+l_d6e7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d6e7:$/;"	label	line:3638
+l_d6f1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d6f1:$/;"	label	line:3645
+l_d706	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d706:$/;"	label	line:3658
+l_d710	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d710:$/;"	label	line:3664
+l_d720	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d720:$/;"	label	line:3673
+l_d72b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d72b:$/;"	label	line:3680
+l_d730	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d730:$/;"	label	line:3685
+l_d767	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d767:$/;"	label	line:3716
+l_d787	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d787:$/;"	label	line:3734
+l_d7a4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7a4:$/;"	label	line:3747
+l_d7b2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7b2:$/;"	label	line:3758
+l_d7b6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7b6:$/;"	label	line:3761
+l_d7ba	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7ba:$/;"	label	line:3765
+l_d7c3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7c3:$/;"	label	line:3772
+l_d7cc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7cc:$/;"	label	line:3778
+l_d7cd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7cd:$/;"	label	line:3781
+l_d7d0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7d0:$/;"	label	line:3783
+l_d7d4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7d4:$/;"	label	line:3786
+l_d7ff	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d7ff:$/;"	label	line:3813
+l_d800	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d800:$/;"	label	line:3815
+l_d805	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d805:$/;"	label	line:3820
+l_d815	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d815:$/;"	label	line:3829
+chr_string	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^chr_string:$/;"	label	line:3835
+left_string	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^left_string:$/;"	label	line:3851
+l_d830	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d830:$/;"	label	line:3855
+l_d836	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d836:$/;"	label	line:3860
+l_d837	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d837:$/;"	label	line:3862
+l_d838	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d838:$/;"	label	line:3864
+l_d845	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d845:$/;"	label	line:3872
+l_d84f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d84f:$/;"	label	line:3879
+right_string	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^right_string:$/;"	label	line:3887
+mid_string	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^mid_string:$/;"	label	line:3897
+l_d872	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d872:$/;"	label	line:3905
+l_d88b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d88b:$/;"	label	line:3920
+len	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^len:$/;"	label	line:3945
+l_d8ac	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d8ac:$/;"	label	line:3949
+asc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^asc:$/;"	label	line:3959
+l_d8c2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d8c2:$/;"	label	line:3967
+l_d8c5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d8c5:$/;"	label	line:3970
+l_d8c8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d8c8:$/;"	label	line:3972
+l_d8cb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d8cb:$/;"	label	line:3974
+val	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^val:$/;"	label	line:3983
+l_d8df	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d8df:$/;"	label	line:3987
+l_d8f7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d8f7:$/;"	label	line:4001
+l_d90d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d90d:$/;"	label	line:4013
+l_d916	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d916:$/;"	label	line:4020
+l_d922	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d922:$/;"	label	line:4026
+l_d92a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d92a:$/;"	label	line:4031
+peek	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^peek:$/;"	label	line:4042
+l_d941	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d941:$/;"	label	line:4048
+poke	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^poke:$/;"	label	line:4061
+wait	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^wait:$/;"	label	line:4070
+doke	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^doke:$/;"	label	line:4081
+l_d97a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d97a:$/;"	label	line:4090
+deek	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^deek:$/;"	label	line:4099
+l_d990	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d990:$/;"	label	line:4108
+l_d993	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d993:$/;"	label	line:4111
+l_d99c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d99c:$/;"	label	line:4119
+l_d9a6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d9a6:$/;"	label	line:4125
+l_d9ae	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d9ae:$/;"	label	line:4130
+l_d9b4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d9b4:$/;"	label	line:4134
+hex_string	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^hex_string:$/;"	label	line:4139
+l_d9d3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d9d3:$/;"	label	line:4154
+l_d9db	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d9db:$/;"	label	line:4158
+lores	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^lores:$/;"	label	line:4164
+l_d9ed	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d9ed:$/;"	label	line:4173
+l_d9f6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_d9f6:$/;"	label	line:4178
+l_da00	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da00:$/;"	label	line:4184
+l_da0c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da0c:$/;"	label	line:4194
+l_da1f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da1f:$/;"	label	line:4206
+l_da22	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da22:$/;"	label	line:4209
+scrn	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^scrn:$/;"	label	line:4227
+plot	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^plot:$/;"	label	line:4236
+l_da6c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da6c:$/;"	label	line:4249
+l_da71	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da71:$/;"	label	line:4253
+l_da7b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da7b:$/;"	label	line:4260
+l_da84	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da84:$/;"	label	line:4265
+repeat	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^repeat:$/;"	label	line:4271
+l_da8c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da8c:$/;"	label	line:4275
+l_da9e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_da9e:$/;"	label	line:4287
+pull	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^pull:$/;"	label	line:4293
+until	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^until:$/;"	label	line:4294
+l_dab2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dab2:$/;"	label	line:4303
+l_dabb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dabb:$/;"	label	line:4309
+l_dac1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dac1:$/;"	label	line:4312
+l_dacb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dacb:$/;"	label	line:4321
+key_string	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^key_string:$/;"	label	line:4335
+l_dae4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dae4:$/;"	label	line:4342
+l_daf1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_daf1:$/;"	label	line:4350
+l_daf6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_daf6:$/;"	label	line:4355
+l_db02	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db02:$/;"	label	line:4361
+l_db03	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db03:$/;"	label	line:4363
+l_db04	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db04:$/;"	label	line:4366
+l_db0b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db0b:$/;"	label	line:4371
+l_db0e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db0e:$/;"	label	line:4373
+substraction_operator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^substraction_operator:$/;"	label	line:4378
+l_db1d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db1d:$/;"	label	line:4386
+l_db22	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db22:$/;"	label	line:4389
+l_db25	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db25:$/;"	label	line:4391
+plus_operator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^plus_operator:$/;"	label	line:4396
+l_db2a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db2a:$/;"	label	line:4399
+l_db32	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db32:$/;"	label	line:4404
+l_db4e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db4e:$/;"	label	line:4420
+l_db52	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db52:$/;"	label	line:4423
+l_db5e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db5e:$/;"	label	line:4430
+l_db6a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db6a:$/;"	label	line:4437
+l_db8d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db8d:$/;"	label	line:4454
+l_db92	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db92:$/;"	label	line:4457
+l_db96	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_db96:$/;"	label	line:4461
+l_dbb2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dbb2:$/;"	label	line:4476
+l_dbb4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dbb4:$/;"	label	line:4478
+l_dbb6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dbb6:$/;"	label	line:4480
+l_dbb9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dbb9:$/;"	label	line:4483
+l_dbd8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dbd8:$/;"	label	line:4499
+l_dbe4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dbe4:$/;"	label	line:4506
+l_dbf1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dbf1:$/;"	label	line:4514
+l_dbf3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dbf3:$/;"	label	line:4516
+l_dc01	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc01:$/;"	label	line:4524
+l_dc02	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc02:$/;"	label	line:4527
+l_dc08	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc08:$/;"	label	line:4531
+l_dc2a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc2a:$/;"	label	line:4549
+l_dc38	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc38:$/;"	label	line:4557
+l_dc39	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc39:$/;"	label	line:4560
+l_dc3e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc3e:$/;"	label	line:4564
+l_dc40	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc40:$/;"	label	line:4566
+l_dc54	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc54:$/;"	label	line:4577
+l_dc61	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc61:$/;"	label	line:4585
+l_dc67	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc67:$/;"	label	line:4589
+l_dc6b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc6b:$/;"	label	line:4592
+l_dc75	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dc75:$/;"	label	line:4599
+ln	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^ln:$/;"	label	line:4671
+l_dcb6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dcb6:$/;"	label	line:4675
+l_dcb9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dcb9:$/;"	label	line:4677
+l_dced	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dced:$/;"	label	line:4702
+multiplication_operator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^multiplication_operator:$/;"	label	line:4707
+l_dcf5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dcf5:$/;"	label	line:4710
+l_dd1e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd1e:$/;"	label	line:4729
+l_dd23	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd23:$/;"	label	line:4733
+l_dd26	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd26:$/;"	label	line:4736
+l_dd42	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd42:$/;"	label	line:4752
+l_dd50	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd50:$/;"	label	line:4761
+l_dd51	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd51:$/;"	label	line:4764
+l_dd7c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd7c:$/;"	label	line:4790
+l_dd7e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd7e:$/;"	label	line:4792
+l_dd89	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd89:$/;"	label	line:4800
+l_dd94	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd94:$/;"	label	line:4806
+l_dd99	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd99:$/;"	label	line:4811
+l_dd9f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dd9f:$/;"	label	line:4815
+l_dda4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dda4:$/;"	label	line:4819
+l_dda7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dda7:$/;"	label	line:4822
+l_ddbd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ddbd:$/;"	label	line:4834
+l_ddc3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ddc3:$/;"	label	line:4844
+l_ddcc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ddcc:$/;"	label	line:4849
+log	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^log:$/;"	label	line:4857
+l_dde4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dde4:$/;"	label	line:4865
+l_dde7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dde7:$/;"	label	line:4867
+division_operator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^division_operator:$/;"	label	line:4871
+l_ddfe	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ddfe:$/;"	label	line:4883
+l_de14	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de14:$/;"	label	line:4895
+l_de21	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de21:$/;"	label	line:4904
+l_de24	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de24:$/;"	label	line:4907
+l_de32	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de32:$/;"	label	line:4915
+l_de4f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de4f:$/;"	label	line:4931
+l_de53	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de53:$/;"	label	line:4934
+l_de5f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de5f:$/;"	label	line:4944
+l_de64	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de64:$/;"	label	line:4948
+pi	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^pi:$/;"	label	line:4962
+l_de7b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_de7b:$/;"	label	line:4965
+l_dea0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dea0:$/;"	label	line:4988
+l_dea3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dea3:$/;"	label	line:4991
+l_dea9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dea9:$/;"	label	line:4995
+l_dead	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dead:$/;"	label	line:4998
+l_ded5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ded5:$/;"	label	line:5022
+l_ded7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ded7:$/;"	label	line:5024
+l_dedb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dedb:$/;"	label	line:5027
+l_dee5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dee5:$/;"	label	line:5035
+l_dee8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dee8:$/;"	label	line:5037
+l_deea	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_deea:$/;"	label	line:5039
+l_def3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_def3:$/;"	label	line:5045
+l_def4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_def4:$/;"	label	line:5048
+l_defc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_defc:$/;"	label	line:5053
+false	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^false:$/;"	label	line:5064
+true	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^true:$/;"	label	line:5070
+l_df13	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df13:$/;"	label	line:5073
+l_df17	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df17:$/;"	label	line:5076
+l_df19	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df19:$/;"	label	line:5078
+l_df20	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df20:$/;"	label	line:5083
+sgn	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^sgn:$/;"	label	line:5089
+l_df24	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df24:$/;"	label	line:5091
+l_df2c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df2c:$/;"	label	line:5096
+l_df31	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df31:$/;"	label	line:5100
+l_df40	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df40:$/;"	label	line:5109
+abs	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^abs:$/;"	label	line:5118
+l_df4c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df4c:$/;"	label	line:5122
+l_df4e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df4e:$/;"	label	line:5124
+l_df83	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df83:$/;"	label	line:5154
+l_df89	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df89:$/;"	label	line:5158
+l_df8c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_df8c:$/;"	label	line:5161
+l_dfa0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dfa0:$/;"	label	line:5173
+l_dfab	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dfab:$/;"	label	line:5179
+l_dfac	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dfac:$/;"	label	line:5181
+int	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^int:$/;"	label	line:5195
+l_dfda	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dfda:$/;"	label	line:5210
+l_dfe3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dfe3:$/;"	label	line:5216
+l_dfe4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dfe4:$/;"	label	line:5218
+l_dfe7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dfe7:$/;"	label	line:5221
+l_dfeb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dfeb:$/;"	label	line:5224
+l_dffe	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_dffe:$/;"	label	line:5235
+l_e002	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e002:$/;"	label	line:5238
+l_e005	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e005:$/;"	label	line:5240
+l_e007	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e007:$/;"	label	line:5242
+l_e026	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e026:$/;"	label	line:5258
+l_e028	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e028:$/;"	label	line:5260
+l_e02b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e02b:$/;"	label	line:5262
+l_e02d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e02d:$/;"	label	line:5264
+l_e039	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e039:$/;"	label	line:5271
+l_e03f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e03f:$/;"	label	line:5275
+l_e041	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e041:$/;"	label	line:5277
+l_e04a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e04a:$/;"	label	line:5283
+l_e053	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e053:$/;"	label	line:5288
+l_e05a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e05a:$/;"	label	line:5292
+l_e05f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e05f:$/;"	label	line:5296
+l_e062	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e062:$/;"	label	line:5298
+l_e069	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e069:$/;"	label	line:5303
+l_e076	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e076:$/;"	label	line:5311
+l_e089	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e089:$/;"	label	line:5321
+l_e098	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e098:$/;"	label	line:5329
+l_e0a6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0a6:$/;"	label	line:5340
+l_e0ba	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0ba:$/;"	label	line:5352
+l_e0c5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0c5:$/;"	label	line:5358
+l_e0d2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0d2:$/;"	label	line:5365
+l_e0d5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0d5:$/;"	label	line:5368
+l_e0d7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0d7:$/;"	label	line:5370
+l_e0df	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0df:$/;"	label	line:5375
+l_e0f0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0f0:$/;"	label	line:5384
+l_e0f8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e0f8:$/;"	label	line:5389
+l_e101	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e101:$/;"	label	line:5394
+l_e103	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e103:$/;"	label	line:5396
+l_e10e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e10e:$/;"	label	line:5402
+l_e119	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e119:$/;"	label	line:5408
+l_e120	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e120:$/;"	label	line:5412
+l_e127	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e127:$/;"	label	line:5416
+l_e12a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e12a:$/;"	label	line:5418
+l_e13f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e13f:$/;"	label	line:5430
+l_e140	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e140:$/;"	label	line:5432
+l_e14b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e14b:$/;"	label	line:5439
+l_e15c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e15c:$/;"	label	line:5449
+l_e15e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e15e:$/;"	label	line:5451
+l_e162	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e162:$/;"	label	line:5454
+l_e186	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e186:$/;"	label	line:5472
+l_e188	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e188:$/;"	label	line:5474
+l_e18f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e18f:$/;"	label	line:5479
+l_e1aa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e1aa:$/;"	label	line:5496
+l_e1ba	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e1ba:$/;"	label	line:5506
+l_e1c7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e1c7:$/;"	label	line:5514
+l_e1d7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e1d7:$/;"	label	line:5524
+l_e1e3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e1e3:$/;"	label	line:5531
+l_e1f8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e1f8:$/;"	label	line:5542
+l_e1fb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e1fb:$/;"	label	line:5544
+l_e200	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e200:$/;"	label	line:5547
+sqr	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^sqr:$/;"	label	line:5611
+a_operator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^a_operator:$/;"	label	line:5620
+l_e241	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e241:$/;"	label	line:5625
+l_e25b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e25b:$/;"	label	line:5638
+negate_operator	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^negate_operator:$/;"	label	line:5654
+l_e27b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e27b:$/;"	label	line:5660
+exp	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^exp:$/;"	label	line:5716
+l_e2ba	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e2ba:$/;"	label	line:5724
+l_e2c5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e2c5:$/;"	label	line:5730
+l_e2c8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e2c8:$/;"	label	line:5732
+l_e2d8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e2d8:$/;"	label	line:5742
+l_e2fd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e2fd:$/;"	label	line:5762
+l_e313	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e313:$/;"	label	line:5773
+l_e317	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e317:$/;"	label	line:5776
+l_e326	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e326:$/;"	label	line:5785
+l_e32a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e32a:$/;"	label	line:5788
+l_e337	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e337:$/;"	label	line:5796
+l_e346	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e346:$/;"	label	line:5804
+rnd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^rnd:$/;"	label	line:5814
+l_e36d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e36d:$/;"	label	line:5829
+l_e388	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e388:$/;"	label	line:5843
+cos	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^cos:$/;"	label	line:5848
+sin	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^sin:$/;"	label	line:5855
+l_e3c4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e3c4:$/;"	label	line:5878
+l_e3c7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e3c7:$/;"	label	line:5880
+l_e3d4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e3d4:$/;"	label	line:5887
+tan	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^tan:$/;"	label	line:5894
+l_e403	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e403:$/;"	label	line:5913
+atn	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^atn:$/;"	label	line:5979
+l_e447	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e447:$/;"	label	line:5984
+l_e455	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e455:$/;"	label	line:5992
+l_e468	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e468:$/;"	label	line:6002
+l_e46e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e46e:$/;"	label	line:6006
+l_e4ac	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e4ac:$/;"	label	line:6073
+l_e4af	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e4af:$/;"	label	line:6075
+l_e4bb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e4bb:$/;"	label	line:6081
+l_e4c4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e4c4:$/;"	label	line:6086
+l_e4d3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e4d3:$/;"	label	line:6094
+l_e4e0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e4e0:$/;"	label	line:6102
+l_e4ec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e4ec:$/;"	label	line:6108
+l_e4f9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e4f9:$/;"	label	line:6114
+l_e505	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e505:$/;"	label	line:6120
+l_e56c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e56c:$/;"	label	line:6137
+l_e57c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e57c:$/;"	label	line:6145
+l_e57d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e57d:$/;"	label	line:6148
+l_e585	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e585:$/;"	label	line:6154
+l_e594	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e594:$/;"	label	line:6163
+l_e59b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e59b:$/;"	label	line:6168
+l_e5a7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e5a7:$/;"	label	line:6174
+l_e5ab	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e5ab:$/;"	label	line:6177
+l_e5b6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e5b6:$/;"	label	line:6184
+l_e5d7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e5d7:$/;"	label	line:6201
+l_e5e5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e5e5:$/;"	label	line:6209
+l_e5ea	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e5ea:$/;"	label	line:6212
+l_e5f5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e5f5:$/;"	label	line:6220
+l_e5ff	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e5ff:$/;"	label	line:6226
+l_e605	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e605:$/;"	label	line:6230
+l_e607	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e607:$/;"	label	line:6234
+l_e611	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e611:$/;"	label	line:6239
+l_e61a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e61a:$/;"	label	line:6244
+l_e625	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e625:$/;"	label	line:6250
+l_e62a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e62a:$/;"	label	line:6253
+l_e62e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e62e:$/;"	label	line:6258
+l_e63a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e63a:$/;"	label	line:6264
+l_e651	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e651:$/;"	label	line:6274
+l_e65d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e65d:$/;"	label	line:6280
+l_e65e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e65e:$/;"	label	line:6283
+l_e66e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e66e:$/;"	label	line:6294
+l_e674	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e674:$/;"	label	line:6299
+l_e67f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e67f:$/;"	label	line:6306
+l_e68b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e68b:$/;"	label	line:6317
+l_e69c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e69c:$/;"	label	line:6328
+l_e6a6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6a6:$/;"	label	line:6334
+l_e6ab	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6ab:$/;"	label	line:6339
+l_e6b2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6b2:$/;"	label	line:6345
+l_e6ba	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6ba:$/;"	label	line:6351
+l_e6c0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6c0:$/;"	label	line:6354
+l_e6c3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6c3:$/;"	label	line:6356
+l_e6c9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6c9:$/;"	label	line:6361
+l_e6d0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6d0:$/;"	label	line:6367
+l_e6de	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6de:$/;"	label	line:6374
+l_e6f0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6f0:$/;"	label	line:6385
+l_e6f5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6f5:$/;"	label	line:6388
+l_e6fc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6fc:$/;"	label	line:6396
+l_e6ff	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e6ff:$/;"	label	line:6398
+l_e70e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e70e:$/;"	label	line:6406
+l_e710	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e710:$/;"	label	line:6408
+l_e71a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e71a:$/;"	label	line:6414
+l_e71c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e71c:$/;"	label	line:6418
+l_e720	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e720:$/;"	label	line:6421
+l_e735	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e735:$/;"	label	line:6434
+l_e748	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e748:$/;"	label	line:6443
+l_e74d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e74d:$/;"	label	line:6446
+l_e74f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e74f:$/;"	label	line:6448
+l_e75a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e75a:$/;"	label	line:6456
+l_e75e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e75e:$/;"	label	line:6459
+l_e76a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e76a:$/;"	label	line:6468
+l_e770	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e770:$/;"	label	line:6472
+l_e782	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e782:$/;"	label	line:6482
+l_e789	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e789:$/;"	label	line:6492
+l_e790	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e790:$/;"	label	line:6502
+l_e799	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e799:$/;"	label	line:6507
+l_e7a2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e7a2:$/;"	label	line:6512
+l_e7ae	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e7ae:$/;"	label	line:6520
+l_e7af	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e7af:$/;"	label	line:6522
+l_e7b2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e7b2:$/;"	label	line:6525
+l_e7da	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e7da:$/;"	label	line:6542
+l_e7e7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e7e7:$/;"	label	line:6550
+l_e7ec	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e7ec:$/;"	label	line:6553
+l_e7f5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e7f5:$/;"	label	line:6558
+l_e807	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e807:$/;"	label	line:6567
+l_e810	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e810:$/;"	label	line:6572
+l_e819	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e819:$/;"	label	line:6577
+l_e822	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e822:$/;"	label	line:6582
+l_e82a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e82a:$/;"	label	line:6587
+l_e849	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e849:$/;"	label	line:6601
+l_e852	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e852:$/;"	label	line:6605
+l_e853	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e853:$/;"	label	line:6608
+cload	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^cload:$/;"	label	line:6616
+l_e871	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e871:$/;"	label	line:6626
+l_e874	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e874:$/;"	label	line:6628
+l_e87a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e87a:$/;"	label	line:6631
+l_e896	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e896:$/;"	label	line:6645
+l_e8b3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e8b3:$/;"	label	line:6661
+l_e8d3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e8d3:$/;"	label	line:6675
+l_e8e8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e8e8:$/;"	label	line:6685
+l_e8e9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e8e9:$/;"	label	line:6687
+l_e903	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e903:$/;"	label	line:6699
+csave	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^csave:$/;"	label	line:6706
+l_e92c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e92c:$/;"	label	line:6721
+l_e93d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e93d:$/;"	label	line:6730
+call	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^call:$/;"	label	line:6737
+l_e94c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e94c:$/;"	label	line:6741
+l_e954	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e954:$/;"	label	line:6746
+l_e95a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e95a:$/;"	label	line:6752
+l_e964	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e964:$/;"	label	line:6758
+l_e967	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e967:$/;"	label	line:6761
+l_e97c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e97c:$/;"	label	line:6772
+l_e981	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e981:$/;"	label	line:6777
+store	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^store:$/;"	label	line:6781
+l_e9aa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e9aa:$/;"	label	line:6796
+l_e9b3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e9b3:$/;"	label	line:6802
+l_e9bc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e9bc:$/;"	label	line:6808
+l_e9c7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e9c7:$/;"	label	line:6815
+l_e9cc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e9cc:$/;"	label	line:6818
+recall	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^recall:$/;"	label	line:6823
+l_e9db	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_e9db:$/;"	label	line:6828
+l_ea09	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea09:$/;"	label	line:6848
+l_ea13	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea13:$/;"	label	line:6853
+l_ea20	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea20:$/;"	label	line:6861
+l_ea2b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea2b:$/;"	label	line:6868
+l_ea2d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea2d:$/;"	label	line:6870
+l_ea35	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea35:$/;"	label	line:6875
+l_ea3a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea3a:$/;"	label	line:6878
+l_ea42	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea42:$/;"	label	line:6884
+l_ea4d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea4d:$/;"	label	line:6891
+l_ea57	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea57:$/;"	label	line:6898
+l_ea74	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea74:$/;"	label	line:6912
+l_ea9a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea9a:$/;"	label	line:6930
+l_ea9e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ea9e:$/;"	label	line:6934
+l_eac1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eac1:$/;"	label	line:6954
+l_eac2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eac2:$/;"	label	line:6956
+hires_scr_cmds	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^hires_scr_cmds:$/;"	label	line:7007
+l_eaf7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eaf7:$/;"	label	line:7011
+sound_cmds	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^sound_cmds:$/;"	label	line:7017
+l_eb00	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb00:$/;"	label	line:7020
+l_eb03	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb03:$/;"	label	line:7022
+l_eb26	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb26:$/;"	label	line:7042
+l_eb34	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb34:$/;"	label	line:7048
+l_eb3b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb3b:$/;"	label	line:7052
+l_eb5a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb5a:$/;"	label	line:7069
+l_eb6d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb6d:$/;"	label	line:7084
+l_eb78	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb78:$/;"	label	line:7091
+l_eb88	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb88:$/;"	label	line:7101
+l_eb89	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb89:$/;"	label	line:7104
+l_eb8d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb8d:$/;"	label	line:7107
+l_eb8e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb8e:$/;"	label	line:7109
+l_eb8f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb8f:$/;"	label	line:7111
+l_eb97	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eb97:$/;"	label	line:7116
+l_ebb5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebb5:$/;"	label	line:7138
+l_ebbc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebbc:$/;"	label	line:7142
+l_ebbd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebbd:$/;"	label	line:7144
+l_ebc1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebc1:$/;"	label	line:7148
+l_ebca	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebca:$/;"	label	line:7153
+himem	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^himem:$/;"	label	line:7160
+l_ebdd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebdd:$/;"	label	line:7167
+l_ebe0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebe0:$/;"	label	line:7170
+grab	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^grab:$/;"	label	line:7177
+l_ebf4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebf4:$/;"	label	line:7184
+l_ebf9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ebf9:$/;"	label	line:7187
+release	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^release:$/;"	label	line:7203
+text	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^text:$/;"	label	line:7217
+l_ec32	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ec32:$/;"	label	line:7226
+hires	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^hires:$/;"	label	line:7231
+point	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^point:$/;"	label	line:7245
+l_ec99	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ec99:$/;"	label	line:7284
+l_ec9c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ec9c:$/;"	label	line:7286
+l_eca2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eca2:$/;"	label	line:7290
+l_ecb9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ecb9:$/;"	label	line:7303
+l_eccb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eccb:$/;"	label	line:7314
+l_eccc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eccc:$/;"	label	line:7317
+l_ecfb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ecfb:$/;"	label	line:7340
+l_ed55	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ed55:$/;"	label	line:7383
+l_edc4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_edc4:$/;"	label	line:7414
+l_edc8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_edc8:$/;"	label	line:7417
+l_edd0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_edd0:$/;"	label	line:7422
+l_eddf	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eddf:$/;"	label	line:7431
+l_ede0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ede0:$/;"	label	line:7434
+l_ee1a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee1a:$/;"	label	line:7461
+l_ee22	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee22:$/;"	label	line:7468
+l_ee30	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee30:$/;"	label	line:7475
+l_ee34	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee34:$/;"	label	line:7479
+l_ee3b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee3b:$/;"	label	line:7486
+l_ee6b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee6b:$/;"	label	line:7509
+l_ee86	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee86:$/;"	label	line:7521
+l_ee8c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee8c:$/;"	label	line:7529
+l_ee93	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee93:$/;"	label	line:7535
+l_ee9d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ee9d:$/;"	label	line:7544
+l_eeab	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eeab:$/;"	label	line:7556
+l_eec9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eec9:$/;"	label	line:7580
+l_eecc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eecc:$/;"	label	line:7582
+l_eed8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eed8:$/;"	label	line:7590
+l_eede	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eede:$/;"	label	line:7593
+l_eee8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eee8:$/;"	label	line:7599
+l_eef8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eef8:$/;"	label	line:7611
+l_ef0b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef0b:$/;"	label	line:7621
+l_ef1a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef1a:$/;"	label	line:7629
+l_ef30	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef30:$/;"	label	line:7638
+l_ef31	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef31:$/;"	label	line:7640
+l_ef3f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef3f:$/;"	label	line:7646
+l_ef40	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef40:$/;"	label	line:7649
+l_ef5c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef5c:$/;"	label	line:7663
+l_ef67	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef67:$/;"	label	line:7668
+l_ef6a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef6a:$/;"	label	line:7670
+l_ef7a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef7a:$/;"	label	line:7677
+l_ef7d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef7d:$/;"	label	line:7679
+l_ef84	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef84:$/;"	label	line:7685
+l_ef8f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef8f:$/;"	label	line:7690
+l_ef92	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_ef92:$/;"	label	line:7692
+l_efa2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_efa2:$/;"	label	line:7699
+l_efa5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_efa5:$/;"	label	line:7701
+l_efac	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_efac:$/;"	label	line:7707
+l_efc1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_efc1:$/;"	label	line:7720
+l_efc8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_efc8:$/;"	label	line:7725
+l_efd5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_efd5:$/;"	label	line:7735
+l_eff1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_eff1:$/;"	label	line:7750
+l_effa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_effa:$/;"	label	line:7760
+l_f014	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f014:$/;"	label	line:7773
+l_f016	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f016:$/;"	label	line:7777
+l_f020	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f020:$/;"	label	line:7783
+l_f024	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f024:$/;"	label	line:7787
+l_f042	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f042:$/;"	label	line:7803
+l_f048	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f048:$/;"	label	line:7807
+l_f049	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f049:$/;"	label	line:7810
+l_f07c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f07c:$/;"	label	line:7838
+l_f082	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f082:$/;"	label	line:7843
+l_f089	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f089:$/;"	label	line:7850
+l_f094	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f094:$/;"	label	line:7857
+l_f095	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f095:$/;"	label	line:7860
+l_f0a0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f0a0:$/;"	label	line:7867
+l_f0a1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f0a1:$/;"	label	line:7870
+l_f0b1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f0b1:$/;"	label	line:7878
+l_f0b2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f0b2:$/;"	label	line:7881
+l_f0c5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f0c5:$/;"	label	line:7890
+l_f0f9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f0f9:$/;"	label	line:7913
+l_f10c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f10c:$/;"	label	line:7922
+l_f119	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f119:$/;"	label	line:7929
+l_f129	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f129:$/;"	label	line:7937
+l_f16d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f16d:$/;"	label	line:7967
+l_f171	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f171:$/;"	label	line:7971
+l_f186	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f186:$/;"	label	line:7981
+l_f19b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f19b:$/;"	label	line:7996
+l_f19e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f19e:$/;"	label	line:7999
+l_f1ad	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f1ad:$/;"	label	line:8007
+l_f1b4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f1b4:$/;"	label	line:8011
+l_f1c8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f1c8:$/;"	label	line:8023
+l_f1f7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f1f7:$/;"	label	line:8043
+l_f1f9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f1f9:$/;"	label	line:8045
+l_f200	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f200:$/;"	label	line:8049
+l_f21c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f21c:$/;"	label	line:8065
+l_f247	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f247:$/;"	label	line:8085
+l_f251	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f251:$/;"	label	line:8092
+l_f264	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f264:$/;"	label	line:8101
+l_f276	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f276:$/;"	label	line:8110
+l_f27f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f27f:$/;"	label	line:8116
+l_f2b3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2b3:$/;"	label	line:8142
+l_f2c9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2c9:$/;"	label	line:8151
+l_f2cd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2cd:$/;"	label	line:8155
+l_f2ce	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2ce:$/;"	label	line:8157
+l_f2d3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2d3:$/;"	label	line:8160
+l_f2e4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2e4:$/;"	label	line:8170
+l_f2f6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2f6:$/;"	label	line:8178
+l_f2f7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2f7:$/;"	label	line:8180
+l_f2f8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f2f8:$/;"	label	line:8183
+l_f308	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f308:$/;"	label	line:8190
+l_f309	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f309:$/;"	label	line:8192
+l_f30a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f30a:$/;"	label	line:8195
+l_f35c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f35c:$/;"	label	line:8229
+l_f35d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f35d:$/;"	label	line:8232
+l_f36e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f36e:$/;"	label	line:8241
+l_f3c2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f3c2:$/;"	label	line:8277
+l_f3c5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f3c5:$/;"	label	line:8279
+l_f3c6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f3c6:$/;"	label	line:8282
+l_f3f2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f3f2:$/;"	label	line:8300
+l_f403	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f403:$/;"	label	line:8308
+l_f414	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f414:$/;"	label	line:8317
+l_f43c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f43c:$/;"	label	line:8334
+l_f43f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f43f:$/;"	label	line:8336
+l_f443	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f443:$/;"	label	line:8339
+l_f444	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f444:$/;"	label	line:8342
+l_f46c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f46c:$/;"	label	line:8359
+l_f46f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f46f:$/;"	label	line:8361
+l_f473	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f473:$/;"	label	line:8364
+l_f474	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f474:$/;"	label	line:8367
+l_f47a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f47a:$/;"	label	line:8371
+l_f485	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f485:$/;"	label	line:8380
+l_f48d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f48d:$/;"	label	line:8385
+l_f495	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f495:$/;"	label	line:8392
+l_f4bd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f4bd:$/;"	label	line:8411
+l_f4c6	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f4c6:$/;"	label	line:8415
+l_f4e0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f4e0:$/;"	label	line:8429
+l_f4e3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f4e3:$/;"	label	line:8431
+l_f4e7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f4e7:$/;"	label	line:8434
+l_f4e9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f4e9:$/;"	label	line:8436
+l_f4ef	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f4ef:$/;"	label	line:8444
+l_f4fd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f4fd:$/;"	label	line:8452
+l_f500	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f500:$/;"	label	line:8455
+l_f514	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f514:$/;"	label	line:8466
+l_f520	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f520:$/;"	label	line:8473
+l_f522	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f522:$/;"	label	line:8475
+l_f523	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f523:$/;"	label	line:8478
+l_f531	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f531:$/;"	label	line:8485
+l_f548	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f548:$/;"	label	line:8498
+l_f550	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f550:$/;"	label	line:8503
+l_f561	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f561:$/;"	label	line:8516
+l_f56e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f56e:$/;"	label	line:8524
+l_f575	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f575:$/;"	label	line:8528
+l_f58c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f58c:$/;"	label	line:8542
+l_f590	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f590:$/;"	label	line:8547
+l_f59d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f59d:$/;"	label	line:8556
+l_f5c1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f5c1:$/;"	label	line:8576
+l_f5d7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f5d7:$/;"	label	line:8587
+l_f5e2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f5e2:$/;"	label	line:8594
+l_f602	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f602:$/;"	label	line:8629
+l_f639	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f639:$/;"	label	line:8655
+l_f653	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f653:$/;"	label	line:8668
+l_f679	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f679:$/;"	label	line:8685
+l_f67c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f67c:$/;"	label	line:8687
+l_f681	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f681:$/;"	label	line:8690
+l_f6a2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f6a2:$/;"	label	line:8704
+l_f6b0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f6b0:$/;"	label	line:8712
+l_f6fe	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f6fe:$/;"	label	line:8747
+l_f70d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f70d:$/;"	label	line:8755
+l_f716	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f716:$/;"	label	line:8761
+l_f71a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f71a:$/;"	label	line:8765
+l_f71e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f71e:$/;"	label	line:8768
+l_f731	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f731:$/;"	label	line:8780
+l_f74a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f74a:$/;"	label	line:8792
+l_f75a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f75a:$/;"	label	line:8802
+l_f766	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f766:$/;"	label	line:8808
+l_f76a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f76a:$/;"	label	line:8811
+l_f77c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f77c:$/;"	label	line:8822
+l_f7aa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7aa:$/;"	label	line:8850
+l_f7b1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7b1:$/;"	label	line:8854
+l_f7b5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7b5:$/;"	label	line:8857
+l_f7c1	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7c1:$/;"	label	line:8864
+l_f7cd	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7cd:$/;"	label	line:8870
+l_f7d0	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7d0:$/;"	label	line:8872
+l_f7d7	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7d7:$/;"	label	line:8881
+l_f7de	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7de:$/;"	label	line:8885
+l_f7e3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7e3:$/;"	label	line:8888
+l_f7e4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7e4:$/;"	label	line:8891
+l_f7fa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f7fa:$/;"	label	line:8904
+l_f801	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f801:$/;"	label	line:8910
+l_f816	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f816:$/;"	label	line:8922
+l_f82d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f82d:$/;"	label	line:8935
+l_f82f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f82f:$/;"	label	line:8937
+l_f84e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f84e:$/;"	label	line:8956
+l_f850	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f850:$/;"	label	line:8960
+l_f852	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f852:$/;"	label	line:8963
+l_f854	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f854:$/;"	label	line:8966
+l_f861	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f861:$/;"	label	line:8976
+l_f865	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f865:$/;"	label	line:8979
+l_f870	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f870:$/;"	label	line:8985
+l_f87b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f87b:$/;"	label	line:8992
+l_f87c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f87c:$/;"	label	line:8994
+reset	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^reset:$/;"	label	line:9003
+l_f896	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f896:$/;"	label	line:9009
+l_f8b2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f8b2:$/;"	label	line:9022
+l_f8b8	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f8b8:$/;"	label	line:9026
+l_f8dc	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f8dc:$/;"	label	line:9042
+l_f90e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f90e:$/;"	label	line:9068
+l_f920	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f920:$/;"	label	line:9079
+l_f92b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f92b:$/;"	label	line:9085
+l_f967	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f967:$/;"	label	line:9112
+l_f982	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f982:$/;"	label	line:9126
+l_f984	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f984:$/;"	label	line:9128
+l_f992	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f992:$/;"	label	line:9137
+l_f9aa	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f9aa:$/;"	label	line:9143
+l_f9c9	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f9c9:$/;"	label	line:9158
+l_f9d2	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_f9d2:$/;"	label	line:9163
+l_fa07	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa07:$/;"	label	line:9187
+l_fa14	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa14:$/;"	label	line:9195
+l_fa30	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa30:$/;"	label	line:9208
+l_fa35	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa35:$/;"	label	line:9211
+l_fa3c	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa3c:$/;"	label	line:9216
+l_fa42	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa42:$/;"	label	line:9220
+l_fa4e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa4e:$/;"	label	line:9227
+l_fa5d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa5d:$/;"	label	line:9236
+l_fa77	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa77:$/;"	label	line:9250
+l_fa7b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa7b:$/;"	label	line:9253
+l_fa86	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa86:$/;"	label	line:9260
+l_fa8e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fa8e:$/;"	label	line:9266
+ping	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^ping:$/;"	label	line:9283
+ping_data	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^ping_data:$/;"	label	line:9290
+shoot	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^shoot:$/;"	label	line:9297
+shoot_data	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^shoot_data:$/;"	label	line:9303
+explode	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^explode:$/;"	label	line:9310
+explode_data	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^explode_data:$/;"	label	line:9316
+zap	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^zap:$/;"	label	line:9323
+l_faeb	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_faeb:$/;"	label	line:9329
+l_faf4	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_faf4:$/;"	label	line:9335
+zap_data	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^zap_data:$/;"	label	line:9348
+l_fb14	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb14:$/;"	label	line:9352
+high_keyclick_data	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^high_keyclick_data:$/;"	label	line:9358
+l_fb2a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb2a:$/;"	label	line:9362
+low_keyclick	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^low_keyclick:$/;"	label	line:9368
+l_fb40	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb40:$/;"	label	line:9372
+l_fb57	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb57:$/;"	label	line:9382
+l_fb62	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb62:$/;"	label	line:9388
+l_fb63	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb63:$/;"	label	line:9390
+l_fb69	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb69:$/;"	label	line:9394
+l_fb7d	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb7d:$/;"	label	line:9403
+l_fb88	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb88:$/;"	label	line:9409
+l_fb89	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb89:$/;"	label	line:9411
+l_fb8f	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fb8f:$/;"	label	line:9415
+l_fba3	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fba3:$/;"	label	line:9424
+l_fbae	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fbae:$/;"	label	line:9430
+l_fbaf	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fbaf:$/;"	label	line:9432
+l_fbb5	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fbb5:$/;"	label	line:9436
+l_fc4b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fc4b:$/;"	label	line:9502
+l_fc57	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fc57:$/;"	label	line:9508
+l_fc5a	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fc5a:$/;"	label	line:9510
+l_fc5e	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fc5e:$/;"	label	line:9514
+l_fc6b	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fc6b:$/;"	label	line:9517
+l_fc78	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^l_fc78:$/;"	label	line:9521
+nmi	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		nmi = $0247$/;"	define	line:9638
+irq	/home/jgroth/Documents/dev/github/OricAtmos/atmos/rom/atmos.asm	/^		irq = $0244$/;"	define	line:9639
